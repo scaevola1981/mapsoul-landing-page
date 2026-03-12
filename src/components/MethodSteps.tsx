@@ -1,0 +1,106 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { MessageCircle, Map, Compass } from "lucide-react";
+
+const steps = [
+  {
+    number: "01",
+    title: "Consultare & Intenție",
+    icon: MessageCircle,
+    description:
+      "Pornim de la întrebările tale reale. Stabilim împreună intenția ședinței și contextul pe care vrei să-l clarifici, fără grabă.",
+  },
+  {
+    number: "02",
+    title: "Hartă & Sinteză",
+    icon: Map,
+    description:
+      "Analizez harta natală și tranzitele relevante, sintetizând tiparele esențiale într-o lectură clară, adaptată limbajului tău.",
+  },
+  {
+    number: "03",
+    title: "Integrare & Plan",
+    icon: Compass,
+    description:
+      "Traducem insight-urile în pași concreți. Primești un plan practic de integrare, cu repere clare pentru săptămânile următoare.",
+  },
+];
+
+export default function MethodSteps() {
+  return (
+    <section
+      id="metoda"
+      className="relative w-full overflow-hidden px-6 py-20 md:py-28"
+    >
+      <div className="mx-auto w-full max-w-6xl">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-14 text-center"
+        >
+          <h2 className="mb-4 font-serif text-3xl font-light text-[#ededed] md:text-5xl">
+            Metoda Mea
+          </h2>
+          <p className="mx-auto max-w-xl text-lg text-[#ededed]/60">
+            Trei pași simpli spre claritate și direcție.
+          </p>
+        </motion.div>
+
+        {/* Cards */}
+        <div className="grid gap-5 md:grid-cols-3">
+          {steps.map((step, i) => {
+            const Icon = step.icon;
+            return (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.12 }}
+                className="group relative flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.03] p-7 backdrop-blur-sm transition-all duration-500 hover:border-[#6d28d9]/40 hover:bg-white/[0.06]"
+              >
+                {/* Glow on hover */}
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at 50% 0%, rgba(109,40,217,0.1) 0%, transparent 65%)",
+                  }}
+                />
+
+                {/* Step number + icon row */}
+                <div className="relative mb-5 flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#6d28d9]/15 text-[#e0ab76] transition-all duration-300 group-hover:bg-[#6d28d9]/25 group-hover:shadow-[0_0_24px_rgba(109,40,217,0.2)]">
+                    <Icon size={22} strokeWidth={1.5} />
+                  </div>
+                  <span className="font-mono text-xs font-semibold tracking-widest text-[#6d28d9]/60">
+                    PAS {step.number}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="relative mb-3 font-serif text-xl font-medium tracking-wide text-[#ededed]">
+                  {step.title}
+                </h3>
+
+                {/* Description */}
+                <p className="relative text-sm leading-relaxed text-[#ededed]/65">
+                  {step.description}
+                </p>
+
+                {/* Decorative connector line (not on last card) */}
+                {i < steps.length - 1 && (
+                  <div className="absolute -right-3 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-gradient-to-r from-[#6d28d9]/30 to-transparent md:block" />
+                )}
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

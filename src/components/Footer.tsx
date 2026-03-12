@@ -30,7 +30,7 @@ export default function Footer() {
           <nav className="flex flex-col items-center gap-3 text-sm text-[#ededed]/70 md:items-start">
             <Link href="#hero" className="transition-colors hover:text-[#e0ab76]">Acasă</Link>
             <Link href="#specializari" className="transition-colors hover:text-[#e0ab76]">Sisteme de Cunoaștere</Link>
-            <Link href="#despre-mine" className="transition-colors hover:text-[#e0ab76]">Despre Mine</Link>
+            <Link href="#metoda" className="transition-colors hover:text-[#e0ab76]">Metoda Mea</Link>
           </nav>
         </div>
 

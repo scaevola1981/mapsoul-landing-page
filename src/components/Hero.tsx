@@ -1,58 +1,185 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { Globe, ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative flex min-h-[75vh] items-center justify-center overflow-hidden px-4 pb-4 pt-24 md:min-h-[80vh]">
-      <div className="z-10 flex flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-12"
-        >
-          <Image
-            src="/logo.png"
-            alt="MapSoul Logo"
-            width={150}
-            height={150}
-            className="object-contain"
-            priority
-          />
-        </motion.div>
+    <section
+      id="hero"
+      className="relative min-h-screen overflow-hidden px-6 pb-16 pt-28 md:pt-32"
+    >
+      {/* Background handled by galaxy.png wallpaper in globals.css */}
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-6 font-serif text-5xl font-light tracking-widest text-[#ededed] md:text-7xl lg:text-8xl"
-          style={{ textShadow: "0 2px 10px rgba(255, 255, 255, 0.1)" }}
-        >
-          ASTROLOGIE INTEGRATIVĂ
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="mb-12 max-w-2xl text-lg font-light leading-relaxed text-[#ededed]/80 md:text-xl lg:text-2xl"
-        >
-          Combină tradiția astrologică cu psihologia și dezvoltarea personală
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-        >
-          <button className="glass-card group relative overflow-hidden rounded-full border border-[rgba(255,255,255,0.2)] bg-transparent px-8 py-4 font-medium tracking-wide text-[#ededed] transition-all duration-300 hover:border-[#e0ab76]/50 hover:bg-[#e0ab76]/10">
-            <span className="relative z-10 transition-colors duration-300 group-hover:text-[#e0ab76]">
-              Descoperă-ți sinele autentic
+      {/* ── Split-screen grid ── */}
+      <div className="mx-auto flex min-h-[80vh] max-w-6xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+        {/* ─── LEFT: Text ─── */}
+        <div className="z-10 flex-1 text-center lg:text-left">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-6"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.06)] px-5 py-2 text-sm font-medium tracking-wide text-[#ededed]/90 backdrop-blur-md">
+              <Globe size={15} className="text-[#e0ab76]" />
+              Disponibil online & în persoană
             </span>
-            <div className="absolute inset-0 -z-10 bg-[#e0ab76] opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-20"></div>
-          </button>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mb-6 font-serif text-4xl font-light leading-tight tracking-wide text-[#ededed] sm:text-5xl lg:text-6xl"
+            style={{ textShadow: "0 2px 20px rgba(109,40,217,0.15)" }}
+          >
+            Astrologie integrativă,{" "}
+            <span className="bg-gradient-to-r from-[#e0ab76] to-[#c98d5a] bg-clip-text text-transparent">
+              personalizată
+            </span>{" "}
+            pentru tine
+          </motion.h1>
+
+          {/* Personal intro */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
+            className="mb-6 space-y-4 text-[16px] leading-relaxed text-[#ededed]/70 md:text-[17px]"
+          >
+            <p>
+              Sunt{" "}
+              <strong className="text-[#ededed]/90">Marilena</strong>, am
+              47 de ani și sunt zodia Pești — un semn asociat sensibilității,
+              intuiției și dorinței de a înțelege emoțiile profunde. Aceste
+              trăsături au fost punctul de pornire spre întrebările care m-au
+              însoțit mereu:
+            </p>
+            <ul className="ml-1 space-y-1 text-[15px] text-[#ededed]/60 lg:ml-4">
+              {[
+                "de ce sunt așa cum sunt?",
+                "de ce trec prin aceste experiențe?",
+                "când se vor îmbunătăți lucrurile?",
+                "care este scopul meu în viață?",
+              ].map((q) => (
+                <li key={q} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#6d28d9]" />
+                  {q}
+                </li>
+              ))}
+            </ul>
+            <p>
+              Din aceste întrebări s-a născut o călătorie de peste 12 ani în
+              astrologie. Am obținut calificarea de{" "}
+              <strong className="text-[#ededed]/90">Astrolog certificat</strong>{" "}
+              în 2023, formându-mă în astrologie natală, karmică, previzională
+              și relațională.
+            </p>
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
+          >
+            <Link
+              href="#contact"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#6d28d9] to-[#7c3aed] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#6d28d9]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#6d28d9]/35 hover:brightness-110"
+            >
+              Programează o ședință
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+            </Link>
+            <Link
+              href="#metoda"
+              className="group inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.15)] bg-transparent px-8 py-4 text-sm font-medium tracking-wide text-[#ededed]/90 backdrop-blur-sm transition-all duration-300 hover:border-[#e0ab76]/40 hover:bg-[rgba(255,255,255,0.06)] hover:text-[#e0ab76]"
+            >
+              Vezi metoda mea
+            </Link>
+          </motion.div>
+
+          {/* Micro-line */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-6 text-xs font-light tracking-widest text-[#ededed]/35"
+          >
+            Răspuns în 24 h&ensp;|&ensp;RO / EN
+          </motion.p>
+        </div>
+
+        {/* ─── RIGHT: Visual ─── */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="relative z-10 w-full max-w-sm shrink-0 lg:max-w-md"
+        >
+          {/* Organic shape container */}
+          <div className="relative mx-auto aspect-[3/4] w-full">
+            {/* Background logo watermark */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-[0.06]">
+              <Image
+                src="/logo.png"
+                alt=""
+                width={320}
+                height={320}
+                className="object-contain"
+                aria-hidden="true"
+              />
+            </div>
+
+            {/* Glass-blur frame with organic shape */}
+            <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] border border-white/[0.1] shadow-2xl shadow-[#6d28d9]/10">
+              {/* Inner glass effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-[#6d28d9]/[0.04] backdrop-blur-sm" />
+
+              {/* Image — use marilena.png if it exists, otherwise logo as placeholder */}
+              <Image
+                src="/logo.png"
+                alt="MapSoul — Marilena, Astrolog"
+                fill
+                className="object-contain p-12 opacity-80"
+                sizes="(max-width: 768px) 100vw, 400px"
+                priority
+              />
+
+              {/* Bottom gradient fade */}
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0b0e14]/60 to-transparent" />
+            </div>
+
+            {/* Decorative glow ring */}
+            <div className="pointer-events-none absolute -inset-4 rounded-[3rem] border border-[#6d28d9]/10 opacity-50" />
+            <div
+              className="pointer-events-none absolute -bottom-8 left-1/2 h-32 w-64 -translate-x-1/2 rounded-full blur-[60px]"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(109,40,217,0.3) 0%, transparent 70%)",
+              }}
+            />
+          </div>
+
+          {/* Gold accent quote */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="mt-6 text-center text-sm font-medium italic text-[#e0ab76]/70"
+          >
+            &ldquo;Fiecare hartă este o poveste care merită ascultată cu
+            răbdare și respect.&rdquo;
+          </motion.p>
         </motion.div>
       </div>
     </section>
