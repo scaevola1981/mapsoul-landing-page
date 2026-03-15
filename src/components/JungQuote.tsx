@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 export default function JungQuote() {
   return (
-    <section className="relative w-full overflow-hidden px-6 py-12 md:py-16">
+    <section className="relative w-full overflow-hidden px-6 py-6 md:py-8">
       <div className="mx-auto max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true, margin: "-60px", amount: 0.3 }}
           transition={{ duration: 0.7 }}
           className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#e0ab76]/20 bg-[#0b0e14]/60 p-8 shadow-2xl shadow-black/30 backdrop-blur-xl sm:flex-row sm:gap-8 md:p-10"
         >

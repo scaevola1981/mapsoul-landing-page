@@ -99,14 +99,24 @@ function BentoTile({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "-60px", amount: 0.3 }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
+      whileHover={{ scale: 1.02 }}
       className="bento-tile group relative flex h-full min-h-[260px] flex-col justify-end overflow-hidden rounded-2xl border border-white/[0.08] transition-all duration-500 hover:border-[#6d28d9]/50"
       style={{ gridArea: spec.area }}
     >
-      {/* Background image */}
+      <motion.div
+        animate={{ y: [0, -8, 0] }}
+        transition={{
+          duration: 4 + Math.random() * 2,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "easeInOut",
+        }}
+        className="absolute inset-0 z-0"
+      >
+        {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
         style={{ backgroundImage: `url('${spec.image}')` }}
@@ -125,6 +135,7 @@ function BentoTile({
 
       {/* Glass overlay on hover */}
       <div className="absolute inset-0 backdrop-blur-[0px] transition-all duration-500 group-hover:backdrop-blur-[3px]" />
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col gap-3 p-5 md:p-6">
@@ -159,14 +170,14 @@ export default function SpecializationsCarousel() {
   return (
     <section
       id="specializari"
-      className="relative w-full px-6 py-20 md:py-28 overflow-hidden"
+      className="relative w-full px-6 py-12 md:py-16 overflow-hidden"
     >
       <div className="mx-auto w-full max-w-6xl">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="mb-14 text-center"
         >
@@ -212,18 +223,28 @@ export default function SpecializationsCarousel() {
               return (
                 <SwiperSlide key={spec.id}>
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.4, delay: i * 0.06 }}
                     className="relative flex h-[340px] flex-col justify-end overflow-hidden rounded-2xl border border-white/[0.08]"
                   >
-                    {/* BG */}
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{ backgroundImage: `url('${spec.image}')` }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20" />
+                    {/* BG wrapper for float */}
+                    <motion.div
+                      animate={{ y: [0, -8, 0] }}
+                      transition={{
+                        duration: 4 + Math.random() * 2,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute inset-0 z-0"
+                    >
+                      <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{ backgroundImage: `url('${spec.image}')` }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20" />
+                    </motion.div>
 
                     {/* Content */}
                     <div className="relative z-10 flex flex-col gap-3 p-5">

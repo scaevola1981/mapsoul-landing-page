@@ -3,38 +3,36 @@
 import { motion } from "framer-motion";
 import { Moon, Sun, Star, Orbit, Sparkles } from "lucide-react";
 
-export default function PlanetaryCards() {
+export function PersonalPlanets() {
   return (
-    <section className="relative w-full overflow-hidden px-6 py-16 md:py-24">
-      <div className="absolute left-0 top-1/4 h-72 w-72 -translate-x-1/2 rounded-full bg-[#6d28d9]/8 blur-[90px]" />
-      <div className="absolute right-0 bottom-1/4 h-72 w-72 translate-x-1/2 rounded-full bg-[#e0ab76]/8 blur-[90px]" />
-
+    <div className="relative w-full overflow-hidden px-6 py-6 md:py-10">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
           <h2 className="mb-3 font-serif text-2xl font-light text-[#ededed] md:text-3xl">
-            Planetele — Simboluri ale Cunoașterii
+            Planetele Personale — Fundamentul Identității
           </h2>
           <p className="mx-auto max-w-xl text-sm text-[#ededed]/50">
             Nu sunt predicții, ci oglinzi simbolice care invită la reflecție.
           </p>
         </motion.div>
 
-        {/* Cards grid — 3 columns */}
-        <div className="grid gap-6 md:grid-cols-3">
-          {/* ── Planete Personale ── */}
+        {/* Cards grid — Centered single column for Personal Planets */}
+        <div className="mx-auto max-w-md">
+          {/* ── Soare / Luna / Venus ── */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-80px", amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="glass-card flex flex-col rounded-2xl p-6"
+            whileHover={{ scale: 1.02 }}
+            className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
             style={{ backdropFilter: "blur(44px) saturate(1.4)", WebkitBackdropFilter: "blur(44px) saturate(1.4)" }}
           >
             <h3 className="mb-5 flex items-center gap-3 font-serif text-xl text-[#e0ab76]">
@@ -82,14 +80,40 @@ export default function PlanetaryCards() {
               în care ne raportăm la noi și la ceilalți.
             </p>
           </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
+export function EvolutionPlanets() {
+  return (
+    <div className="relative w-full overflow-hidden px-6 py-6 md:py-10">
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="mb-10 text-center"
+        >
+          <h2 className="mb-3 font-serif text-2xl font-light text-[#ededed] md:text-3xl">
+            Planetele Evoluției și Societății
+          </h2>
+          <p className="mx-auto max-w-xl text-sm text-[#ededed]/50">
+            Forțe colective care influențează generații și transformări profunde ale conștiinței.
+          </p>
+        </motion.div>
+
+        <div className="grid gap-6 md:grid-cols-2">
           {/* ── Planete Sociale ── */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-80px", amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="glass-card flex flex-col rounded-2xl p-6"
+            whileHover={{ scale: 1.02 }}
+            className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
             style={{ backdropFilter: "blur(44px) saturate(1.4)", WebkitBackdropFilter: "blur(44px) saturate(1.4)" }}
           >
             <h3 className="mb-5 flex items-center gap-3 font-serif text-xl text-[#6d28d9]">
@@ -117,18 +141,18 @@ export default function PlanetaryCards() {
             </div>
 
             <p className="mt-auto border-t border-white/[0.06] pt-3 text-xs italic text-[#ededed]/40">
-              Planetele sociale marchează punctul de trecere între lumea
-              personală și cea colectivă.
+              Planetele sociale marchează punctul de trecere între lumea personală și cea colectivă.
             </p>
           </motion.div>
 
           {/* ── Planete Transpersonale ── */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-80px", amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-card flex flex-col rounded-2xl p-6"
+            whileHover={{ scale: 1.02 }}
+            className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
             style={{ backdropFilter: "blur(44px) saturate(1.4)", WebkitBackdropFilter: "blur(44px) saturate(1.4)" }}
           >
             <h3 className="mb-5 flex items-center gap-3 font-serif text-xl text-[#e0ab76]">
@@ -165,12 +189,11 @@ export default function PlanetaryCards() {
             </div>
 
             <p className="mt-auto border-t border-white/[0.06] pt-3 text-xs italic text-[#ededed]/40">
-              Forțe colective care influențează generații și transformări
-              profunde ale conștiinței.
+              Forțe colective care influențează generații și transformări profunde ale conștiinței.
             </p>
           </motion.div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

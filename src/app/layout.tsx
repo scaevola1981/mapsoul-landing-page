@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AstroLab from "@/components/AstroLab";
 
 export default function RootLayout({
   children,
@@ -35,7 +34,6 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <AstroLab />
       </body>
     </html>
   );

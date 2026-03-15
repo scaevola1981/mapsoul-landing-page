@@ -1,26 +1,55 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Globe, ArrowRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Globe, ArrowRight, ChevronDown } from "lucide-react";
 
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Connect to the page scroll to control hero parallax
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  // Fade out and translate the indicator after scrolling 25% of the hero
+  const indicatorOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+  const indicatorY = useTransform(scrollYProgress, [0, 0.25], [0, 50]);
+
+  // Parallax the right card (moves up slightly as you scroll down) and scales down
+  const cardY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const cardScale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+
   return (
     <section
       id="hero"
-      className="relative min-h-screen overflow-hidden px-6 pb-16 pt-28 md:pt-32"
+      ref={containerRef}
+      className="relative w-full overflow-hidden px-6 pb-12 pt-20 md:pt-24"
     >
-      {/* Background handled by galaxy.png wallpaper in globals.css */}
+      {/* Animated Gradient Overlay moving on X */}
+      <motion.div 
+        className="pointer-events-none absolute inset-0 z-0 opacity-20"
+        style={{
+          background: "linear-gradient(90deg, transparent 0%, rgba(109,40,217,0.15) 50%, transparent 100%)",
+          backgroundSize: "200% 100%",
+        }}
+        animate={{ backgroundPosition: ["0% 0%", "100% 0%", "0% 0%"] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+      />
+      {/* Background handled by global transitions */}
 
       {/* ── Split-screen grid ── */}
-      <div className="mx-auto flex min-h-[80vh] max-w-6xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+      <div className="mx-auto flex min-h-[70vh] w-full max-w-6xl flex-col items-center justify-center gap-12 lg:flex-row lg:items-center lg:gap-16">
         {/* ─── LEFT: Text ─── */}
         <div className="z-10 flex-1 text-center lg:text-left">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-6"
           >
@@ -32,23 +61,32 @@ export default function Hero() {
 
           {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            initial={{ clipPath: "inset(100% 0 0 0)", y: 20 }}
+            animate={{ clipPath: "inset(0 0 0 0)", y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="mb-6 font-serif text-4xl font-light leading-tight tracking-wide text-[#ededed] sm:text-5xl lg:text-6xl"
             style={{ textShadow: "0 2px 20px rgba(109,40,217,0.15)" }}
           >
             Astrologie integrativă,{" "}
-            <span className="bg-gradient-to-r from-[#e0ab76] to-[#c98d5a] bg-clip-text text-transparent">
-              personalizată
+            <span className="relative inline-block overflow-hidden pb-1">
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: "0%" }}
+                transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="inline-block bg-gradient-to-r from-[#e0ab76] to-[#c98d5a] bg-clip-text text-transparent"
+              >
+                personalizată
+              </motion.span>
             </span>{" "}
             pentru tine
           </motion.h1>
 
           {/* Personal intro */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.45 }}
             className="mb-6 space-y-4 text-[16px] leading-relaxed text-[#ededed]/70 md:text-[17px]"
           >
@@ -84,22 +122,31 @@ export default function Hero() {
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
           >
-            <Link
-              href="#contact"
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#6d28d9] to-[#7c3aed] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#6d28d9]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#6d28d9]/35 hover:brightness-110"
-            >
-              Programează o ședință
-              <ArrowRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-            </Link>
+            <motion.div whileHover={{ scale: 1.02, rotate: -1 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="#contact"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#6d28d9] to-[#7c3aed] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#6d28d9]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#6d28d9]/40 hover:brightness-110"
+              >
+                Programează o ședință
+                <ArrowRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+                {/* Advanced Sweep */}
+                <motion.span 
+                  className="absolute inset-0 z-10 w-full -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-20deg]"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "200%" }}
+                  transition={{ duration: 0.7, ease: "easeInOut" }}
+                />
+              </Link>
+            </motion.div>
             <Link
               href="#metoda"
               className="group inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.15)] bg-transparent px-8 py-4 text-sm font-medium tracking-wide text-[#ededed]/90 backdrop-blur-sm transition-all duration-300 hover:border-[#e0ab76]/40 hover:bg-[rgba(255,255,255,0.06)] hover:text-[#e0ab76]"
@@ -110,8 +157,9 @@ export default function Hero() {
 
           {/* Micro-line */}
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-6 text-xs font-light tracking-widest text-[#ededed]/35"
           >
@@ -123,11 +171,18 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
+          style={{ y: cardY, scale: cardScale }}
           className="relative z-10 w-full max-w-sm shrink-0 lg:max-w-md"
         >
-          {/* Organic shape container */}
-          <div className="relative mx-auto aspect-[3/4] w-full">
+          {/* Continuous Floating Container */}
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-full h-full relative"
+          >
+            {/* Organic shape container */}
+            <div className="relative mx-auto aspect-[3/4] w-full">
             {/* Background logo watermark */}
             <div className="absolute inset-0 flex items-center justify-center opacity-[0.06]">
               <Image
@@ -169,11 +224,13 @@ export default function Hero() {
               }}
             />
           </div>
+          </motion.div>
 
           {/* Gold accent quote */}
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 1.2 }}
             className="mt-6 text-center text-sm font-medium italic text-[#e0ab76]/70"
           >
@@ -182,6 +239,27 @@ export default function Hero() {
           </motion.p>
         </motion.div>
       </div>
+
+      {/* ─── SCROLL INDICATOR ─── */}
+      <motion.div 
+        style={{ opacity: indicatorOpacity, y: indicatorY }}
+        className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 pointer-events-none"
+      >
+        <span className="text-[10px] uppercase tracking-[0.2em] text-[#ededed]/40">Scroll to discover</span>
+        <div className="flex h-10 w-6 items-start justify-center rounded-full border border-[#ededed]/20 p-1">
+          <motion.div
+            animate={{ y: [0, 16, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="h-1.5 w-1.5 rounded-full bg-[#e0ab76]"
+          />
+        </div>
+        <motion.div
+          animate={{ opacity: [0.2, 0.8, 0.2] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown size={14} className="text-[#ededed]/40" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

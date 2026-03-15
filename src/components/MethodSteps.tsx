@@ -31,14 +31,14 @@ export default function MethodSteps() {
   return (
     <section
       id="metoda"
-      className="relative w-full overflow-hidden px-6 py-20 md:py-28"
+      className="relative w-full overflow-hidden px-6 py-12 md:py-16"
     >
       <div className="mx-auto w-full max-w-6xl">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="mb-14 text-center"
         >
@@ -57,9 +57,9 @@ export default function MethodSteps() {
             return (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 28 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={{ once: true, margin: "-40px", amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
                 className="group relative flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.03] p-7 backdrop-blur-sm transition-all duration-500 hover:border-[#6d28d9]/40 hover:bg-white/[0.06]"
               >

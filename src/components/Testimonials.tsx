@@ -28,13 +28,13 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative w-full overflow-hidden px-6 py-20 md:py-28">
+    <section className="relative w-full overflow-hidden px-6 py-12 md:py-16">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
@@ -51,9 +51,9 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
+              viewport={{ once: true, margin: "-40px", amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group relative flex flex-col rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 backdrop-blur-sm transition-all duration-500 hover:border-[#e0ab76]/25 hover:bg-white/[0.05]"
             >
