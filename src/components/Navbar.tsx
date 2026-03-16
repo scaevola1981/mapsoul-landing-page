@@ -53,8 +53,8 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="MapSoul Logo"
-            width={isScrolled ? 50 : 60}
-            height={isScrolled ? 50 : 60}
+            width={isScrolled ? 80 : 80}
+            height={isScrolled ? 80 : 80}
             className="object-contain transition-all duration-300"
           />
         </a>

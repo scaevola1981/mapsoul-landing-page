@@ -26,6 +26,8 @@ interface Specialization {
   icon: React.ElementType;
   image: string;
   shortDesc: string;
+  quote?: string;
+  author?: string;
   /** CSS grid-area name for the bento layout */
   area: string;
 }
@@ -36,26 +38,21 @@ const specializations: Specialization[] = [
     title: "Astrologie Natală",
     icon: Sparkles,
     image: "/cards-foto/astrologie-natala.png",
-    shortDesc:
-      "Harta natală dezvăluie cine ești cu adevărat — tipare, puncte forte și potențialul tău unic, pas esențial spre autocunoaștere.",
+    shortDesc: "La naștere, poziția planetelor formează o configurație unică: Harta natală. Ea nu stabilește destinul, ci arată potențialul, tiparele vieții și ne ajută să privim experiențele cu mai multă conștientizare.",
+    quote: "Cine privește în afară, visează; cine privește înăuntru, se trezește.",
+    author: "Carl Jung",
     area: "natala",
   },
-  {
-    id: "relationala",
-    title: "Astrologie Relațională",
-    icon: Users,
-    image: "/cards-foto/astrologie-relationala.png",
-    shortDesc:
-      "Înțelege dinamica relațiilor tale prin analiză astrală: compatibilitate, conflicte ascunse și lecții de creștere în cuplu sau parteneriat.",
-    area: "relationala",
-  },
+
   {
     id: "karmica",
     title: "Astrologie Karmică",
     icon: Search,
     image: "/cards-foto/karmic-astrology.png",
     shortDesc:
-      "Descoperă tiparele karmice și misiunea sufletului tău prin Nodurile Lunare, retrograde și lecțiile din viețile anterioare.",
+      "Harta karmică îți arată tiparele și lecțiile pe care le porți din viețile trecute și darurile ascunse care te pot ghida acum. Este un ghid al sufletului, care te ajută să înțelegi cine ești cu adevărat și cum să trăiești mai liber, mai autentic și mai conștient.",
+      quote: "Până nu vei aduce în conștient ceea ce este inconștient, acesta îți va ghida viața, iar tu îl vei numi destin.",
+      author: "Carl Jung",
     area: "karmica",
   },
   {
@@ -64,24 +61,20 @@ const specializations: Specialization[] = [
     icon: Calendar,
     image: "/cards-foto/astrologie-previzionala.png",
     shortDesc:
-      "Navighează conștient prin tranzite și revoluții solare — află când să acționezi și când să ai răbdare în ciclurile vieții.",
+      "Harta previzionala  arată cum mișcarea planetelor în prezent influențează energiile din harta ta natală. Este ca un ghid al valurilor universului: unele perioade aduc oportunități și inspirație, altele provocări care te ajută să crești.",
+      quote: "Ceea ce ignorăm persistă, iar ceea ce îmbrățișăm se transformă",
+      author: "Carl Jung",
     area: "previzionala",
   },
   {
     id: "revolutii",
     title: "Revoluții solare",
-    shortDesc: "Revoluția solară este harta anului tău personal. Ea oferă perspective asupra energiei și temelor care pot apărea.",
+    shortDesc: "Revoluția solară releva  aspectele și direcțiile importante pentru anul ce urmează. Calculată la revenirea Soarelui în poziția natală, ea evidențiază temele majore ale anului, schimbările, oportunitățile și provocările care te așteaptă între două aniversări. ",
+    quote: "Eu nu sunt ceea ce mi s-a intamplat,sunt ceea ce aleg sa devin.",
+    author: "Carl Jung",
     icon: Sun,
     image: "/cards-foto/RevolutiiSoalre.png",
     area: "revolutii",
-  },
-  {
-    id: "orara",
-    title: "Astrologia Orară",
-    shortDesc: "Răspunsuri precise la întrebări punctuale prin harta momentului exact pentru decizii importante din viață.",
-    icon: Eye,
-    image: "/cards-foto/astrology-orara.png",
-    area: "orara",
   },
 ];
 
@@ -103,7 +96,7 @@ function BentoTile({
       viewport={{ once: true, margin: "-60px", amount: 0.3 }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ scale: 1.02 }}
-      className="bento-tile group relative flex h-full min-h-[260px] flex-col justify-end overflow-hidden rounded-2xl border border-white/[0.08] glass-card transition-all duration-500 hover:border-[#6d28d9]/50"
+      className="bento-tile group relative flex h-full flex-col justify-end overflow-hidden rounded-2xl border border-white/[0.08] glass-card transition-all duration-500 hover:border-[#6d28d9]/50"
       style={{ gridArea: spec.area }}
     >
       <motion.div
@@ -128,9 +121,22 @@ function BentoTile({
         </h3>
 
         {/* Short desc */}
-        <p className="text-[13px] leading-relaxed md:text-sm">
+        <p className="mb-4 text-[13px] leading-relaxed md:text-sm">
           {spec.shortDesc}
         </p>
+
+        {spec.quote && (
+          <div className="mt-2 border-l-2 border-[#E0AB76]/40 pl-3 italic">
+            <p className="text-[12px] leading-tight text-[#E0AB76]/90 md:text-[13px]">
+              &ldquo;{spec.quote}&rdquo;
+            </p>
+            {spec.author && (
+              <span className="mt-1 block text-[10px] not-italic opacity-60">
+                — {spec.author}
+              </span>
+            )}
+          </div>
+        )}
 
        
       </div>
@@ -145,21 +151,21 @@ export default function SpecializationsCarousel() {
         {/* Header */}
         <div className="mb-12 text-center md:mb-20">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-4 font-serif text-[33px] md:text-[53px] font-medium tracking-tight text-[#BC8F8F] opacity-100"
-          >
-            Sisteme de Cunoaștere
-          </motion.h2>
-          <motion.p
             initial={{ opacity: 100, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="mx-auto max-w-2xl text-sm leading-relaxed text-[#0b0e14]/70 md:text-base"
+            className="mb-4 font-serif text-[33px] md:text-[53px] font-medium tracking-tight text-[#000]"
           >
-            Alege domeniul care te ghidează cel mai bine spre transformarea ta
+            Harti ale Sufletului
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="mx-auto max-w-2xl text-lg leading-relaxed text-[#000]/70 md:text-xl"
+          >
+            Alege harta care te ghidează cel mai bine spre transformarea ta
             interioară.
           </motion.p>
         </div>
@@ -207,13 +213,26 @@ export default function SpecializationsCarousel() {
                           {spec.title}
                         </h3>
                       </div>
-                      <p className="text-[13px] leading-relaxed">
+                      <p className="mb-3 text-[13px] leading-relaxed">
                         {spec.shortDesc}
                       </p>
-                      <button className="mt-1 inline-flex w-fit items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-white">
+
+                      {spec.quote && (
+                        <div className="mb-4 border-l-2 border-[#E0AB76]/40 pl-3 italic">
+                          <p className="text-[12px] leading-tight text-[#E0AB76]/90">
+                            &ldquo;{spec.quote}&rdquo;
+                          </p>
+                          {spec.author && (
+                            <span className="mt-1 block text-[10px] not-italic opacity-60">
+                              — {spec.author}
+                            </span>
+                          )}
+                        </div>
+                      )}
+                      {/* <button className="mt-1 inline-flex w-fit items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-white">
                         Detalii
                         <ArrowRight size={13} />
-                      </button>
+                      </button> */}
                     </div>
                   </motion.div>
                 </SwiperSlide>

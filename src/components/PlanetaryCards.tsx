@@ -18,7 +18,7 @@ export function PersonalPlanets() {
           <h2 className="mb-3 font-serif text-[26px] font-light text-[#BC8F8F] md:text-[33px] opacity-100">
             Planetele Personale — Fundamentul Identității
           </h2>
-          <p className="mx-auto max-w-xl text-sm text-[#0b0e14]/60">
+          <p className="mx-auto max-w-xl text-sm text-[#0b0e14]/50">
             Nu sunt predicții, ci oglinzi simbolice care invită la reflecție.
           </p>
         </motion.div>
@@ -72,6 +72,18 @@ export function PersonalPlanets() {
                   <li>felul în care ne conectăm cu ceilalți</li>
                 </ul>
               </div>
+
+              <div>
+                <h4 className="mb-1.5 flex items-center gap-2 font-medium">
+                  <Star className="h-3.5 w-3.5" /> Marte
+                </h4>
+                <ul className="list-inside list-disc space-y-0.5 opacity-90">
+                  <li>energia,vointa si actiunea</li>
+                  <li>arata cum ne afirmam,cum luam initiativa si cum ne urmam dorintele</li>
+                  <li>reflecta modul in care ne folosim forta interioara pentru a depasi provocarile</li>
+                  <li>vorbeste despre curaj,determinare si felul in care ne aparam limitele personale</li>
+                </ul>
+              </div>
             </div>
 
             <p className="mt-5 border-t border-black/[0.1] pt-3 text-xs italic opacity-60">
@@ -99,7 +111,7 @@ export function EvolutionPlanets() {
           <h2 className="mb-3 font-serif text-[26px] font-light text-[#BC8F8F] md:text-[33px] opacity-100">
             Planetele Evoluției și Societății
           </h2>
-          <p className="mx-auto max-w-xl text-sm text-[#0b0e14]/60">
+          <p className="mx-auto max-w-xl text-sm text-[#BC8F8F]/50">
             Forțe colective care influențează generații și transformări profunde ale conștiinței.
           </p>
         </motion.div>

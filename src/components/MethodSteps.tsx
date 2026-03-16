@@ -16,14 +16,14 @@ const steps = [
     title: "Hartă & Sinteză",
     icon: Map,
     description:
-      "Analizez harta natală și tranzitele relevante, sintetizând tiparele esențiale într-o lectură clară, adaptată limbajului tău.",
+      "Descifrăm harta sufletului tău și evidențiem mesajele esențiale.",
   },
   {
     number: "03",
     title: "Integrare & Plan",
     icon: Compass,
     description:
-      "Traducem insight-urile în pași concreți. Primești un plan practic de integrare, cu repere clare pentru săptămânile următoare.",
+      "Transformăm interpetarea în pași concreți pentru claritate și evoluție.",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function MethodSteps() {
           <h2 className="mb-4 font-serif text-[33px] font-light text-[#BC8F8F] md:text-[53px] opacity-100">
             Metoda Mea
           </h2>
-          <p className="mx-auto max-w-xl text-lg text-[#0b0e14]/70">
+          <p className="mx-auto max-w-xl text-lg text-[#E0AB76]/70">
             Trei pași simpli spre claritate și direcție.
           </p>
         </motion.div>

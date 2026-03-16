@@ -5,27 +5,27 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    text: "Am primit un calendar clar de acțiune, nu predicții vagi. Acum știu ce pași să fac și când să-i fac.",
+    text: "Claritate asupra direcției mele este mult mai mare. Știu ce pași să fac pentru a-mi urma intențiile și a crește.",
     name: "Andreea M.",
     city: "Cluj-Napoca",
   },
   {
-    text: "Marilena mi-a explicat tiparele fără fatalism. Am plecat cu un plan concret și o perspectivă nouă asupra relațiilor.",
+    text: "Am primit claritate asupra energiei și oportunităților din viața mea. Acum știu cum să le privesc și să le folosesc în avantajul meu.",
     name: "Radu P.",
     city: "București",
   },
   {
-    text: "Prima ședință de astrologie în care nu m-am simțit judecată. Claritate, empatie, direcție — exact ce aveam nevoie.",
+    text: "O ședință de astrologie caldă și primitoare, unde am primit claritate, empatie și direcție — exact ce aveam nevoie",
     name: "Elena V.",
-    city: "Timișoara",
+    city: "Ramnicu Valcea",
   },
   {
-    text: "Mi-a plăcut abordarea practică: nu \"ce se va întâmpla\", ci \"ce poți face\". Am aplicat sfaturile imediat.",
+    text: "Mă așteptam la termeni greu de înțeles, dar totul a fost simplu, clar și prezentat ca o poveste. Pasiunea cu care Marilena explică face totul ușor și plăcut.",
     name: "Mihai D.",
     city: "Iași",
   },
   {
-    text: "Am regăsit în hartă exact acele răspunsuri pe care sufletul meu le căuta. O experiență de o profunzime rară.",
+    text: "O ședință de astrologie caldă și primitoare, unde am primit claritate, empatie și direcție — exact ce aveam nevoie.",
     name: "Monica R.",
     city: "Râmnicu Vâlcea",
   },
@@ -44,11 +44,8 @@ export default function Testimonials() {
           className="mb-12 text-center"
         >
           <h2 className="mb-3 font-serif text-[33px] font-light text-[#BC8F8F] md:text-[53px] opacity-100">
-            Ce Spun Cei Care Au Fost
+            Experiente reale, in cuvintele lor
           </h2>
-          <p className="mx-auto max-w-xl text-base text-[#0b0e14]/60">
-            Experiențe reale, în cuvintele lor.
-          </p>
         </motion.div>
 
         {/* Cards grid */}

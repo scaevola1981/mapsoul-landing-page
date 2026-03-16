@@ -19,7 +19,7 @@ export default function Footer() {
               className="object-contain"
             />
           </Link>
-          <p className="max-w-xs text-center text-sm leading-relaxed text-[#0b0e14]/70 md:text-left">
+          <p className="max-w-xs text-center text-sm leading-relaxed text-[#E0AB76]/70 md:text-left">
             Hărțile astrologice sunt instrumente pentru a ajunge la tine, cu claritate și iubire.
           </p>
         </div>
@@ -27,9 +27,9 @@ export default function Footer() {
         {/* Links */}
         <div className="flex flex-col items-center md:items-start">
           <h4 className="mb-4 font-serif text-lg text-[#BC8F8F]">Navigare</h4>
-          <nav className="flex flex-col items-center gap-3 text-sm text-[#0b0e14]/80 md:items-start">
+          <nav className="flex flex-col items-center gap-3 text-sm text-[#E0AB76]/80 md:items-start">
             <Link href="#hero" className="transition-colors hover:text-[#9A4EAE]">Acasă</Link>
-            <Link href="#specializari" className="transition-colors hover:text-[#9A4EAE]">Sisteme de Cunoaștere</Link>
+            <Link href="#specializari" className="transition-colors hover:text-[#9A4EAE]">Harti ale Sufletului</Link>
             <Link href="#metoda" className="transition-colors hover:text-[#9A4EAE]">Metoda Mea</Link>
           </nav>
         </div>

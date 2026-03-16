@@ -88,35 +88,29 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.45 }}
-            className="mb-6 space-y-4 text-[16px] leading-relaxed text-[#E0AB76] md:text-[17px]"
+            className="mb-6 space-y-4 text-[16px] leading-relaxed text-[#E0AB76]/90 md:text-[17px]"
           >
             <p>
-              Sunt{" "}
-              <strong className="text-[#E0AB76] font-bold">Marilena</strong>, am
-              47 de ani și sunt zodia Pești — un semn asociat sensibilității,
-              intuiției și dorinței de a înțelege emoțiile profunde. Aceste
-              trăsături au fost punctul de pornire spre întrebările care m-au
-              însoțit mereu:
+              Dacă ai ajuns aici, probabil ești un căutător de sensuri și de răspunsuri,un om care vrea să înțeleagă mai mult decât aparențele.
             </p>
-            <ul className="ml-1 space-y-1 text-[15px] text-[#E0AB76]/80 lg:ml-4">
+            <p>
+              La un moment dat în viață începem să ne punem întrebări:
+            </p>
+            <ul className="ml-1 space-y-2 text-[15px] lg:ml-4">
               {[
-                "de ce sunt așa cum sunt?",
-                "de ce trec prin aceste experiențe?",
-                "când se vor îmbunătăți lucrurile?",
-                "care este scopul meu în viață?",
+                "De ce trec prin aceste experiențe?",
+                "Când se vor îmbunătăți lucrurile?",
+                "Când voi câștiga mai mult?",
+                "Care este scopul meu în viață?",
               ].map((q) => (
-                <li key={q} className="flex items-start gap-2">
+                <li key={q} className="flex items-start gap-2 italic text-[#E0AB76]">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#9A4EAE]" />
                   {q}
                 </li>
               ))}
             </ul>
             <p>
-              Din aceste întrebări s-a născut o călătorie de peste 6 ani în
-              astrologie. Am obținut calificarea de{" "}
-              <strong className="text-[#E0AB76] font-bold">Astrolog certificat</strong>{" "}
-              în 2023, formându-mă în astrologie natală, karmică, previzională
-              și relațională.
+              Astrologia integrativă poate aduce lumină asupra acestor întrebări, oferind perspective prin interpretarea <strong>hărții natale</strong>, a <strong>hărții karmice</strong>, a <strong>tranzitelor</strong> și a <strong>revoluțiilor solare</strong>.
             </p>
           </motion.div>
 
@@ -226,7 +220,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="mt-6 text-center text-sm font-medium italic text-[#0b0e14]/70"
+            className="mt-6 text-center text-sm font-medium italic text-[#E0AB76]/70"
           >
             &ldquo;Fiecare hartă este o poveste care merită ascultată cu
             răbdare și respect.&rdquo;
@@ -244,7 +238,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 16, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="h-1.5 w-1.5 rounded-full bg-[#0b0e14]"
+            className="h-1.5 w-1.5 rounded-full bg-[#E0AB76]"
           />
         </div>
         <motion.div

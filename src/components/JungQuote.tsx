@@ -39,8 +39,8 @@ export default function JungQuote() {
             <p className="mb-6 font-serif text-xl italic leading-relaxed md:text-2xl">
               &ldquo;În viziunea astrologiei integrative, cerul și psihicul uman se întâlnesc în simbolurile astrelor, deschizând o cale de cunoaștere și înțelegere de sine.&rdquo;
             </p>
-            <p className="text-sm font-medium tracking-[0.2em] uppercase opacity-70">
-              — Viziunea MapSoul
+            <p className="text-xs font-medium tracking-[0.2em] uppercase opacity-70">
+                Karl Jung, psiholog și astrolog
             </p>
           </div>
         </motion.div>
