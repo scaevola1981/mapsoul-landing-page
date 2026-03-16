@@ -41,11 +41,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled
-          ? "bg-[#0b0e14]/80 backdrop-blur-md shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)] border-b border-[rgba(255,255,255,0.05)]"
-          : "bg-transparent py-4"
-      }`}
+      className="fixed top-0 left-0 w-full z-[150] bg-[#0b0e14]/80 backdrop-blur-md shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)] border-b border-[rgba(255,255,255,0.05)] transition-all duration-300"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         {/* Logo */}
@@ -77,7 +73,7 @@ export default function Navbar() {
           ))}
           <a
             href="mailto:contact@mapsoul.ro"
-            className="rounded-full border border-[#e0ab76]/30 bg-[#e0ab76]/10 px-5 py-2 text-sm font-medium text-[#e0ab76] transition-all hover:bg-[#e0ab76] hover:text-[#0b0e14]"
+            className="rounded-full border border-[#9A4EAE]/30 bg-[#9A4EAE] px-5 py-2 text-sm font-medium text-white transition-all hover:bg-[#9A4EAE]/90"
           >
             Programează o ședință
           </a>
@@ -115,7 +111,7 @@ export default function Navbar() {
               <a
                 href="mailto:contact@mapsoul.ro"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-2 text-center rounded-full bg-[#e0ab76] px-5 py-3 text-sm font-semibold text-[#0b0e14] transition-all hover:bg-[#e0ab76]/90"
+                className="mt-2 text-center rounded-full bg-[#9A4EAE] px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-[#9A4EAE]/90"
               >
                 Programează o ședință
               </a>

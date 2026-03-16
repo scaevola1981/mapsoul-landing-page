@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-20 w-full border-t border-[rgba(255,255,255,0.05)] bg-[#030406] px-6 py-12 md:py-16">
+    <footer className="relative z-20 w-full border-t border-white/[0.07] glass-card backdrop-blur-xl shadow-[0_4px_24px_-1px_rgba(0,0,0,0.3)] px-6 py-12 md:py-16">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-12 md:flex-row md:items-start">
         {/* Brand / Logo */}
         <div className="flex flex-col items-center md:items-start">
@@ -14,37 +14,37 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="MapSoul Logo"
-              width={80}
-              height={80}
+              width={150}
+              height={150}
               className="object-contain"
             />
           </Link>
-          <p className="max-w-xs text-center text-sm leading-relaxed text-[#ededed]/60 md:text-left">
+          <p className="max-w-xs text-center text-sm leading-relaxed text-[#0b0e14]/70 md:text-left">
             Hărțile astrologice sunt instrumente pentru a ajunge la tine, cu claritate și iubire.
           </p>
         </div>
 
         {/* Links */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="mb-4 font-serif text-lg text-[#ededed]">Navigare</h4>
-          <nav className="flex flex-col items-center gap-3 text-sm text-[#ededed]/70 md:items-start">
-            <Link href="#hero" className="transition-colors hover:text-[#e0ab76]">Acasă</Link>
-            <Link href="#specializari" className="transition-colors hover:text-[#e0ab76]">Sisteme de Cunoaștere</Link>
-            <Link href="#metoda" className="transition-colors hover:text-[#e0ab76]">Metoda Mea</Link>
+          <h4 className="mb-4 font-serif text-lg text-[#BC8F8F]">Navigare</h4>
+          <nav className="flex flex-col items-center gap-3 text-sm text-[#0b0e14]/80 md:items-start">
+            <Link href="#hero" className="transition-colors hover:text-[#9A4EAE]">Acasă</Link>
+            <Link href="#specializari" className="transition-colors hover:text-[#9A4EAE]">Sisteme de Cunoaștere</Link>
+            <Link href="#metoda" className="transition-colors hover:text-[#9A4EAE]">Metoda Mea</Link>
           </nav>
         </div>
 
         {/* Contact/Socials */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="mb-4 font-serif text-lg text-[#ededed]">Conectare</h4>
+          <h4 className="mb-4 font-serif text-lg text-[#BC8F8F]">Conectare</h4>
           <div className="flex gap-4 mb-6">
-            <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[#ededed] hover:bg-[#e0ab76]/20 hover:text-[#e0ab76] transition-all">
+            <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[#E0AB76] hover:bg-[#9A4EAE]/20 hover:text-[#9A4EAE] transition-all">
               <Instagram size={20} />
             </a>
-            <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[#ededed] hover:bg-[#e0ab76]/20 hover:text-[#e0ab76] transition-all">
+            <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[#E0AB76] hover:bg-[#9A4EAE]/20 hover:text-[#9A4EAE] transition-all">
               <Facebook size={20} />
             </a>
-            <a href="mailto:contact@mapsoul.ro" className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[#ededed] hover:bg-[#e0ab76]/20 hover:text-[#e0ab76] transition-all">
+            <a href="mailto:contact@mapsoul.ro" className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[#E0AB76] hover:bg-[#9A4EAE]/20 hover:text-[#9A4EAE] transition-all">
               <Mail size={20} />
             </a>
           </div>

@@ -53,7 +53,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-6"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.06)] px-5 py-2 text-sm font-medium tracking-wide text-[#ededed]/90 backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.06)] px-5 py-2 text-sm font-medium tracking-wide text-[#ededed]/90 glass-card">
               <Globe size={15} className="text-[#e0ab76]" />
               Disponibil online & în persoană
             </span>
@@ -65,11 +65,11 @@ export default function Hero() {
             animate={{ clipPath: "inset(0 0 0 0)", y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-6 font-serif text-4xl font-light leading-tight tracking-wide text-[#ededed] sm:text-5xl lg:text-6xl"
-            style={{ textShadow: "0 2px 20px rgba(109,40,217,0.15)" }}
+            className="mb-6 font-serif text-[41px] sm:text-[55px] lg:text-[69px] font-light leading-tight tracking-wide text-[#BC8F8F] opacity-100"
+            style={{ textShadow: "0 2px 20px rgba(188,143,143,0.15)" }}
           >
             Astrologie integrativă,{" "}
-            <span className="relative inline-block overflow-hidden pb-1">
+            <span className="relative inline-block overflow-hidden pb-1 align-baseline">
               <motion.span
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
@@ -79,7 +79,7 @@ export default function Hero() {
                 personalizată
               </motion.span>
             </span>{" "}
-            pentru tine
+            <span className="whitespace-nowrap">pentru tine</span>
           </motion.h1>
 
           {/* Personal intro */}
@@ -88,17 +88,17 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.45 }}
-            className="mb-6 space-y-4 text-[16px] leading-relaxed text-[#ededed]/70 md:text-[17px]"
+            className="mb-6 space-y-4 text-[16px] leading-relaxed text-[#E0AB76] md:text-[17px]"
           >
             <p>
               Sunt{" "}
-              <strong className="text-[#ededed]/90">Marilena</strong>, am
+              <strong className="text-[#E0AB76] font-bold">Marilena</strong>, am
               47 de ani și sunt zodia Pești — un semn asociat sensibilității,
               intuiției și dorinței de a înțelege emoțiile profunde. Aceste
               trăsături au fost punctul de pornire spre întrebările care m-au
               însoțit mereu:
             </p>
-            <ul className="ml-1 space-y-1 text-[15px] text-[#ededed]/60 lg:ml-4">
+            <ul className="ml-1 space-y-1 text-[15px] text-[#E0AB76]/80 lg:ml-4">
               {[
                 "de ce sunt așa cum sunt?",
                 "de ce trec prin aceste experiențe?",
@@ -106,15 +106,15 @@ export default function Hero() {
                 "care este scopul meu în viață?",
               ].map((q) => (
                 <li key={q} className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#6d28d9]" />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#9A4EAE]" />
                   {q}
                 </li>
               ))}
             </ul>
             <p>
-              Din aceste întrebări s-a născut o călătorie de peste 12 ani în
+              Din aceste întrebări s-a născut o călătorie de peste 6 ani în
               astrologie. Am obținut calificarea de{" "}
-              <strong className="text-[#ededed]/90">Astrolog certificat</strong>{" "}
+              <strong className="text-[#E0AB76] font-bold">Astrolog certificat</strong>{" "}
               în 2023, formându-mă în astrologie natală, karmică, previzională
               și relațională.
             </p>
@@ -131,7 +131,7 @@ export default function Hero() {
             <motion.div whileHover={{ scale: 1.02, rotate: -1 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="#contact"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#6d28d9] to-[#7c3aed] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#6d28d9]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#6d28d9]/40 hover:brightness-110"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#9A4EAE] to-[#b066c9] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#9A4EAE]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#9A4EAE]/40 hover:brightness-110"
               >
                 Programează o ședință
                 <ArrowRight
@@ -147,12 +147,6 @@ export default function Hero() {
                 />
               </Link>
             </motion.div>
-            <Link
-              href="#metoda"
-              className="group inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.15)] bg-transparent px-8 py-4 text-sm font-medium tracking-wide text-[#ededed]/90 backdrop-blur-sm transition-all duration-300 hover:border-[#e0ab76]/40 hover:bg-[rgba(255,255,255,0.06)] hover:text-[#e0ab76]"
-            >
-              Vezi metoda mea
-            </Link>
           </motion.div>
 
           {/* Micro-line */}
@@ -163,7 +157,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-6 text-xs font-light tracking-widest text-[#ededed]/35"
           >
-            Răspuns în 24 h&ensp;|&ensp;RO / EN
+           
           </motion.p>
         </div>
 
@@ -198,7 +192,7 @@ export default function Hero() {
             {/* Glass-blur frame with organic shape */}
             <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] border border-white/[0.1] shadow-2xl shadow-[#6d28d9]/10">
               {/* Inner glass effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-[#6d28d9]/[0.04] backdrop-blur-sm" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-[#6d28d9]/[0.04]" />
 
               {/* Image — use marilena.png if it exists, otherwise logo as placeholder */}
               <Image
@@ -232,7 +226,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="mt-6 text-center text-sm font-medium italic text-[#e0ab76]/70"
+            className="mt-6 text-center text-sm font-medium italic text-[#0b0e14]/70"
           >
             &ldquo;Fiecare hartă este o poveste care merită ascultată cu
             răbdare și respect.&rdquo;
@@ -250,7 +244,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 16, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="h-1.5 w-1.5 rounded-full bg-[#e0ab76]"
+            className="h-1.5 w-1.5 rounded-full bg-[#0b0e14]"
           />
         </div>
         <motion.div

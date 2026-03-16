@@ -12,7 +12,7 @@ export default function JungQuote() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px", amount: 0.3 }}
           transition={{ duration: 0.7 }}
-          className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#e0ab76]/20 bg-[#0b0e14]/60 p-8 shadow-2xl shadow-black/30 backdrop-blur-xl sm:flex-row sm:gap-8 md:p-10"
+          className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#e0ab76]/20 glass-card p-8 shadow-2xl shadow-black/30 sm:flex-row sm:gap-8 md:p-10"
         >
           {/* Soft glow */}
           <div
@@ -36,15 +36,11 @@ export default function JungQuote() {
 
           {/* Quote */}
           <div className="relative text-center sm:text-left">
-            <p
-              className="text-xl leading-relaxed text-[#ededed]/90 sm:text-2xl"
-              style={{ fontFamily: "'Dancing Script', cursive" }}
-            >
-              &ldquo;Astrologia integrativă nu prezice doar evenimentele, ci
-              te ajută să înțelegi cine ești cu adevărat...&rdquo;
+            <p className="mb-6 font-serif text-xl italic leading-relaxed md:text-2xl">
+              &ldquo;În viziunea astrologiei integrative, cerul și psihicul uman se întâlnesc în simbolurile astrelor, deschizând o cale de cunoaștere și înțelegere de sine.&rdquo;
             </p>
-            <p className="mt-4 text-sm font-medium uppercase tracking-widest text-[#e0ab76]/70">
-              &mdash; Carl Jung
+            <p className="text-sm font-medium tracking-[0.2em] uppercase opacity-70">
+              — Viziunea MapSoul
             </p>
           </div>
         </motion.div>

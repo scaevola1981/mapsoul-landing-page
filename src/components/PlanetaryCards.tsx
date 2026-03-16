@@ -15,10 +15,10 @@ export function PersonalPlanets() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <h2 className="mb-3 font-serif text-2xl font-light text-[#ededed] md:text-3xl">
+          <h2 className="mb-3 font-serif text-[26px] font-light text-[#BC8F8F] md:text-[33px] opacity-100">
             Planetele Personale — Fundamentul Identității
           </h2>
-          <p className="mx-auto max-w-xl text-sm text-[#ededed]/50">
+          <p className="mx-auto max-w-xl text-sm text-[#0b0e14]/60">
             Nu sunt predicții, ci oglinzi simbolice care invită la reflecție.
           </p>
         </motion.div>
@@ -33,18 +33,17 @@ export function PersonalPlanets() {
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.02 }}
             className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
-            style={{ backdropFilter: "blur(44px) saturate(1.4)", WebkitBackdropFilter: "blur(44px) saturate(1.4)" }}
           >
-            <h3 className="mb-5 flex items-center gap-3 font-serif text-xl text-[#e0ab76]">
+            <h3 className="mb-5 flex items-center gap-3 font-serif text-xl">
               <Sun className="h-5 w-5" /> Planete Personale
             </h3>
 
             <div className="space-y-4 text-sm">
               <div>
-                <h4 className="mb-1.5 flex items-center gap-2 font-medium text-[#ededed]">
-                  <Moon className="h-3.5 w-3.5 text-[#6d28d9]" /> Luna
+                <h4 className="mb-1.5 flex items-center gap-2 font-medium">
+                  <Moon className="h-3.5 w-3.5" /> Luna
                 </h4>
-                <ul className="list-inside list-disc space-y-0.5 text-[#ededed]/65">
+                <ul className="list-inside list-disc space-y-0.5 opacity-90">
                   <li>lumea interioară și emoții</li>
                   <li>nevoia de siguranță și felul în care simțim</li>
                   <li>tiparele din trecut care ne influențează</li>
@@ -53,10 +52,10 @@ export function PersonalPlanets() {
               </div>
 
               <div>
-                <h4 className="mb-1.5 flex items-center gap-2 font-medium text-[#ededed]">
-                  <Sun className="h-3.5 w-3.5 text-[#e0ab76]" /> Soarele
+                <h4 className="mb-1.5 flex items-center gap-2 font-medium">
+                  <Sun className="h-3.5 w-3.5" /> Soarele
                 </h4>
-                <ul className="list-inside list-disc space-y-0.5 text-[#ededed]/65">
+                <ul className="list-inside list-disc space-y-0.5 opacity-90">
                   <li>identitatea și lumina personală</li>
                   <li>cine suntem și cum ne exprimăm</li>
                   <li>descoperirea potențialului</li>
@@ -64,10 +63,10 @@ export function PersonalPlanets() {
               </div>
 
               <div>
-                <h4 className="mb-1.5 flex items-center gap-2 font-medium text-[#ededed]">
-                  <Star className="h-3.5 w-3.5 text-[#6d28d9]" /> Venus
+                <h4 className="mb-1.5 flex items-center gap-2 font-medium">
+                  <Star className="h-3.5 w-3.5" /> Venus
                 </h4>
-                <ul className="list-inside list-disc space-y-0.5 text-[#ededed]/65">
+                <ul className="list-inside list-disc space-y-0.5 opacity-90">
                   <li>relații și armonie</li>
                   <li>cum valorizăm iubirea și resursele</li>
                   <li>felul în care ne conectăm cu ceilalți</li>
@@ -75,7 +74,7 @@ export function PersonalPlanets() {
               </div>
             </div>
 
-            <p className="mt-5 border-t border-white/[0.06] pt-3 text-xs italic text-[#ededed]/40">
+            <p className="mt-5 border-t border-black/[0.1] pt-3 text-xs italic opacity-60">
               Simboluri care invită la reflecție asupra relațiilor și modului
               în care ne raportăm la noi și la ceilalți.
             </p>
@@ -97,10 +96,10 @@ export function EvolutionPlanets() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <h2 className="mb-3 font-serif text-2xl font-light text-[#ededed] md:text-3xl">
+          <h2 className="mb-3 font-serif text-[26px] font-light text-[#BC8F8F] md:text-[33px] opacity-100">
             Planetele Evoluției și Societății
           </h2>
-          <p className="mx-auto max-w-xl text-sm text-[#ededed]/50">
+          <p className="mx-auto max-w-xl text-sm text-[#0b0e14]/60">
             Forțe colective care influențează generații și transformări profunde ale conștiinței.
           </p>
         </motion.div>
@@ -114,16 +113,15 @@ export function EvolutionPlanets() {
             transition={{ duration: 0.6, delay: 0.1 }}
             whileHover={{ scale: 1.02 }}
             className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
-            style={{ backdropFilter: "blur(44px) saturate(1.4)", WebkitBackdropFilter: "blur(44px) saturate(1.4)" }}
           >
-            <h3 className="mb-5 flex items-center gap-3 font-serif text-xl text-[#6d28d9]">
+            <h3 className="mb-5 flex items-center gap-3 font-serif text-xl">
               <Orbit className="h-5 w-5" /> Planete Sociale
             </h3>
 
             <div className="space-y-4 text-sm">
               <div>
-                <h4 className="mb-1.5 font-medium text-[#ededed]">Jupiter</h4>
-                <ul className="list-inside list-disc space-y-0.5 text-[#ededed]/65">
+                <h4 className="mb-1.5 font-medium">Jupiter</h4>
+                <ul className="list-inside list-disc space-y-0.5 opacity-90">
                   <li>simbolizează expansiunea, sensul și căutarea cunoașterii</li>
                   <li>arată unde avem oportunități de creștere și dezvoltare</li>
                   <li>vorbește despre credințe, valori și modul în care ne lărgim orizonturile</li>
@@ -131,8 +129,8 @@ export function EvolutionPlanets() {
               </div>
 
               <div>
-                <h4 className="mb-1.5 font-medium text-[#ededed]">Saturn</h4>
-                <ul className="list-inside list-disc space-y-0.5 text-[#ededed]/65">
+                <h4 className="mb-1.5 font-medium">Saturn</h4>
+                <ul className="list-inside list-disc space-y-0.5 opacity-90">
                   <li>simbolizează structura, responsabilitatea și maturizarea</li>
                   <li>arată lecțiile de viață și domeniile unde avem de construit cu răbdare</li>
                   <li>ne învață disciplina, limitele și asumarea responsabilităților</li>
@@ -140,7 +138,7 @@ export function EvolutionPlanets() {
               </div>
             </div>
 
-            <p className="mt-auto border-t border-white/[0.06] pt-3 text-xs italic text-[#ededed]/40">
+            <p className="mt-auto border-t border-black/[0.1] pt-3 text-xs italic opacity-60">
               Planetele sociale marchează punctul de trecere între lumea personală și cea colectivă.
             </p>
           </motion.div>
@@ -153,16 +151,15 @@ export function EvolutionPlanets() {
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ scale: 1.02 }}
             className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
-            style={{ backdropFilter: "blur(44px) saturate(1.4)", WebkitBackdropFilter: "blur(44px) saturate(1.4)" }}
           >
-            <h3 className="mb-5 flex items-center gap-3 font-serif text-xl text-[#e0ab76]">
+            <h3 className="mb-5 flex items-center gap-3 font-serif text-xl">
               <Sparkles className="h-5 w-5" /> Planete Transpersonale
             </h3>
 
             <div className="space-y-4 text-sm">
               <div>
-                <h4 className="mb-1.5 font-medium text-[#ededed]">Uranus</h4>
-                <ul className="list-inside list-disc space-y-0.5 text-[#ededed]/65">
+                <h4 className="mb-1.5 font-medium">Uranus</h4>
+                <ul className="list-inside list-disc space-y-0.5 opacity-90">
                   <li>simbolizează schimbarea, libertatea și originalitatea</li>
                   <li>arată unde simțim nevoia de independență și de a rupe tipare vechi</li>
                   <li>aduce revelații și perspective noi asupra vieții</li>
@@ -170,8 +167,8 @@ export function EvolutionPlanets() {
               </div>
 
               <div>
-                <h4 className="mb-1.5 font-medium text-[#ededed]">Neptun</h4>
-                <ul className="list-inside list-disc space-y-0.5 text-[#ededed]/65">
+                <h4 className="mb-1.5 font-medium">Neptun</h4>
+                <ul className="list-inside list-disc space-y-0.5 opacity-90">
                   <li>vorbește despre sensibilitate, imaginație și dimensiunea spirituală</li>
                   <li>arată unde visăm, idealizăm sau căutăm sensuri mai profunde</li>
                   <li>influențează intuiția și legătura cu planul subtil</li>
@@ -179,8 +176,8 @@ export function EvolutionPlanets() {
               </div>
 
               <div>
-                <h4 className="mb-1.5 font-medium text-[#ededed]">Pluto</h4>
-                <ul className="list-inside list-disc space-y-0.5 text-[#ededed]/65">
+                <h4 className="mb-1.5 font-medium">Pluto</h4>
+                <ul className="list-inside list-disc space-y-0.5 opacity-90">
                   <li>simbolizează transformarea profundă și puterea interioară</li>
                   <li>arată procesele de regenerare și schimbările esențiale din viață</li>
                   <li>ne conduce spre confruntarea cu adevărurile profunde și renașterea interioară</li>
@@ -188,7 +185,7 @@ export function EvolutionPlanets() {
               </div>
             </div>
 
-            <p className="mt-auto border-t border-white/[0.06] pt-3 text-xs italic text-[#ededed]/40">
+            <p className="mt-auto border-t border-black/[0.1] pt-3 text-xs italic opacity-60">
               Forțe colective care influențează generații și transformări profunde ale conștiinței.
             </p>
           </motion.div>

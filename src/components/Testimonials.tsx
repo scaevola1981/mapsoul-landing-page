@@ -24,6 +24,11 @@ const testimonials = [
     name: "Mihai D.",
     city: "Iași",
   },
+  {
+    text: "Am regăsit în hartă exact acele răspunsuri pe care sufletul meu le căuta. O experiență de o profunzime rară.",
+    name: "Monica R.",
+    city: "Râmnicu Vâlcea",
+  },
 ];
 
 export default function Testimonials() {
@@ -38,10 +43,10 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <h2 className="mb-3 font-serif text-3xl font-light text-[#ededed] md:text-5xl">
+          <h2 className="mb-3 font-serif text-[33px] font-light text-[#BC8F8F] md:text-[53px] opacity-100">
             Ce Spun Cei Care Au Fost
           </h2>
-          <p className="mx-auto max-w-xl text-base text-[#ededed]/50">
+          <p className="mx-auto max-w-xl text-base text-[#0b0e14]/60">
             Experiențe reale, în cuvintele lor.
           </p>
         </motion.div>
@@ -55,26 +60,26 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px", amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative flex flex-col rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 backdrop-blur-sm transition-all duration-500 hover:border-[#e0ab76]/25 hover:bg-white/[0.05]"
+              className="group relative flex flex-col rounded-2xl border border-white/[0.07] glass-card p-6 transition-all duration-500 hover:border-[#e0ab76]/25 hover:bg-white/[0.05]"
             >
               {/* Quote icon */}
               <Quote
                 size={20}
-                className="mb-4 text-[#6d28d9]/40"
+                className="mb-4 text-[#9A4EAE]/40"
                 strokeWidth={1.5}
               />
 
               {/* Text */}
-              <p className="mb-5 flex-1 text-[14px] leading-relaxed text-[#ededed]/70">
+               <p className="mb-5 flex-1 text-[14px] leading-relaxed opacity-90">
                 &ldquo;{t.text}&rdquo;
               </p>
 
               {/* Author */}
               <div className="border-t border-white/[0.06] pt-4">
-                <p className="text-sm font-semibold text-[#ededed]/90">
+                <p className="text-sm font-semibold opacity-90">
                   {t.name}
                 </p>
-                <p className="text-xs text-[#e0ab76]/60">{t.city}</p>
+                <p className="text-xs opacity-75">{t.city}</p>
               </div>
             </motion.div>
           ))}
