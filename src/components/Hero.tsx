@@ -8,7 +8,7 @@ import { Globe, ArrowRight, ChevronDown } from "lucide-react";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   // Connect to the page scroll to control hero parallax
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -30,7 +30,7 @@ export default function Hero() {
       className="relative w-full overflow-hidden px-6 pb-12 pt-20 md:pt-24"
     >
       {/* Animated Gradient Overlay moving on X */}
-      <motion.div 
+      <motion.div
         className="pointer-events-none absolute inset-0 z-0 opacity-20"
         style={{
           background: "linear-gradient(90deg, transparent 0%, rgba(109,40,217,0.15) 50%, transparent 100%)",
@@ -46,18 +46,6 @@ export default function Hero() {
         {/* ─── LEFT: Text ─── */}
         <div className="z-10 flex-1 text-center lg:text-left">
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-6"
-          >
-            <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.06)] px-5 py-2 text-sm font-medium tracking-wide text-[#ededed]/90 glass-card">
-              <Globe size={15} className="text-[#e0ab76]" />
-              Disponibil online & în persoană
-            </span>
-          </motion.div>
 
           {/* Headline */}
           <motion.h1
@@ -65,16 +53,22 @@ export default function Hero() {
             animate={{ clipPath: "inset(0 0 0 0)", y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-6 font-serif text-[41px] sm:text-[55px] lg:text-[69px] font-light leading-tight tracking-wide text-[#BC8F8F] opacity-100"
-            style={{ textShadow: "0 2px 20px rgba(188,143,143,0.15)" }}
+            /* 1. Am schimbat leading-tight în leading-[1.05] pentru a apropia rândurile */
+            className="mb-6 font-serif text-[41px] sm:text-[55px] lg:text-[69px] font-light leading-[1.05] tracking-wide text-[#BC8F8F] opacity-100"
+            /* 2. Am mutat drop-shadow în interiorul obiectului style, sub formă de filter */
+            style={{
+              textShadow: "0 2px 20px rgba(188,143,143,0.15)",
+              filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.5))"
+            }}
           >
             Astrologie integrativă,{" "}
-            <span className="relative inline-block overflow-hidden pb-1 align-baseline">
+            <span className="relative inline-block overflow-hidden align-baseline">
               <motion.span
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
                 transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="inline-block bg-gradient-to-r from-[#e0ab76] to-[#c98d5a] bg-clip-text text-transparent"
+                /* Noul tău gradient (Indigo închis spre Mint) și font-bold */
+                className="inline-block bg-gradient-to-r from-[#0D0630] to-[#8bbeb2] font-bold bg-clip-text text-transparent"
               >
                 personalizată
               </motion.span>
@@ -88,7 +82,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.45 }}
-            className="mb-6 space-y-4 text-[16px] leading-relaxed text-[#E0AB76]/90 md:text-[17px]"
+            className="mb-6 space-y-4 text-[16px] leading-relaxed text-[#A5F3FC]/90 md:text-[17px]"
+            style={{ textShadow: "0 4px 15px rgba(0, 0, 0, 0.9)" }}
+            drop-shadow="0 4px 15px rgba(243, 241, 241, 0.9)"
           >
             <p>
               Dacă ai ajuns aici, probabil ești un căutător de sensuri și de răspunsuri,un om care vrea să înțeleagă mai mult decât aparențele.
@@ -103,7 +99,7 @@ export default function Hero() {
                 "Când voi câștiga mai mult?",
                 "Care este scopul meu în viață?",
               ].map((q) => (
-                <li key={q} className="flex items-start gap-2 italic text-[#E0AB76]">
+                <li key={q} className="flex items-start gap-2 font-bold italic text-[#A5F3FC]">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#9A4EAE]" />
                   {q}
                 </li>
@@ -133,7 +129,7 @@ export default function Hero() {
                   className="transition-transform duration-300 group-hover:translate-x-1"
                 />
                 {/* Advanced Sweep */}
-                <motion.span 
+                <motion.span
                   className="absolute inset-0 z-10 w-full -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-20deg]"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: "200%" }}
@@ -151,7 +147,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-6 text-xs font-light tracking-widest text-[#ededed]/35"
           >
-           
+
           </motion.p>
         </div>
 
@@ -171,56 +167,68 @@ export default function Hero() {
           >
             {/* Organic shape container */}
             <div className="relative mx-auto aspect-[3/4] w-full">
-            {/* Background logo watermark */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-[0.06]">
-              <Image
-                src="/logo.png"
-                alt=""
-                width={320}
-                height={320}
-                className="object-contain"
-                aria-hidden="true"
+              {/* Background logo watermark */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-[0.06]">
+                <Image
+                  src="/logo.png"
+                  alt=""
+                  width={320}
+                  height={320}
+                  className="object-contain"
+                  aria-hidden="true"
+                />
+              </div>
+
+              {/* Glass-blur frame with organic shape */}
+              <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] border border-white/[0.1] shadow-2xl shadow-[#6d28d9]/10">
+                {/* Inner glass effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-[#6d28d9]/[0.04]" />
+
+                {/* Image — use marilena.png if it exists, otherwise logo as placeholder */}
+                <Image
+                  src="/foto-client/foto-client.png"
+                  alt="MapSoul — Marilena, Astrolog"
+                  fill
+                  className="object-cover opacity-100"
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  priority
+                />
+
+                {/* Bottom gradient fade */}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0b0e14]/60 to-transparent" />
+              </div>
+
+              {/* Decorative glow ring */}
+
+              <div
+                className="pointer-events-none absolute -bottom-8 left-1/2 h-32 w-64 -translate-x-1/2 rounded-full blur-[60px]"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(109,40,217,0.3) 0%, transparent 70%)",
+                }}
+
               />
+
             </div>
-
-            {/* Glass-blur frame with organic shape */}
-            <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] border border-white/[0.1] shadow-2xl shadow-[#6d28d9]/10">
-              {/* Inner glass effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-[#6d28d9]/[0.04]" />
-
-              {/* Image — use marilena.png if it exists, otherwise logo as placeholder */}
-              <Image
-                src="/logo.png"
-                alt="MapSoul — Marilena, Astrolog"
-                fill
-                className="object-contain p-12 opacity-80"
-                sizes="(max-width: 768px) 100vw, 400px"
-                priority
-              />
-
-              {/* Bottom gradient fade */}
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0b0e14]/60 to-transparent" />
-            </div>
-
-            {/* Decorative glow ring */}
-            <div className="pointer-events-none absolute -inset-4 rounded-[3rem] border border-[#6d28d9]/10 opacity-50" />
-            <div
-              className="pointer-events-none absolute -bottom-8 left-1/2 h-32 w-64 -translate-x-1/2 rounded-full blur-[60px]"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(109,40,217,0.3) 0%, transparent 70%)",
-              }}
-            />
-          </div>
           </motion.div>
 
           {/* Gold accent quote */}
+          <div className="pointer-events-none absolute -inset-4 rounded-[3rem] border border-[#6d28d9]/10 opacity-50" />
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="mt-6 text-center text-sm font-medium italic text-[#E0AB76]/70"
+            className="mt-6 text-center text-sm font-medium italic text-[#A5F3FC]/70"
+          >
+            Sunt astrolog acreditat și student la psihologie. MapSoul este harta  sufletului tău, iar experiența mea te-ar putea ghida spre răspunsurile care aduc sens și direcție vieții tale.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="mt-6 text-center text-sm  font-bold italic text-[#A5F3FC]/70"
           >
             &ldquo;Fiecare hartă este o poveste care merită ascultată cu
             răbdare și respect.&rdquo;
@@ -229,11 +237,11 @@ export default function Hero() {
       </div>
 
       {/* ─── SCROLL INDICATOR ─── */}
-      <motion.div 
+      <motion.div
         style={{ opacity: indicatorOpacity, y: indicatorY }}
         className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 pointer-events-none"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] text-[#ededed]/40">Scroll to discover</span>
+        <span className="text-[10px] uppercase tracking-[0.2em] text-[#fff]/40">Scroll to discover</span>
         <div className="flex h-10 w-6 items-start justify-center rounded-full border border-[#ededed]/20 p-1">
           <motion.div
             animate={{ y: [0, 16, 0] }}

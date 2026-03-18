@@ -15,10 +15,10 @@ export function PersonalPlanets() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <h2 className="mb-3 font-serif text-[26px] font-light text-[#BC8F8F] md:text-[33px] opacity-100">
+          <h2 className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100">
             Planetele Personale — Fundamentul Identității
           </h2>
-          <p className="mx-auto max-w-xl text-sm text-[#0b0e14]/50">
+          <p className="mx-auto max-w-2xl text-bold text-lg leading-relaxed text-[#9A4EAE]/800 md:text-xl opacity-100">
             Nu sunt predicții, ci oglinzi simbolice care invită la reflecție.
           </p>
         </motion.div>
@@ -32,7 +32,7 @@ export function PersonalPlanets() {
             viewport={{ once: true, margin: "-80px", amount: 0.3 }}
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.02 }}
-            className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
+            className="glass-card flex flex-col font-bold rounded-2xl p-6 transition-all duration-300"
           >
             <h3 className="mb-5 flex items-center gap-3 font-serif text-xl">
               <Sun className="h-5 w-5" /> Planete Personale
@@ -108,10 +108,10 @@ export function EvolutionPlanets() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <h2 className="mb-3 font-serif text-[26px] font-light text-[#BC8F8F] md:text-[33px] opacity-100">
+          <h2 className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100">
             Planetele Evoluției și Societății
           </h2>
-          <p className="mx-auto max-w-xl text-sm text-[#BC8F8F]/50">
+          <p className="mx-auto max-w-2xl text-bold text-lg leading-relaxed text-[#9A4EAE]/800 md:text-xl opacity-100">
             Forțe colective care influențează generații și transformări profunde ale conștiinței.
           </p>
         </motion.div>

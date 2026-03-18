@@ -24,11 +24,6 @@ const testimonials = [
     name: "Mihai D.",
     city: "Iași",
   },
-  {
-    text: "O ședință de astrologie caldă și primitoare, unde am primit claritate, empatie și direcție — exact ce aveam nevoie.",
-    name: "Monica R.",
-    city: "Râmnicu Vâlcea",
-  },
 ];
 
 export default function Testimonials() {
@@ -43,7 +38,7 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <h2 className="mb-3 font-serif text-[33px] font-light text-[#BC8F8F] md:text-[53px] opacity-100">
+          <h2 className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100">
             Experiente reale, in cuvintele lor
           </h2>
         </motion.div>
@@ -62,7 +57,7 @@ export default function Testimonials() {
               {/* Quote icon */}
               <Quote
                 size={20}
-                className="mb-4 text-[#9A4EAE]/40"
+                className="mb-4 text-[#fff]/100"
                 strokeWidth={1.5}
               />
 

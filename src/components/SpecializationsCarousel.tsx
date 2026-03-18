@@ -48,11 +48,11 @@ const specializations: Specialization[] = [
     id: "karmica",
     title: "Astrologie Karmică",
     icon: Search,
-    image: "/cards-foto/karmic-astrology.png",
+    image: "/cards-foto/karma.png",
     shortDesc:
       "Harta karmică îți arată tiparele și lecțiile pe care le porți din viețile trecute și darurile ascunse care te pot ghida acum. Este un ghid al sufletului, care te ajută să înțelegi cine ești cu adevărat și cum să trăiești mai liber, mai autentic și mai conștient.",
-      quote: "Până nu vei aduce în conștient ceea ce este inconștient, acesta îți va ghida viața, iar tu îl vei numi destin.",
-      author: "Carl Jung",
+    quote: "Până nu vei aduce în conștient ceea ce este inconștient, acesta îți va ghida viața, iar tu îl vei numi destin.",
+    author: "Carl Jung",
     area: "karmica",
   },
   {
@@ -62,8 +62,8 @@ const specializations: Specialization[] = [
     image: "/cards-foto/astrologie-previzionala.png",
     shortDesc:
       "Harta previzionala  arată cum mișcarea planetelor în prezent influențează energiile din harta ta natală. Este ca un ghid al valurilor universului: unele perioade aduc oportunități și inspirație, altele provocări care te ajută să crești.",
-      quote: "Ceea ce ignorăm persistă, iar ceea ce îmbrățișăm se transformă",
-      author: "Carl Jung",
+    quote: "Ceea ce ignorăm persistă, iar ceea ce îmbrățișăm se transformă",
+    author: "Carl Jung",
     area: "previzionala",
   },
   {
@@ -116,18 +116,18 @@ function BentoTile({
         </div>
 
         {/* Title */}
-        <h3 className="font-serif text-lg font-medium tracking-wide md:text-xl">
+        <h3 className="font-serif text-lg font-bold tracking-wide md:text-xl text-[#A5F3FC]">
           {spec.title}
         </h3>
 
         {/* Short desc */}
-        <p className="mb-4 text-[13px] leading-relaxed md:text-sm">
+        <p className="mb-4 text-[13px] leading-relaxed md:text-sm font-semibold text-[#A5F3FC]">
           {spec.shortDesc}
         </p>
 
         {spec.quote && (
           <div className="mt-2 border-l-2 border-[#E0AB76]/40 pl-3 italic">
-            <p className="text-[12px] leading-tight text-[#E0AB76]/90 md:text-[13px]">
+            <p className="text-[12px] leading-tight text-[#A5F3FC]/90 md:text-[13px]">
               &ldquo;{spec.quote}&rdquo;
             </p>
             {spec.author && (
@@ -138,7 +138,7 @@ function BentoTile({
           </div>
         )}
 
-       
+
       </div>
     </motion.div>
   );
@@ -154,7 +154,7 @@ export default function SpecializationsCarousel() {
             initial={{ opacity: 100, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-4 font-serif text-[33px] md:text-[53px] font-medium tracking-tight text-[#000]"
+            className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100"
           >
             Harti ale Sufletului
           </motion.h2>
@@ -163,7 +163,9 @@ export default function SpecializationsCarousel() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mx-auto max-w-2xl text-lg leading-relaxed text-[#000]/70 md:text-xl"
+            className="mx-auto max-w-2xl text-bold text-lg leading-relaxed text-[#9A4EAE]/800 md:text-xl"
+            // style={{ textShadow: "0 4px 15px rgba(16, 16, 17, 0.9)" }}
+            drop-shadow="0 4px 15px rgba(16, 16, 17, 0.9)"
           >
             Alege harta care te ghidează cel mai bine spre transformarea ta
             interioară.
@@ -171,14 +173,14 @@ export default function SpecializationsCarousel() {
         </div>
 
         {/* Bento Grid (Desktop) */}
-        <div className="hidden md:grid-bento-layout md:grid">
+        <div className="hidden md:grid-bento-layout md:grid bg-transparent">
           {specializations.map((spec, i) => (
             <BentoTile key={spec.id} spec={spec} index={i} />
           ))}
         </div>
 
         {/* Carousel (Mobile) */}
-        <div className="block md:hidden">
+        <div className="block md:hidden font-bold text-[#2E4057]">
           <Swiper
             spaceBetween={16}
             slidesPerView={1.2}

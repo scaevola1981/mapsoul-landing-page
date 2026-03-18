@@ -40,12 +40,12 @@ export default function MethodSteps() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="mb-14 text-center"
+          className="mb-14 text-center opacity-100"
         >
-          <h2 className="mb-4 font-serif text-[33px] font-light text-[#BC8F8F] md:text-[53px] opacity-100">
+          <h2 className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100">
             Metoda Mea
           </h2>
-          <p className="mx-auto max-w-xl text-lg text-[#E0AB76]/70">
+          <p className="mx-auto max-w-2xl text-bold text-lg leading-relaxed text-[#9A4EAE]/800 md:text-xl">
             Trei pași simpli spre claritate și direcție.
           </p>
         </motion.div>
@@ -83,7 +83,7 @@ export default function MethodSteps() {
                 </div>
 
                 {/* Title */}
-                <h3 className="relative mb-3 font-serif text-xl font-medium tracking-wide">
+                <h3 className="relative mb-3 font-serif text-xl font-medium tracking-wide text-[#2E4057] opacity-100 font-bold">
                   {step.title}
                 </h3>
 
