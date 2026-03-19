@@ -119,23 +119,22 @@ export default function Hero() {
             className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
           >
             <motion.div whileHover={{ scale: 1.02, rotate: -1 }} whileTap={{ scale: 0.98 }}>
-              <Link
-                href="#contact"
+              <a
+                href="https://wa.me/40765181199"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#9A4EAE] to-[#b066c9] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#9A4EAE]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#9A4EAE]/40 hover:brightness-110"
               >
-                Programează o ședință
-                <ArrowRight
-                  size={16}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-                {/* Advanced Sweep */}
+                Programează pe WhatsApp
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
                 <motion.span
                   className="absolute inset-0 z-10 w-full -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-20deg]"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: "200%" }}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
                 />
-              </Link>
+              </a>
+
             </motion.div>
           </motion.div>
 

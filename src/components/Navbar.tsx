@@ -72,15 +72,19 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="mailto:contact@mapsoul.ro"
+            href="https://wa.me/40765181199"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full border border-[#9A4EAE]/30 bg-[#9A4EAE] px-5 py-2 text-sm font-medium text-white transition-all hover:bg-[#9A4EAE]/90"
           >
-            Programează o ședință
+            Programează pe WhatsApp
           </a>
+
         </nav>
 
         {/* Mobile Menu Button */}
         <button
+        aria-label="Deschide meniul"
           className="text-[#ededed] md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -109,12 +113,15 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="mailto:contact@mapsoul.ro"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-2 text-center rounded-full bg-[#9A4EAE] px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-[#9A4EAE]/90"
+                href="https://wa.me/40765181199"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}  
+                className="rounded-full border border-[#9A4EAE]/30 bg-[#9A4EAE] px-5 py-2 text-sm font-medium text-white transition-all hover:bg-[#9A4EAE]/90"
               >
-                Programează o ședință
+                Programează pe WhatsApp
               </a>
+
             </nav>
           </motion.div>
         )}
