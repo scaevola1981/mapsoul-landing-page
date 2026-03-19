@@ -120,7 +120,7 @@ export default function Hero() {
           >
             <motion.div whileHover={{ scale: 1.02, rotate: -1 }} whileTap={{ scale: 0.98 }}>
               <a
-                href="https://wa.me/40765181199"
+                href="https://wa.me/40752102281"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#9A4EAE] to-[#b066c9] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#9A4EAE]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#9A4EAE]/40 hover:brightness-110"

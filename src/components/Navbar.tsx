@@ -72,7 +72,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://wa.me/40765181199"
+            href="https://wa.me/40752102281"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border border-[#9A4EAE]/30 bg-[#9A4EAE] px-5 py-2 text-sm font-medium text-white transition-all hover:bg-[#9A4EAE]/90"
@@ -113,7 +113,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="https://wa.me/40765181199"
+                href="https://wa.me/40752102281"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}  
