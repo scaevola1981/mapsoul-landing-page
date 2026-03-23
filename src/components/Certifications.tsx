@@ -18,6 +18,12 @@ const certificates = [
     date: "01.07.2024",
   },
   {
+    file: "/certificates/karmica.jpg",
+    title: "Astrologie Karmică",
+    issuer: "Școala de Științe Spirituale Barbara Băcăuanu",
+    date: "01.07.2024",
+  },
+  {
     file: "/certificates/previzionala.jpeg",
     title: "Astrologie Previzională",
     issuer: "Școala de Științe Spirituale Barbara Băcăuanu",
@@ -25,8 +31,8 @@ const certificates = [
   },
   {
     file: "/certificates/arhetipuri.jpeg",
-    title: "Arhetipuri & Linii de destin / Face Keys",
-    issuer: "Școala de Științe Spirituale / Face Keys România",
+    title: "Arhetipuri & Linii de destin ",
+    issuer: "Școala de Științe Spirituale",
     date: "2024",
   },
 ];
