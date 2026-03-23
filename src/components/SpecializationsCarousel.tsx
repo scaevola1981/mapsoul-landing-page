@@ -149,12 +149,18 @@ export default function SpecializationsCarousel() {
     <section id="specializari" className="relative py-20 md:py-32">
       <div className="container relative mx-auto px-4 md:px-6">
         {/* Header */}
-        <div className="mb-12 text-center md:mb-20">
+        <div className="mb-12 text-center font-bold md:mb-20">
           <motion.h2
-            initial={{ opacity: 100, y: 100 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100"
+            className="mb-4 font-serif text-[33px] md:text-[53px]"
+            style={{
+              backgroundImage: "linear-gradient(to right, #9A4EAE, #D47AFE)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
           >
             Harti ale Sufletului
           </motion.h2>
@@ -163,9 +169,14 @@ export default function SpecializationsCarousel() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mx-auto max-w-2xl text-bold text-lg leading-relaxed text-[#9A4EAE]/800 md:text-xl"
-            // style={{ textShadow: "0 4px 15px rgba(16, 16, 17, 0.9)" }}
-            drop-shadow="0 4px 15px rgba(16, 16, 17, 0.9)"
+            className="mx-auto max-w-2xl font-bold md:text-xl leading-relaxed font-semibold"
+            style={{
+              backgroundImage: "linear-gradient(to right, #3a0446ff, #028ee6ff)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+              filter: "drop-shadow(0 4px 15px rgba(16, 16, 17, 0.4))",
+            }}
           >
             Alege harta care te ghidează cel mai bine spre transformarea ta
             interioară.
@@ -209,7 +220,7 @@ export default function SpecializationsCarousel() {
                     <div className="relative z-10 p-6">
                       <div className="mb-4 flex items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.08] text-white backdrop-blur-md">
-                          <Icon size={20} strokeWidth={1.5} />
+                          <Icon size={40} strokeWidth={1.5} />
                         </div>
                         <h3 className="font-serif text-lg font-medium">
                           {spec.title}

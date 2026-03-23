@@ -36,11 +36,11 @@ export default function JungQuote() {
 
           {/* Quote */}
           <div className="relative text-center sm:text-left">
-            <p className="mb-6 font-serif text-xl italic leading-relaxed md:text-2xl">
-              &ldquo;În viziunea astrologiei integrative, cerul și psihicul uman se întâlnesc în simbolurile astrelor, deschizând o cale de cunoaștere și înțelegere de sine.&rdquo;
+            <p className="mb-6 font-serif text-md italic leading-relaxed md:text-lg">
+              În viziunea astrologiei integrative, cerul și psihicul uman se întâlnesc în simbolurile astrelor, deschizând o cale de cunoaștere și înțelegere de sine.
             </p>
             <p className="text-xs font-medium tracking-[0.2em] uppercase opacity-70">
-                Karl Jung, psiholog și astrolog
+                Karl Jung, psiholog 
             </p>
           </div>
         </motion.div>

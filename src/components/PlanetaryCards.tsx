@@ -5,7 +5,7 @@ import { Moon, Sun, Star, Orbit, Sparkles } from "lucide-react";
 
 export function PersonalPlanets() {
   return (
-    <div className="relative w-full overflow-hidden px-6 py-6 md:py-10">
+    <div className="relative w-full px-6 py-6 md:py-10">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
         <motion.div
@@ -18,7 +18,14 @@ export function PersonalPlanets() {
           <h2 className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100">
             Planetele Personale — Fundamentul Identității
           </h2>
-          <p className="mx-auto max-w-2xl text-bold text-lg leading-relaxed text-[#9A4EAE]/800 md:text-xl opacity-100">
+          <p className="mx-auto max-w-2xl text-lg md:text-xl leading-relaxed font-semibold text-[#9A4EAE] opacity-100"
+          style={{
+            backgroundImage: "linear-gradient(to right,  #fd6ccdff, #028ee6ff)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+          >
             Nu sunt predicții, ci oglinzi simbolice care invită la reflecție.
           </p>
         </motion.div>
@@ -99,7 +106,7 @@ export function PersonalPlanets() {
 
 export function EvolutionPlanets() {
   return (
-    <div className="relative w-full overflow-hidden px-6 py-6 md:py-10">
+    <div className="relative w-full px-6 py-6 md:py-10">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -111,7 +118,14 @@ export function EvolutionPlanets() {
           <h2 className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100">
             Planetele Evoluției și Societății
           </h2>
-          <p className="mx-auto max-w-2xl text-bold text-lg leading-relaxed text-[#9A4EAE]/800 md:text-xl opacity-100">
+          <p className="mx-auto max-w-2xl text-lg md:text-xl leading-relaxed font-bold opacity-100"
+          style={{
+            backgroundImage: "linear-gradient(to right,  #ef03a0ff, #a1e5f1ff)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+          >
             Forțe colective care influențează generații și transformări profunde ale conștiinței.
           </p>
         </motion.div>
@@ -126,14 +140,14 @@ export function EvolutionPlanets() {
             whileHover={{ scale: 1.02 }}
             className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
           >
-            <h3 className="mb-5 flex items-center gap-3 font-serif text-xl">
+            <h3 className="mb-5 flex items-center font-bold gap-3 font-serif text-xl">
               <Orbit className="h-5 w-5" /> Planete Sociale
             </h3>
 
             <div className="space-y-4 text-sm">
               <div>
-                <h4 className="mb-1.5 font-medium">Jupiter</h4>
-                <ul className="list-inside list-disc space-y-0.5 opacity-90">
+                <h4 className="mb-1.5 font-bold text-lg">Jupiter</h4>
+                <ul className="list-inside font-bold list-disc space-y-0.5 opacity-100">
                   <li>simbolizează expansiunea, sensul și căutarea cunoașterii</li>
                   <li>arată unde avem oportunități de creștere și dezvoltare</li>
                   <li>vorbește despre credințe, valori și modul în care ne lărgim orizonturile</li>
@@ -141,8 +155,8 @@ export function EvolutionPlanets() {
               </div>
 
               <div>
-                <h4 className="mb-1.5 font-medium">Saturn</h4>
-                <ul className="list-inside list-disc space-y-0.5 opacity-90">
+                <h4 className="mb-1.5 font-bold text-lg">Saturn</h4>
+                <ul className="list-inside font-bold list-disc space-y-0.5 opacity-100">
                   <li>simbolizează structura, responsabilitatea și maturizarea</li>
                   <li>arată lecțiile de viață și domeniile unde avem de construit cu răbdare</li>
                   <li>ne învață disciplina, limitele și asumarea responsabilităților</li>
@@ -150,7 +164,7 @@ export function EvolutionPlanets() {
               </div>
             </div>
 
-            <p className="mt-auto border-t border-black/[0.1] pt-3 text-xs italic opacity-60">
+            <p className="mt-auto border-t border-black/[0.1] pt-3 text-xs font-bold italic opacity-60">
               Planetele sociale marchează punctul de trecere între lumea personală și cea colectivă.
             </p>
           </motion.div>
@@ -164,14 +178,14 @@ export function EvolutionPlanets() {
             whileHover={{ scale: 1.02 }}
             className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
           >
-            <h3 className="mb-5 flex items-center gap-3 font-serif text-xl">
+            <h3 className="mb-5 flex items-center font-bold text-lg gap-3 font-serif text-xl">
               <Sparkles className="h-5 w-5" /> Planete Transpersonale
             </h3>
 
             <div className="space-y-4 text-sm">
               <div>
-                <h4 className="mb-1.5 font-medium">Uranus</h4>
-                <ul className="list-inside list-disc space-y-0.5 opacity-90">
+                <h4 className="mb-1.5 font-bold text-lg">Uranus</h4>
+                <ul className="list-inside font-bold list-disc space-y-0.5 opacity-100">
                   <li>simbolizează schimbarea, libertatea și originalitatea</li>
                   <li>arată unde simțim nevoia de independență și de a rupe tipare vechi</li>
                   <li>aduce revelații și perspective noi asupra vieții</li>
@@ -179,8 +193,8 @@ export function EvolutionPlanets() {
               </div>
 
               <div>
-                <h4 className="mb-1.5 font-medium">Neptun</h4>
-                <ul className="list-inside list-disc space-y-0.5 opacity-90">
+                <h4 className="mb-1.5 font-bold text-lg">Neptun</h4>
+                <ul className="list-inside font-bold list-disc space-y-0.5 opacity-100">
                   <li>vorbește despre sensibilitate, imaginație și dimensiunea spirituală</li>
                   <li>arată unde visăm, idealizăm sau căutăm sensuri mai profunde</li>
                   <li>influențează intuiția și legătura cu planul subtil</li>
@@ -188,8 +202,8 @@ export function EvolutionPlanets() {
               </div>
 
               <div>
-                <h4 className="mb-1.5 font-medium">Pluto</h4>
-                <ul className="list-inside list-disc space-y-0.5 opacity-90">
+                <h4 className="mb-1.5 font-bold text-lg">Pluto</h4>
+                <ul className="list-inside font-bold list-disc space-y-0.5 opacity-100">
                   <li>simbolizează transformarea profundă și puterea interioară</li>
                   <li>arată procesele de regenerare și schimbările esențiale din viață</li>
                   <li>ne conduce spre confruntarea cu adevărurile profunde și renașterea interioară</li>
@@ -197,7 +211,7 @@ export function EvolutionPlanets() {
               </div>
             </div>
 
-            <p className="mt-auto border-t border-black/[0.1] pt-3 text-xs italic opacity-60">
+            <p className="mt-auto border-t border-black/[0.1] font-bold text-lg pt-3 text-xs italic opacity-60">
               Forțe colective care influențează generații și transformări profunde ale conștiinței.
             </p>
           </motion.div>

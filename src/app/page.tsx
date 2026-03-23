@@ -5,7 +5,7 @@ import {
   motion,
   useScroll,
   useTransform,
-  useMotionTemplate,
+  useReducedMotion,
 } from "framer-motion";
 import Hero from "@/components/Hero";
 import JungQuote from "@/components/JungQuote";
@@ -13,6 +13,9 @@ import SpecializationsCarousel from "@/components/SpecializationsCarousel";
 import MethodSteps from "@/components/MethodSteps";
 import { PersonalPlanets, EvolutionPlanets } from "@/components/PlanetaryCards";
 import Testimonials from "@/components/Testimonials";
+import Certifications from "@/components/Certifications";
+import FAQ from "@/components/FAQ";
+
 
 function PortalSection({
   id,
@@ -28,24 +31,23 @@ function PortalSection({
   children: React.ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
   
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
 
-  // Force constant opacity as requested
-  const opacity = 1;
-  
-  // Subtle parallax strictly localized to this background layer
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
-  
-  // Zoom parallax redus cu ~50% față de setarea anterioară
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1.18, 0.82]);
-  const contentScale = useTransform(scrollYProgress, [0, 1], [1, 0.97]);
-  // Disable background blur as requested
-  const bgBlur = 0;
-  const bgFilter = useMotionTemplate`blur(${bgBlur}px)`;
+  // Subtle parallax (mai ușor pe GPU) și respectă prefers-reduced-motion
+  const bgYRange = prefersReducedMotion ? ["0%", "0%"] : ["0%", "-6%"];
+  const bgScaleRange = prefersReducedMotion ? [1, 1] : [1.05, 0.95];
+  const contentScaleRange = prefersReducedMotion ? [1, 1] : [1, 0.99];
+
+  const bgY = useTransform(scrollYProgress, [0, 1], bgYRange);
+  const bgScale = useTransform(scrollYProgress, [0, 1], bgScaleRange);
+  const contentScale = useTransform(scrollYProgress, [0, 1], contentScaleRange);
+
+  const initialBlur = prefersReducedMotion ? 0 : (isHero ? 8 : 6);
 
   return (
     <motion.section
@@ -56,19 +58,19 @@ function PortalSection({
       {/* Background Layer with Mask Image to erase hard lines */}
       <div className="absolute inset-0 -z-10">
         <motion.div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center portal-bg"
           style={{
             backgroundImage: `url('/photo_transitions/${bgImage}')`,
             y: bgY,
             scale: bgScale,
-            filter: bgFilter,
+            filter: prefersReducedMotion ? "none" : undefined,
             // SMOOTH TRANSITION: This creates a tighter fade to avoid expansive "shadows"
             WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
             maskImage: "linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)"
           }}
-          initial={isHero ? { scale: 1.06, filter: "blur(16px)" } : { scale: 1.04, filter: "blur(14px)" }}
+          initial={isHero ? { scale: 1.03, filter: `blur(${initialBlur}px)` } : { scale: 1.02, filter: `blur(${initialBlur}px)` }}
           animate={{ scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
         />
       </div>
 
@@ -142,8 +144,11 @@ export default function Home() {
         <EvolutionPlanets />
       </PortalSection>
 
-      <PortalSection id="ContactFooterSection" bgImage="ContactFooterSection.png" className="min-h-[100vh] pb-32">
+      <PortalSection id="contact" bgImage="ContactFooterSection.png" className="min-h-[100vh] pb-32">
+        <Certifications />
         <Testimonials />
+        <FAQ />
+
       </PortalSection>
     </motion.main>
   );

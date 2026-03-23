@@ -31,7 +31,7 @@ export default function MethodSteps() {
   return (
     <section
       id="metoda"
-      className="relative w-full overflow-hidden px-6 py-12 md:py-16"
+      className="relative w-full px-6 py-12 md:py-16"
     >
       <div className="mx-auto w-full max-w-6xl">
         {/* Header */}
@@ -42,10 +42,26 @@ export default function MethodSteps() {
           transition={{ duration: 0.6 }}
           className="mb-14 text-center opacity-100"
         >
-          <h2 className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100">
+          <h2
+            className="mb-4 font-serif text-[33px] font-bold md:text-[53px] opacity-100"
+            style={{
+              backgroundImage: "linear-gradient(to right, #9A4EAE, #D47AFE)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
+          >
             Metoda Mea
           </h2>
-          <p className="mx-auto max-w-2xl text-bold text-lg leading-relaxed text-[#9A4EAE]/800 md:text-xl">
+          <p
+            className="mx-auto max-w-2xl text-lg md:text-xl leading-relaxed font-semibold opacity-100"
+            style={{
+              backgroundImage: "linear-gradient(to right, #3a0446ff, #028ee6ff)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
+          >
             Trei pași simpli spre claritate și direcție.
           </p>
         </motion.div>
@@ -83,7 +99,7 @@ export default function MethodSteps() {
                 </div>
 
                 {/* Title */}
-                <h3 className="relative mb-3 font-serif text-xl font-medium tracking-wide text-[#2E4057] opacity-100 font-bold">
+                <h3 className="relative mb-3 font-serif text-xl font-lg  tracking-wide text-[ #FFF] opacity-100 font-bold">
                   {step.title}
                 </h3>
 

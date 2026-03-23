@@ -39,6 +39,9 @@ export default function Hero() {
         animate={{ backgroundPosition: ["0% 0%", "100% 0%", "0% 0%"] }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       />
+      
+      {/* Dark overlay to improve contrast against bright background areas */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[#0b0e14]/30" />
       {/* Background handled by global transitions */}
 
       {/* ── Split-screen grid ── */}
@@ -53,12 +56,14 @@ export default function Hero() {
             animate={{ clipPath: "inset(0 0 0 0)", y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            /* 1. Am schimbat leading-tight în leading-[1.05] pentru a apropia rândurile */
-            className="mb-6 font-serif text-[41px] sm:text-[55px] lg:text-[69px] font-light leading-[1.05] tracking-wide text-[#BC8F8F] opacity-100"
-            /* 2. Am mutat drop-shadow în interiorul obiectului style, sub formă de filter */
+            className="mb-6 font-serif text-[41px] sm:text-[55px] lg:text-[69px] font-light leading-[1.05] tracking-wide"
             style={{
-              textShadow: "0 2px 20px rgba(188,143,143,0.15)",
-              filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.5))"
+              textShadow: "0 4px 30px rgba(0,0,0,0.6)",
+              filter: "drop-shadow(0 4px 15px rgba(0,0,0,0.8))",
+              backgroundImage: "linear-gradient(90deg, #000338ff, #8bbeb1, #8bbeb2)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
             }}
           >
             Astrologie integrativă,{" "}
@@ -67,8 +72,13 @@ export default function Hero() {
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
                 transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                /* Noul tău gradient (Indigo închis spre Mint) și font-bold */
-                className="inline-block bg-gradient-to-r from-[#0D0630] to-[#8bbeb2] font-bold bg-clip-text text-transparent"
+                className="inline-block font-bold"
+                style={{
+                  backgroundImage: "linear-gradient(90deg, #0D0630, #8bbeb2)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
               >
                 personalizată
               </motion.span>
@@ -120,7 +130,7 @@ export default function Hero() {
           >
             <motion.div whileHover={{ scale: 1.02, rotate: -1 }} whileTap={{ scale: 0.98 }}>
               <a
-                href="https://wa.me/40752102281"
+                href="https://wa.me/40752102281?text=Bun%C4%83%2C%20a%C8%99%20dori%20o%20programare%20(MapSoul)%20pentru%20..."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#9A4EAE] to-[#b066c9] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#9A4EAE]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#9A4EAE]/40 hover:brightness-110"
@@ -165,7 +175,7 @@ export default function Hero() {
             className="w-full h-full relative"
           >
             {/* Organic shape container */}
-            <div className="relative mx-auto aspect-[3/4] w-full">
+            <div className="relative mx-auto w-full max-w-md lg:max-w-lg h-[520px] sm:h-[560px]">
               {/* Background logo watermark */}
               <div className="absolute inset-0 flex items-center justify-center opacity-[0.06]">
                 <Image
@@ -183,12 +193,12 @@ export default function Hero() {
                 {/* Inner glass effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-[#6d28d9]/[0.04]" />
 
-                {/* Image — use marilena.png if it exists, otherwise logo as placeholder */}
+                {/* Main Client Photo - Marilena, Astrolog */}
                 <Image
                   src="/foto-client/foto-client.png"
                   alt="MapSoul — Marilena, Astrolog"
                   fill
-                  className="object-cover opacity-100"
+                  className="object-cover object-top opacity-100"
                   sizes="(max-width: 768px) 100vw, 400px"
                   priority
                 />
