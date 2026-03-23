@@ -7,11 +7,27 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     q: "Cât durează o ședință și cum are loc?",
-    a: "45–60 de minute, online pe Zoom sau față în față, în funcție de preferință.",
+    a: "60-90 de minute, online pe Zoom sau față în față, în funcție de preferință.",
   },
   {
     q: "Ce primesc după ședință?",
-    a: "Un rezumat cu principalele insight-uri și repere calendaristice discutate.",
+    a: (
+      <div className="space-y-3">
+        <p>
+          După o ședință, nu pleci doar cu informații, ci cu o înțelegere mai profundă a propriei tale vieți.
+        </p>
+        <p>Concret, vei primi:</p>
+        <ul className="list-inside list-disc space-y-1 pl-1">
+          <li>claritate</li>
+          <li>răspunsuri</li>
+          <li>direcție</li>
+          <li>conștientizare</li>
+        </ul>
+        <p className="font-medium text-white/90">
+          Încredere în propriul parcurs și în alegerile tale.
+        </p>
+      </div>
+    ),
   },
   {
     q: "Pot pune întrebări punctuale (carieră, relații)?",
@@ -60,9 +76,9 @@ export default function FAQ() {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <p className="pt-2 text-sm text-[#ededed]/80 leading-relaxed">
+                      <div className="pt-2 text-[15px] text-[#ededed]/80 leading-relaxed">
                         {item.a}
-                      </p>
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
