@@ -39,7 +39,7 @@ export default function Hero() {
         animate={{ backgroundPosition: ["0% 0%", "100% 0%", "0% 0%"] }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       />
-      
+
       {/* Dark overlay to improve contrast against bright background areas */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-[#0b0e14]/30" />
       {/* Background handled by global transitions */}

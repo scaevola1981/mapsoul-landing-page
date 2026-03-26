@@ -32,7 +32,7 @@ function PortalSection({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
-  
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
@@ -57,8 +57,8 @@ function PortalSection({
     >
       {/* Background Layer with Mask Image to erase hard lines */}
       <div className="absolute inset-0 -z-10">
-        <motion.div 
-          className="absolute inset-0 bg-cover bg-center portal-bg"
+        <motion.div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat portal-bg"
           style={{
             backgroundImage: `url('/photo_transitions/${bgImage}')`,
             y: bgY,

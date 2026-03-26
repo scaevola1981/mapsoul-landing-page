@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, Mail } from "lucide-react";
+import { Mail, Facebook } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -38,14 +38,23 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start">
           <h4 className="mb-3 font-serif text-lg text-[#BC8F8F]">Conectare</h4>
           <div className="flex gap-4 mb-4">
-            <a 
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=ghermac_marilena@yahoo.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=ghermac_marilena@yahoo.com"
+              target="_blank"
+              rel="noopener noreferrer"
               title="Deschide Gmail pentru a trimite mesaj"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[#E0AB76] hover:bg-[#9A4EAE]/20 hover:text-[#9A4EAE] transition-all"
             >
               <Mail size={20} />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61576429971094"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Vizitează pagina de Facebook"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[#E0AB76] hover:bg-[#9A4EAE]/20 hover:text-[#9A4EAE] transition-all"
+            >
+              <Facebook size={20} />
             </a>
           </div>
         </div>

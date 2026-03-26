@@ -19,12 +19,12 @@ export function PersonalPlanets() {
             Planetele Personale — Fundamentul Identității
           </h2>
           <p className="mx-auto max-w-2xl text-lg md:text-xl leading-relaxed font-semibold text-[#9A4EAE] opacity-100"
-          style={{
-            backgroundImage: "linear-gradient(to right,  #fd6ccdff, #028ee6ff)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-          }}
+            style={{
+              backgroundImage: "linear-gradient(to right,  #fd6ccdff, #028ee6ff)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
           >
             Nu sunt predicții, ci oglinzi simbolice care invită la reflecție.
           </p>
@@ -119,12 +119,12 @@ export function EvolutionPlanets() {
             Planetele Evoluției și Societății
           </h2>
           <p className="mx-auto max-w-2xl text-lg md:text-xl leading-relaxed font-bold opacity-100"
-          style={{
-            backgroundImage: "linear-gradient(to right,  #ef03a0ff, #a1e5f1ff)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-          }}
+            style={{
+              backgroundImage: "linear-gradient(to right,  #ef03a0ff, #a1e5f1ff)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
           >
             Forțe colective care influențează generații și transformări profunde ale conștiinței.
           </p>

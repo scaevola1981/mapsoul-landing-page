@@ -62,7 +62,7 @@ export default function Testimonials() {
               />
 
               {/* Text */}
-               <p className="mb-5 flex-1 text-[14px] leading-relaxed opacity-90">
+              <p className="mb-5 flex-1 text-[14px] leading-relaxed opacity-90">
                 &ldquo;{t.text}&rdquo;
               </p>
 
