@@ -155,7 +155,7 @@ export default function SpecializationsCarousel() {
       {/* Gradient mask to gracefully fade top and bottom edges into the main theme color */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0b0e14] via-transparent to-[#0b0e14]" />
 
-      <div className="container relative z-10 mx-auto px-4 md:px-6">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-6 flex flex-col items-center">
         {/* Header */}
         <div className="mb-12 text-center font-bold md:mb-20">
           <motion.h2
@@ -193,7 +193,7 @@ export default function SpecializationsCarousel() {
 
         {/* Bento Grid (Desktop) */}
         <div className="hidden md:flex justify-center w-full">
-          <div className="grid-bento-layout grid bg-transparent w-full max-w-5xl">
+          <div className="grid-bento-layout grid bg-transparent w-full max-w-4xl">
             {specializations.map((spec, i) => (
               <BentoTile key={spec.id} spec={spec} index={i} />
             ))}
