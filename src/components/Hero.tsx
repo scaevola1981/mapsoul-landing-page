@@ -58,7 +58,7 @@ export default function Hero() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="mb-6 font-serif text-[41px] sm:text-[55px] lg:text-[69px] font-light leading-[1.05] tracking-wide"
             style={{
-              backgroundImage: "linear-gradient(90deg, #000338ff, #8bbeb1, #8bbeb2)",
+              backgroundImage: "linear-gradient(90deg, var(--npul-purple), var(--npul-accent), var(--npul-gold))",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
@@ -72,7 +72,7 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="inline-block font-bold"
                 style={{
-                  backgroundImage: "linear-gradient(90deg, #0D0630, #8bbeb2)",
+                  backgroundImage: "linear-gradient(90deg, var(--npul-accent), var(--npul-gold))",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -106,7 +106,7 @@ export default function Hero() {
                 "Care este scopul meu în viață?",
               ].map((q) => (
                 <li key={q} className="flex items-start gap-2 font-bold italic text-[#A5F3FC]">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#9A4EAE]" />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--npul-accent)]" />
                   {q}
                 </li>
               ))}
@@ -129,7 +129,7 @@ export default function Hero() {
                 href="https://wa.me/40752102281?text=Bun%C4%83%2C%20a%C8%99%20dori%20o%20programare%20(MapSoul)%20pentru%20..."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#9A4EAE] to-[#b066c9] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#9A4EAE]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#9A4EAE]/40 hover:brightness-110"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[var(--npul-accent)] px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[var(--npul-accent)]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--npul-accent)]/40 hover:brightness-110"
               >
                 Programează pe WhatsApp
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -191,7 +191,7 @@ export default function Hero() {
 
                 {/* Main Client Photo - Marilena, Astrolog */}
                 <Image
-                  src="/foto-client/foto-client.png"
+                  src="/design-nou/foto/foto-client.png"
                   alt="MapSoul — Marilena, Astrolog"
                   fill
                   className="object-cover object-top opacity-100"

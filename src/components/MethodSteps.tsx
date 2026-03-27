@@ -45,7 +45,7 @@ export default function MethodSteps() {
           <h2
             className="mb-4 font-serif text-[33px] font-bold md:text-[53px] opacity-100"
             style={{
-              backgroundImage: "linear-gradient(to right, #9A4EAE, #D47AFE)",
+              backgroundImage: "linear-gradient(to right, var(--npul-purple), var(--npul-accent))",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
@@ -56,7 +56,7 @@ export default function MethodSteps() {
           <p
             className="mx-auto max-w-2xl text-lg md:text-xl leading-relaxed font-semibold opacity-100"
             style={{
-              backgroundImage: "linear-gradient(to right, #3a0446ff, #028ee6ff)",
+              backgroundImage: "linear-gradient(to right, var(--npul-gold), var(--npul-accent))",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
@@ -77,20 +77,20 @@ export default function MethodSteps() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px", amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="group relative flex flex-col rounded-2xl border border-white/[0.08] glass-card p-7 transition-all duration-500 hover:border-[#6d28d9]/40 hover:bg-white/[0.06]"
+                className="group relative flex flex-col rounded-2xl border border-white/[0.08] glass-card p-7 transition-all duration-500 hover:border-[var(--npul-purple)]/40 hover:bg-white/[0.06]"
               >
                 {/* Glow on hover */}
                 <div
                   className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   style={{
                     background:
-                      "radial-gradient(ellipse at 50% 0%, rgba(109,40,217,0.1) 0%, transparent 65%)",
+                      "radial-gradient(ellipse at 50% 0%, rgba(212,187,255,0.1) 0%, transparent 65%)",
                   }}
                 />
 
                 {/* Step number + icon row */}
                 <div className="relative mb-5 flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#6d28d9]/15 text-[#e0ab76] transition-all duration-300 group-hover:bg-[#6d28d9]/25 group-hover:shadow-[0_0_24px_rgba(109,40,217,0.2)]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[var(--npul-purple)]/15 text-[var(--npul-gold)] transition-all duration-300 group-hover:bg-[var(--npul-purple)]/25 group-hover:shadow-[0_0_24px_rgba(212,187,255,0.2)]">
                     <Icon size={22} strokeWidth={1.5} />
                   </div>
                   <span className="font-mono text-xs font-semibold tracking-widest opacity-60">
@@ -110,7 +110,7 @@ export default function MethodSteps() {
 
                 {/* Decorative connector line (not on last card) */}
                 {i < steps.length - 1 && (
-                  <div className="absolute -right-3 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-gradient-to-r from-[#6d28d9]/30 to-transparent md:block" />
+                  <div className="absolute -right-3 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-gradient-to-r from-[var(--npul-purple)]/30 to-transparent md:block" />
                 )}
               </motion.div>
             );

@@ -38,7 +38,7 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <h2 className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100">
+          <h2 className="mb-4 font-serif text-[33px] font-bold text-[var(--npul-purple)] md:text-[53px] opacity-100">
             Experiente reale, in cuvintele lor
           </h2>
         </motion.div>
@@ -52,7 +52,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px", amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative flex flex-col rounded-2xl border border-white/[0.07] glass-card p-6 transition-all duration-500 hover:border-[#e0ab76]/25 hover:bg-white/[0.05]"
+              className="group relative flex flex-col rounded-2xl border border-white/[0.07] glass-card p-6 transition-all duration-500 hover:border-[var(--npul-gold)]/25 hover:bg-white/[0.05]"
             >
               {/* Quote icon */}
               <Quote

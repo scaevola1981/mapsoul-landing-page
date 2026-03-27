@@ -15,12 +15,12 @@ export function PersonalPlanets() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <h2 className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100">
+          <h2 className="mb-4 font-serif text-[33px] font-bold text-[var(--npul-purple)] md:text-[53px] opacity-100">
             Planetele Personale — Fundamentul Identității
           </h2>
-          <p className="mx-auto max-w-2xl text-lg md:text-xl leading-relaxed font-semibold text-[#9A4EAE] opacity-100"
+          <p className="mx-auto max-w-2xl text-lg md:text-xl leading-relaxed font-semibold text-[var(--npul-purple)] opacity-100"
             style={{
-              backgroundImage: "linear-gradient(to right,  #fd6ccdff, #028ee6ff)",
+              backgroundImage: "linear-gradient(to right, var(--npul-accent), var(--npul-gold))",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
@@ -30,191 +30,89 @@ export function PersonalPlanets() {
           </p>
         </motion.div>
 
-        {/* Cards grid — Centered single column for Personal Planets */}
-        <div className="mx-auto max-w-md">
-          {/* ── Soare / Luna / Venus ── */}
+        {/* Cards grid — Bento Grid Layout with new photos */}
+        <div className="grid-bento-layout mx-auto max-w-5xl">
+          
+          {/* Card 1: Natala (Spans 2 columns) */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px", amount: 0.3 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
             whileHover={{ scale: 1.02 }}
-            className="glass-card flex flex-col font-bold rounded-2xl p-6 transition-all duration-300"
+            className="glass-card [grid-area:natala] flex flex-col items-center justify-center p-8 rounded-[32px] overflow-hidden relative min-h-[300px]"
           >
-            <h3 className="mb-5 flex items-center gap-3 font-serif text-xl">
-              <Sun className="h-5 w-5" /> Planete Personale
-            </h3>
-
-            <div className="space-y-4 text-sm">
-              <div>
-                <h4 className="mb-1.5 flex items-center gap-2 font-medium">
-                  <Moon className="h-3.5 w-3.5" /> Luna
-                </h4>
-                <ul className="list-inside list-disc space-y-0.5 opacity-90">
-                  <li>lumea interioară și emoții</li>
-                  <li>nevoia de siguranță și felul în care simțim</li>
-                  <li>tiparele din trecut care ne influențează</li>
-                  <li>relația cu mama</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-1.5 flex items-center gap-2 font-medium">
-                  <Sun className="h-3.5 w-3.5" /> Soarele
-                </h4>
-                <ul className="list-inside list-disc space-y-0.5 opacity-90">
-                  <li>identitatea și lumina personală</li>
-                  <li>cine suntem și cum ne exprimăm</li>
-                  <li>descoperirea potențialului</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-1.5 flex items-center gap-2 font-medium">
-                  <Star className="h-3.5 w-3.5" /> Venus
-                </h4>
-                <ul className="list-inside list-disc space-y-0.5 opacity-90">
-                  <li>relații și armonie</li>
-                  <li>cum valorizăm iubirea și resursele</li>
-                  <li>felul în care ne conectăm cu ceilalți</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-1.5 flex items-center gap-2 font-medium">
-                  <Star className="h-3.5 w-3.5" /> Marte
-                </h4>
-                <ul className="list-inside list-disc space-y-0.5 opacity-90">
-                  <li>energia,vointa si actiunea</li>
-                  <li>arata cum ne afirmam,cum luam initiativa si cum ne urmam dorintele</li>
-                  <li>reflecta modul in care ne folosim forta interioara pentru a depasi provocarile</li>
-                  <li>vorbeste despre curaj,determinare si felul in care ne aparam limitele personale</li>
-                </ul>
-              </div>
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
+              style={{ backgroundImage: "url('/design-nou/foto/astrologie-natala.png')" }}
+            />
+            <div className="relative z-10 text-center">
+              <h3 className="mb-2 font-serif text-3xl font-bold">Astrologie Natală</h3>
+              <p className="text-[#ededed]/90 max-w-sm mx-auto">
+                Harta sufletului tău la momentul nașterii. Descoperă-ți potențialul, darurile și provocările fundamentale ale existenței tale.
+              </p>
             </div>
-
-            <p className="mt-5 border-t border-black/[0.1] pt-3 text-xs italic opacity-60">
-              Simboluri care invită la reflecție asupra relațiilor și modului
-              în care ne raportăm la noi și la ceilalți.
-            </p>
-          </motion.div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export function EvolutionPlanets() {
-  return (
-    <div className="relative w-full px-6 py-6 md:py-10">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 text-center"
-        >
-          <h2 className="mb-4 font-serif text-[33px] font-bold text-[#9A4EAE] md:text-[53px] opacity-100">
-            Planetele Evoluției și Societății
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg md:text-xl leading-relaxed font-bold opacity-100"
-            style={{
-              backgroundImage: "linear-gradient(to right,  #ef03a0ff, #a1e5f1ff)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            Forțe colective care influențează generații și transformări profunde ale conștiinței.
-          </p>
-        </motion.div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {/* ── Planete Sociale ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px", amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            whileHover={{ scale: 1.02 }}
-            className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
-          >
-            <h3 className="mb-5 flex items-center font-bold gap-3 font-serif text-xl">
-              <Orbit className="h-5 w-5" /> Planete Sociale
-            </h3>
-
-            <div className="space-y-4 text-sm">
-              <div>
-                <h4 className="mb-1.5 font-bold text-lg">Jupiter</h4>
-                <ul className="list-inside font-bold list-disc space-y-0.5 opacity-100">
-                  <li>simbolizează expansiunea, sensul și căutarea cunoașterii</li>
-                  <li>arată unde avem oportunități de creștere și dezvoltare</li>
-                  <li>vorbește despre credințe, valori și modul în care ne lărgim orizonturile</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-1.5 font-bold text-lg">Saturn</h4>
-                <ul className="list-inside font-bold list-disc space-y-0.5 opacity-100">
-                  <li>simbolizează structura, responsabilitatea și maturizarea</li>
-                  <li>arată lecțiile de viață și domeniile unde avem de construit cu răbdare</li>
-                  <li>ne învață disciplina, limitele și asumarea responsabilităților</li>
-                </ul>
-              </div>
-            </div>
-
-            <p className="mt-auto border-t border-black/[0.1] pt-3 text-xs font-bold italic opacity-60">
-              Planetele sociale marchează punctul de trecere între lumea personală și cea colectivă.
-            </p>
           </motion.div>
 
-          {/* ── Planete Transpersonale ── */}
+          {/* Card 2: Karmica */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px", amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
             whileHover={{ scale: 1.02 }}
-            className="glass-card flex flex-col rounded-2xl p-6 transition-all duration-300"
+            className="glass-card [grid-area:karmica] flex flex-col items-center justify-center p-8 rounded-[32px] overflow-hidden relative min-h-[300px]"
           >
-            <h3 className="mb-5 flex items-center font-bold text-lg gap-3 font-serif text-xl">
-              <Sparkles className="h-5 w-5" /> Planete Transpersonale
-            </h3>
-
-            <div className="space-y-4 text-sm">
-              <div>
-                <h4 className="mb-1.5 font-bold text-lg">Uranus</h4>
-                <ul className="list-inside font-bold list-disc space-y-0.5 opacity-100">
-                  <li>simbolizează schimbarea, libertatea și originalitatea</li>
-                  <li>arată unde simțim nevoia de independență și de a rupe tipare vechi</li>
-                  <li>aduce revelații și perspective noi asupra vieții</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-1.5 font-bold text-lg">Neptun</h4>
-                <ul className="list-inside font-bold list-disc space-y-0.5 opacity-100">
-                  <li>vorbește despre sensibilitate, imaginație și dimensiunea spirituală</li>
-                  <li>arată unde visăm, idealizăm sau căutăm sensuri mai profunde</li>
-                  <li>influențează intuiția și legătura cu planul subtil</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="mb-1.5 font-bold text-lg">Pluto</h4>
-                <ul className="list-inside font-bold list-disc space-y-0.5 opacity-100">
-                  <li>simbolizează transformarea profundă și puterea interioară</li>
-                  <li>arată procesele de regenerare și schimbările esențiale din viață</li>
-                  <li>ne conduce spre confruntarea cu adevărurile profunde și renașterea interioară</li>
-                </ul>
-              </div>
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
+              style={{ backgroundImage: "url('/design-nou/foto/karma-sign.png')" }}
+            />
+            <div className="relative z-10 text-center">
+              <h3 className="mb-2 font-serif text-2xl font-bold">Astrologie Karmică</h3>
+              <p className="text-[#ededed]/90">
+                Înțelege tiparele din trecut care îți modelează prezentul și misiunea în această viață.
+              </p>
             </div>
-
-            <p className="mt-auto border-t border-black/[0.1] font-bold text-lg pt-3 text-xs italic opacity-60">
-              Forțe colective care influențează generații și transformări profunde ale conștiinței.
-            </p>
           </motion.div>
+
+          {/* Card 3: Previzionala (Spans 2 columns on bottom) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ scale: 1.02 }}
+            className="glass-card [grid-area:previzionala] flex flex-col items-center justify-center p-8 rounded-[32px] overflow-hidden relative min-h-[300px]"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
+              style={{ backgroundImage: "url('/design-nou/foto/astrologie-previzionala.png')" }}
+            />
+            <div className="relative z-10 text-center">
+              <h3 className="mb-2 font-serif text-3xl font-bold">Astrologie Previzională</h3>
+              <p className="text-[#ededed]/90 max-w-sm mx-auto">
+                Anticipează ciclurile vieții și pregătește-te pentru tranzitele care urmează, folosind energia astrală în favoarea ta.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Card 4: Revolutii Solare */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ scale: 1.02 }}
+            className="glass-card [grid-area:revolutii] flex flex-col items-center justify-center p-8 rounded-[32px] overflow-hidden relative min-h-[300px]"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
+              style={{ backgroundImage: "url('/design-nou/foto/revolutii-solare.png')" }}
+            />
+            <div className="relative z-10 text-center">
+              <h3 className="mb-2 font-serif text-2xl font-bold">Revoluții Solare</h3>
+              <p className="text-[#ededed]/90">
+                Află tema principală a anului tău personal de la o zi de naștere la alta.
+              </p>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </div>

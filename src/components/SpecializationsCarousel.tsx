@@ -37,7 +37,7 @@ const specializations: Specialization[] = [
     id: "natala",
     title: "Astrologie Natală",
     icon: Sparkles,
-    image: "/cards-foto/astrologie-natala.png",
+    image: "/design-nou/foto/astrologie-natala.png",
     shortDesc: "La naștere, poziția planetelor formează o configurație unică: Harta natală. Ea nu stabilește destinul, ci arată potențialul, tiparele vieții și ne ajută să privim experiențele cu mai multă conștientizare.",
     quote: "Cine privește în afară, visează; cine privește înăuntru, se trezește.",
     author: "Carl Jung",
@@ -48,7 +48,7 @@ const specializations: Specialization[] = [
     id: "karmica",
     title: "Astrologie Karmică",
     icon: Search,
-    image: "/cards-foto/karma.png",
+    image: "/design-nou/foto/karma-sign.png",
     shortDesc:
       "Harta karmică îți arată tiparele și lecțiile pe care le porți din viețile trecute și darurile ascunse care te pot ghida acum. Este un ghid al sufletului, care te ajută să înțelegi cine ești cu adevărat și cum să trăiești mai liber, mai autentic și mai conștient.",
     quote: "Până nu vei aduce în conștient ceea ce este inconștient, acesta îți va ghida viața, iar tu îl vei numi destin.",
@@ -59,7 +59,7 @@ const specializations: Specialization[] = [
     id: "previzionala",
     title: "Astrologie Previzională",
     icon: Calendar,
-    image: "/cards-foto/astrologie-previzionala.png",
+    image: "/design-nou/foto/astrologie-previzionala.png",
     shortDesc:
       "Harta previzionala  arată cum mișcarea planetelor în prezent influențează energiile din harta ta natală. Este ca un ghid al valurilor universului: unele perioade aduc oportunități și inspirație, altele provocări care te ajută să crești.",
     quote: "Ceea ce ignorăm persistă, iar ceea ce îmbrățișăm se transformă",
@@ -73,7 +73,7 @@ const specializations: Specialization[] = [
     quote: "Eu nu sunt ceea ce mi s-a intamplat,sunt ceea ce aleg sa devin.",
     author: "Carl Jung",
     icon: Sun,
-    image: "/cards-foto/RevolutiiSoalre.png",
+    image: "/design-nou/foto/revolutii-solare.png",
     area: "revolutii",
   },
 ];
@@ -96,7 +96,7 @@ function BentoTile({
       viewport={{ once: true, margin: "-60px", amount: 0.3 }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ scale: 1.02 }}
-      className="bento-tile group relative flex h-full flex-col justify-end overflow-hidden rounded-2xl border border-white/[0.08] glass-card transition-all duration-500 hover:border-[#6d28d9]/50"
+      className="bento-tile group relative flex h-full flex-col justify-end overflow-hidden rounded-2xl border border-white/[0.08] glass-card transition-all duration-500 hover:border-[var(--npul-purple)]/50"
       style={{ gridArea: spec.area }}
     >
       <motion.div
@@ -116,18 +116,18 @@ function BentoTile({
         </div>
 
         {/* Title */}
-        <h3 className="font-serif text-lg font-bold tracking-wide md:text-xl text-[#A5F3FC]">
+        <h3 className="font-serif text-lg font-bold tracking-wide md:text-xl text-[var(--npul-purple)]">
           {spec.title}
         </h3>
 
         {/* Short desc */}
-        <p className="mb-4 text-[13px] leading-relaxed md:text-sm font-semibold text-[#A5F3FC]">
+        <p className="mb-4 text-[13px] leading-relaxed md:text-sm font-semibold text-[var(--npul-purple)]">
           {spec.shortDesc}
         </p>
 
         {spec.quote && (
-          <div className="mt-2 border-l-2 border-[#E0AB76]/40 pl-3 italic">
-            <p className="text-[12px] leading-tight text-[#A5F3FC]/90 md:text-[13px]">
+          <div className="mt-2 border-l-2 border-[var(--npul-gold)]/40 pl-3 italic">
+            <p className="text-[12px] leading-tight text-[var(--npul-purple)]/90 md:text-[13px]">
               &ldquo;{spec.quote}&rdquo;
             </p>
             {spec.author && (
@@ -146,8 +146,16 @@ function BentoTile({
 
 export default function SpecializationsCarousel() {
   return (
-    <section id="specializari" className="relative py-20 md:py-32">
-      <div className="container relative mx-auto px-4 md:px-6">
+    <section id="specializari" className="relative py-20 md:py-32 overflow-hidden">
+      {/* Background Image for the section */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30 mix-blend-lighten"
+        style={{ backgroundImage: "url('/design-nou/foto/foto-coperta.png')" }}
+      />
+      {/* Gradient mask to gracefully fade top and bottom edges into the main theme color */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0b0e14] via-transparent to-[#0b0e14]" />
+
+      <div className="container relative z-10 mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="mb-12 text-center font-bold md:mb-20">
           <motion.h2
@@ -156,7 +164,7 @@ export default function SpecializationsCarousel() {
             viewport={{ once: true }}
             className="mb-4 font-serif text-[33px] md:text-[53px]"
             style={{
-              backgroundImage: "linear-gradient(to right, #9A4EAE, #D47AFE)",
+              backgroundImage: "linear-gradient(to right, var(--npul-purple), var(--npul-accent))",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
@@ -171,7 +179,7 @@ export default function SpecializationsCarousel() {
             transition={{ delay: 0.1 }}
             className="mx-auto max-w-2xl font-bold md:text-xl leading-relaxed font-semibold"
             style={{
-              backgroundImage: "linear-gradient(to right, #3a0446ff, #028ee6ff)",
+              backgroundImage: "linear-gradient(to right, var(--npul-gold), var(--npul-accent))",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
@@ -231,8 +239,8 @@ export default function SpecializationsCarousel() {
                       </p>
 
                       {spec.quote && (
-                        <div className="mb-4 border-l-2 border-[#E0AB76]/40 pl-3 italic">
-                          <p className="text-[12px] leading-tight text-[#E0AB76]/90">
+                        <div className="mb-4 border-l-2 border-[var(--npul-gold)]/40 pl-3 italic">
+                          <p className="text-[12px] leading-tight text-[var(--npul-gold)]/90">
                             &ldquo;{spec.quote}&rdquo;
                           </p>
                           {spec.author && (

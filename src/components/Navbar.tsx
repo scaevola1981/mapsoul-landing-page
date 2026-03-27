@@ -41,7 +41,7 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-[150] bg-[#0b0e14]/80 backdrop-blur-md shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)] border-b border-[rgba(255,255,255,0.05)] transition-all duration-300"
+      className="fixed top-0 left-0 w-full z-[150] bg-[#0D0213]/40 backdrop-blur-md shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)] border-b border-[rgba(255,255,255,0.05)] transition-all duration-300"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         {/* Logo */}
@@ -53,9 +53,9 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="MapSoul Logo"
-            width={isScrolled ? 80 : 80}
-            height={isScrolled ? 80 : 80}
-            className="object-contain transition-all duration-300"
+            width={50}
+            height={50}
+            className="object-contain transition-all duration-300 rounded-[12px]"
           />
         </a>
 
@@ -66,7 +66,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
-              className="text-sm font-medium tracking-wide text-[#ededed]/80 transition-colors hover:text-[#e0ab76] cursor-pointer"
+              className="text-sm font-medium tracking-wide text-[#ededed]/80 transition-colors hover:text-[#DFB0FF] cursor-pointer"
             >
               {link.name}
             </a>
@@ -75,7 +75,7 @@ export default function Navbar() {
             href="https://wa.me/40752102281?text=Bun%C4%83%2C%20a%C8%99%20dori%20o%20programare%20(MapSoul)%20pentru%20..."
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-[#9A4EAE]/30 bg-[#9A4EAE] px-5 py-2 text-sm font-medium text-white transition-all hover:bg-[#9A4EAE]/90"
+            className="rounded-full border border-[var(--npul-accent)]/30 bg-[var(--npul-accent)] px-5 py-2 text-sm font-medium text-white transition-all hover:bg-[var(--npul-accent)]/90"
           >
             Programează pe WhatsApp
           </a>
@@ -107,7 +107,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-lg font-medium text-[#ededed] transition-colors hover:text-[#e0ab76] cursor-pointer"
+                  className="text-lg font-medium text-[#ededed] transition-colors hover:text-[#DFB0FF] cursor-pointer"
                 >
                   {link.name}
                 </a>
@@ -117,7 +117,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}  
-                className="rounded-full border border-[#9A4EAE]/30 bg-[#9A4EAE] px-5 py-2 text-sm font-medium text-white transition-all hover:bg-[#9A4EAE]/90"
+                className="rounded-full border border-[#7E57C2]/30 bg-[#7E57C2] px-5 py-2 text-sm font-medium text-white transition-all hover:bg-[#7E57C2]/90"
               >
                 Programează pe WhatsApp
               </a>

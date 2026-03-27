@@ -19,31 +19,31 @@ export default function Footer() {
               className="object-contain"
             />
           </Link>
-          <p className="max-w-xs text-center text-sm leading-relaxed text-[#E0AB76]/70 md:text-left">
+          <p className="max-w-xs text-center text-sm leading-relaxed text-[var(--npul-gold)]/70 md:text-left">
             Hărțile astrologice sunt instrumente pentru a ajunge la tine, cu claritate și iubire.
           </p>
         </div>
 
         {/* Links */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="mb-3 font-serif text-lg text-[#BC8F8F]">Navigare</h4>
-          <nav className="flex flex-col items-center gap-2 text-sm text-[#E0AB76]/80 md:items-start">
-            <Link href="#hero" className="transition-colors hover:text-[#9A4EAE]">Acasă</Link>
-            <Link href="#specializari" className="transition-colors hover:text-[#9A4EAE]">Harti ale Sufletului</Link>
-            <Link href="#metoda" className="transition-colors hover:text-[#9A4EAE]">Metoda Mea</Link>
+          <h4 className="mb-3 font-serif text-lg text-[var(--npul-gold)]">Navigare</h4>
+          <nav className="flex flex-col items-center gap-2 text-sm text-[var(--npul-gold)]/80 md:items-start">
+            <Link href="#hero" className="transition-colors hover:text-[var(--npul-accent)]">Acasă</Link>
+            <Link href="#specializari" className="transition-colors hover:text-[var(--npul-accent)]">Harti ale Sufletului</Link>
+            <Link href="#metoda" className="transition-colors hover:text-[var(--npul-accent)]">Metoda Mea</Link>
           </nav>
         </div>
 
         {/* Contact/Socials */}
         <div className="flex flex-col items-center md:items-start">
-          <h4 className="mb-3 font-serif text-lg text-[#BC8F8F]">Conectare</h4>
+          <h4 className="mb-3 font-serif text-lg text-[var(--npul-gold)]">Conectare</h4>
           <div className="flex gap-4 mb-4">
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=ghermac_marilena@yahoo.com"
               target="_blank"
               rel="noopener noreferrer"
               title="Deschide Gmail pentru a trimite mesaj"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[#E0AB76] hover:bg-[#9A4EAE]/20 hover:text-[#9A4EAE] transition-all"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[var(--npul-gold)] hover:bg-[var(--npul-accent)]/20 hover:text-[var(--npul-accent)] transition-all"
             >
               <Mail size={20} />
             </a>
@@ -52,7 +52,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               title="Vizitează pagina de Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[#E0AB76] hover:bg-[#9A4EAE]/20 hover:text-[#9A4EAE] transition-all"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-[var(--npul-gold)] hover:bg-[var(--npul-accent)]/20 hover:text-[var(--npul-accent)] transition-all"
             >
               <Facebook size={20} />
             </a>
