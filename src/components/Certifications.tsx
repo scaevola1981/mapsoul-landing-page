@@ -29,7 +29,7 @@ export default function Certifications() {
             <CertCard 
               title="ASTROLOGIE NATALA " 
               className="h-[320px] bg-cover "
-              textColor="text-[#c1b703ff]"
+              textColor="text-[#F8FAFC]"
               style={{ backgroundImage: "url('/design-nou/foto/astrologie-natala-certificari.png')" }}
               overlay="bg-[#1a1124]/40"
               delay={0}
@@ -39,7 +39,7 @@ export default function Certifications() {
             <CertCard 
               title="ASTROLOGIE RELATIONALA" 
               className="h-[300px] bg-cover"
-              textColor="text-[#c1b703ff]"
+              textColor="text-[#F8FAFC]"
               style={{ backgroundImage: "url('/design-nou/foto/astrologie-relationala.png')" }}
               delay={0.1}
               contentClass="items-end text-left pb-8 pl-8"
@@ -52,7 +52,7 @@ export default function Certifications() {
             <CertCard 
               title= 'ASTROLOGIE KARMICA'
               className="h-[460px] bg-cover"
-              textColor="text-[#c1b703ff]"
+              textColor="text-[#F8FAFC]"
               style={{ backgroundImage: "url('/design-nou/foto/astrologie-karmica.png')" }}
               delay={0.2}
               contentClass="items-end justify-center text-center "
@@ -65,7 +65,7 @@ export default function Certifications() {
             <CertCard 
               title="ASTROLOGIE PREVIZIONALA" 
               className="h-[240px] bg-cover"
-              textColor="text-[#c1b703ff]"
+              textColor="text-[#F8FAFC]"
               delay={0.3}
               contentClass="items-end text-center justify-center pb-8"
               style={{ backgroundImage: "url('/design-nou/foto/astrologie-previzionala-certificari.png')" }}
@@ -74,7 +74,7 @@ export default function Certifications() {
             <CertCard 
               title='ARHETIPURI SI LINII DE DESTIN'
               className="h-[240px] bg-cover"
-              textColor="text-[#c1b703ff]"
+              textColor="text-[#F8FAFC]"
               delay={0.4}
               hasStars
               contentClass="items-center justify-center text-center "
@@ -128,7 +128,7 @@ function CertCard({
   overlay,
   delay = 0,
   contentClass = "items-end text-left",
-  textColor = "text-[var(--npul-gold)]",
+  textColor = "text-[#F8FAFC]",
   hasStars = false,
 }: {
   title: React.ReactNode;
@@ -159,7 +159,7 @@ function CertCard({
       )}
 
       <div className={`relative z-10 flex h-full p-6 ${contentClass}`}>
-        <h4 className={`font-serif text-[19px] md:text-[21px] font-medium leading-[1.3] ${textColor}`}>
+        <h4 className={`font-serif text-[19px] md:text-[21px] font-medium leading-[1.3] ${textColor}`} style={{ textShadow: "0 2px 4px rgba(0,0,0,0.6)" }}>
           {title}
         </h4>
       </div>

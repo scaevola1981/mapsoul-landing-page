@@ -87,10 +87,10 @@ export function PersonalPlanets() {
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-12">
-          <h2 className="mb-4 font-serif text-[32px] md:text-[42px] font-medium text-[var(--npul-purple)]">
+          <h2 className="mb-4 font-serif text-[32px] md:text-[42px] font-medium text-[#F8FAFC]" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
             Atlasul Planetar
           </h2>
-          <p className="max-w-xl text-[13px] md:text-[14px] leading-relaxed text-[var(--npul-purple)]/80">
+          <p className="max-w-xl text-[13px] md:text-[14px] leading-relaxed text-[#F8FAFC]/80">
             Fiecare corp ceresc reprezintă o funcție psihologică specifică. Înțelegerea lor
             este cheia către o viață trăită conștient.
           </p>
@@ -145,7 +145,7 @@ function Card({
     >
       <div className="mb-5 flex items-start justify-between">
         <Icon size={18} className="text-[var(--npul-gold)]" strokeWidth={2.5} />
-        <span className="text-[9px] uppercase tracking-[0.15em] text-[var(--npul-purple)]/50">
+        <span className="text-[9px] uppercase tracking-[0.15em] text-[#F8FAFC]/50">
           {role}
         </span>
       </div>
@@ -154,12 +154,12 @@ function Card({
         <span className="text-[9px] font-bold uppercase tracking-widest text-[var(--npul-gold)]/80 flex items-center gap-1.5 mb-1.5">
           <span className="opacity-50">{catNumber}</span> {categoryName}
         </span>
-        <h4 className="font-serif text-[20px] tracking-wide text-[var(--npul-purple)]">
+        <h4 className="font-serif text-[20px] tracking-wide text-[#F8FAFC]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
           {title}
         </h4>
       </div>
       
-      <p className="text-[12px] flex-1 leading-[1.6] text-[var(--npul-purple)]/70">
+      <p className="text-[12px] flex-1 leading-[1.6] text-[#F8FAFC]/70">
         {desc}
       </p>
 

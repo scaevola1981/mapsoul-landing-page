@@ -116,18 +116,18 @@ function BentoTile({
         </div>
 
         {/* Title */}
-        <h3 className="font-serif text-lg font-bold tracking-wide md:text-xl text-[#c1b703]">
+        <h3 className="font-serif text-lg font-bold tracking-wide md:text-xl text-[#F8FAFC]" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
           {spec.title}
         </h3>
 
         {/* Short desc */}
-        <p className="mb-4 text-[13px] leading-relaxed md:text-sm font-semibold text-[#c1b703]/90">
+        <p className="mb-4 text-[13px] leading-relaxed md:text-sm font-semibold text-[#F8FAFC]/90" style={{ textShadow: "0 1px 2px rgba(0,0,0,0.4)" }}>
           {spec.shortDesc}
         </p>
 
         {spec.quote && (
           <div className="mt-2 border-l-2 border-[var(--npul-gold)]/40 pl-3 italic">
-            <p className="text-[12px] leading-tight text-[#c1b703]/80 md:text-[13px]">
+            <p className="text-[12px] leading-tight text-[#F8FAFC]/80 md:text-[13px]" style={{ textShadow: "0 1px 2px rgba(0,0,0,0.4)" }}>
               &ldquo;{spec.quote}&rdquo;
             </p>
             {spec.author && (
@@ -164,7 +164,7 @@ export default function SpecializationsCarousel() {
             viewport={{ once: true }}
             className="mb-4 font-serif text-[33px] md:text-[53px]"
             style={{
-              backgroundImage: "linear-gradient(to right, #c1b703, var(--npul-accent))",
+              backgroundImage: "linear-gradient(to right, #F8FAFC, var(--npul-accent))",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
@@ -179,7 +179,7 @@ export default function SpecializationsCarousel() {
             transition={{ delay: 0.1 }}
             className="mx-auto max-w-2xl font-bold md:text-xl leading-relaxed font-semibold"
             style={{
-              backgroundImage: "linear-gradient(to right, #c1b703, var(--npul-gold))",
+              backgroundImage: "linear-gradient(to right, #F8FAFC, var(--npul-gold))",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
