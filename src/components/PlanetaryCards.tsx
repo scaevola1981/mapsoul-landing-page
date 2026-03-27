@@ -3,6 +3,84 @@
 import { motion } from "framer-motion";
 import { Sun, Moon, Heart, Zap, ArrowUpDown, Shield, Waves, Leaf, ArrowRight } from "lucide-react";
 
+const planetsData = [
+  {
+    categoryName: "Planete Personale",
+    catNumber: "01",
+    title: "Soarele",
+    role: "Identitate",
+    icon: Sun,
+    desc: "Reprezintă esența vitală, egoul conștient și voința de a fi. Este nucleul în jurul căruia se organizează restul personalității.",
+    action: "DETALII ARHETIPALE",
+  },
+  {
+    categoryName: "Planete Personale",
+    catNumber: "01",
+    title: "Luna",
+    role: "Emoție",
+    icon: Moon,
+    desc: "Guvernează instinctele, reacțiile emoționale și nevoia de securitate. Reflectă lumea interioară și amintirile subconștiente.",
+  },
+  {
+    categoryName: "Planete Personale",
+    catNumber: "01",
+    title: "Venus",
+    role: "Valori",
+    icon: Heart,
+    desc: "Arhetipul iubirii, al frumosului și al armoniei. Indică modul în care ne raportăm la relații și ce anume prețuim.",
+  },
+  {
+    categoryName: "Planete Personale",
+    catNumber: "01",
+    title: "Marte",
+    role: "Acțiune",
+    icon: Zap,
+    desc: "Forța motrice, curajul și dorința. Reprezintă modul în care ne afirmăm și cum ne luptăm pentru obiectivele noastre.",
+  },
+  {
+    categoryName: "Planete Sociale",
+    catNumber: "02",
+    title: "Jupiter",
+    role: "Expansiune",
+    icon: ArrowUpDown,
+    desc: "Marele benefic. Simbolizează creșterea, optimismul, credința și căutarea sensului suprem. Este busola noastră morală și spirituală.",
+    bullets: ["NOROC ȘI ABUNDENȚĂ", "FILOZOFIE DE VIAȚĂ"],
+    highlight: true,
+  },
+  {
+    categoryName: "Planete Sociale",
+    catNumber: "02",
+    title: "Saturn",
+    role: "Structură",
+    icon: Shield,
+    desc: "Lordul Karmei. Reprezintă disciplina, responsabilitatea, limitele și lecțiile de viață necesare pentru maturizarea sufletului.",
+  },
+  {
+    categoryName: "Transpersonale",
+    catNumber: "03",
+    title: "Uranus",
+    role: "Inovație",
+    icon: Zap,
+    desc: "Scânteia geniului și a revoltei. Guvernează schimbările bruște, originalitatea și eliberarea de sub rigorile tradiției.",
+  },
+  {
+    categoryName: "Transpersonale",
+    catNumber: "03",
+    title: "Neptun",
+    role: "Transcendență",
+    icon: Waves,
+    desc: "Lumea viselor, a misticismului și a dizolvării granițelor. Reprezintă compasiunea universală și inspirația artistică divină.",
+  },
+  {
+    categoryName: "Transpersonale",
+    catNumber: "03",
+    title: "Pluto",
+    role: "Transformare",
+    icon: Leaf,
+    desc: "Moartea și renașterea. Guvernează procesele profunde de alchimie interioară, puterea personală și eliminarea a ceea ce este perimat.",
+  },
+];
+
 export function PersonalPlanets() {
   return (
     <div className="relative w-full px-6 py-12 md:py-20 bg-transparent">
@@ -18,88 +96,11 @@ export function PersonalPlanets() {
           </p>
         </div>
 
-        {/* 3 Columns Grid */}
-        <div className="grid gap-6 md:grid-cols-3">
-          {/* Column 1: Planete Personale */}
-          <div className="flex flex-col gap-4">
-            <h3 className="mb-4 font-serif text-[22px] font-medium text-[var(--npul-accent)] flex items-center gap-3">
-              <span className="text-[12px] text-[var(--npul-gold)] font-sans">01</span>
-              Planete Personale
-            </h3>
-            <Card
-              title="Soarele"
-              role="Identitate"
-              icon={Sun}
-              desc="Reprezintă esența vitală, egoul conștient și voința de a fi. Este nucleul în jurul căruia se organizează restul personalității."
-              action="DETALII ARHETIPALE"
-            />
-            <Card
-              title="Luna"
-              role="Emoție"
-              icon={Moon}
-              desc="Guvernează instinctele, reacțiile emoționale și nevoia de securitate. Reflectă lumea interioară și amintirile subconștiente."
-            />
-            <Card
-              title="Venus"
-              role="Valori"
-              icon={Heart}
-              desc="Arhetipul iubirii, al frumosului și al armoniei. Indică modul în care ne raportăm la relații și ce anume prețuim."
-            />
-            <Card
-              title="Marte"
-              role="Acțiune"
-              icon={Zap}
-              desc="Forța motrice, curajul și dorința. Reprezintă modul în care ne afirmăm și cum ne luptăm pentru obiectivele noastre."
-            />
-          </div>
-
-          {/* Column 2: Planete Sociale */}
-          <div className="flex flex-col gap-4 mt-8 md:mt-0">
-            <h3 className="mb-4 font-serif text-[22px] font-medium text-[var(--npul-accent)] flex items-center gap-3">
-              <span className="text-[12px] text-[var(--npul-gold)] font-sans">02</span>
-              Planete Sociale
-            </h3>
-            <Card
-              title="Jupiter"
-              role="Expansiune"
-              icon={ArrowUpDown}
-              desc="Marele benefic. Simbolizează creșterea, optimismul, credința și căutarea sensului suprem. Este busola noastră morală și spirituală."
-              bullets={["NOROC ȘI ABUNDENȚĂ", "FILOZOFIE DE VIAȚĂ"]}
-              highlight
-            />
-            <Card
-              title="Saturn"
-              role="Structură"
-              icon={Shield}
-              desc="Lordul Karmei. Reprezintă disciplina, responsabilitatea, limitele și lecțiile de viață necesare pentru maturizarea sufletului."
-            />
-          </div>
-
-          {/* Column 3: Transpersonale */}
-          <div className="flex flex-col gap-4 mt-8 md:mt-0">
-            <h3 className="mb-4 font-serif text-[22px] font-medium text-[var(--npul-accent)] flex items-center gap-3">
-              <span className="text-[12px] text-[var(--npul-gold)] font-sans">03</span>
-              Transpersonale
-            </h3>
-            <Card
-              title="Uranus"
-              role="Inovație"
-              icon={Zap}
-              desc="Scânteia geniului și a revoltei. Guvernează schimbările bruște, originalitatea și eliberarea de sub rigorile tradiției."
-            />
-            <Card
-              title="Neptun"
-              role="Transcendență"
-              icon={Waves}
-              desc="Lumea viselor, a misticismului și a dizolvării granițelor. Reprezintă compasiunea universală și inspirația artistică divină."
-            />
-            <Card
-              title="Pluto"
-              role="Transformare"
-              icon={Leaf}
-              desc="Moartea și renașterea. Guvernează procesele profunde de alchimie interioară, puterea personală și eliminarea a ceea ce este perimat."
-            />
-          </div>
+        {/* 3x3 Flat Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+          {planetsData.map((planet, index) => (
+            <Card key={planet.title} {...planet} index={index} />
+          ))}
         </div>
       </div>
     </div>
@@ -114,6 +115,9 @@ function Card({
   action,
   bullets,
   highlight,
+  categoryName,
+  catNumber,
+  index,
 }: {
   title: string;
   role: string;
@@ -122,9 +126,16 @@ function Card({
   action?: string;
   bullets?: string[];
   highlight?: boolean;
+  categoryName: string;
+  catNumber: string;
+  index: number;
 }) {
   return (
     <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
       whileHover={{ scale: 1.01 }}
       className={`glass-card relative flex flex-col rounded-xl p-6 transition-all duration-300 ${
         highlight
@@ -132,16 +143,23 @@ function Card({
           : "border-white/[0.04] hover:border-white/[0.08] bg-[#1a1124]/40"
       }`}
     >
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-5 flex items-start justify-between">
         <Icon size={18} className="text-[var(--npul-gold)]" strokeWidth={2.5} />
         <span className="text-[9px] uppercase tracking-[0.15em] text-[var(--npul-purple)]/50">
           {role}
         </span>
       </div>
-      <h4 className="mb-3 font-serif text-[20px] tracking-wide text-[var(--npul-purple)]">
-        {title}
-      </h4>
-      <p className="text-[12px] leading-[1.6] text-[var(--npul-purple)]/70">
+      
+      <div className="mb-3">
+        <span className="text-[9px] font-bold uppercase tracking-widest text-[var(--npul-gold)]/80 flex items-center gap-1.5 mb-1.5">
+          <span className="opacity-50">{catNumber}</span> {categoryName}
+        </span>
+        <h4 className="font-serif text-[20px] tracking-wide text-[var(--npul-purple)]">
+          {title}
+        </h4>
+      </div>
+      
+      <p className="text-[12px] flex-1 leading-[1.6] text-[var(--npul-purple)]/70">
         {desc}
       </p>
 
