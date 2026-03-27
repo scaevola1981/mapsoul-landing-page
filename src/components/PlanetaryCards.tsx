@@ -1,120 +1,167 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Moon, Sun, Star, Orbit, Sparkles } from "lucide-react";
+import { Sun, Moon, Heart, Zap, ArrowUpDown, Shield, Waves, Leaf, ArrowRight } from "lucide-react";
 
 export function PersonalPlanets() {
   return (
-    <div className="relative w-full px-6 py-6 md:py-10">
+    <div className="relative w-full px-6 py-12 md:py-20 bg-transparent">
       <div className="mx-auto max-w-6xl">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 text-center"
-        >
-          <h2 className="mb-4 font-serif text-[33px] font-bold text-[var(--npul-purple)] md:text-[53px] opacity-100">
-            Planetele Personale — Fundamentul Identității
+        {/* Header */}
+        <div className="mb-12">
+          <h2 className="mb-4 font-serif text-[32px] md:text-[42px] font-medium text-[var(--npul-purple)]">
+            Atlasul Planetar
           </h2>
-          <p className="mx-auto max-w-2xl text-lg md:text-xl leading-relaxed font-semibold text-[var(--npul-purple)] opacity-100"
-            style={{
-              backgroundImage: "linear-gradient(to right, var(--npul-accent), var(--npul-gold))",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            Nu sunt predicții, ci oglinzi simbolice care invită la reflecție.
+          <p className="max-w-xl text-[13px] md:text-[14px] leading-relaxed text-[var(--npul-purple)]/80">
+            Fiecare corp ceresc reprezintă o funcție psihologică specifică. Înțelegerea lor
+            este cheia către o viață trăită conștient.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Cards grid — Bento Grid Layout with new photos */}
-        <div className="grid-bento-layout mx-auto max-w-5xl">
-          
-          {/* Card 1: Natala (Spans 2 columns) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{ scale: 1.02 }}
-            className="glass-card [grid-area:natala] flex flex-col items-center justify-center p-8 rounded-[32px] overflow-hidden relative min-h-[300px]"
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
-              style={{ backgroundImage: "url('/design-nou/foto/astrologie-natala.png')" }}
+        {/* 3 Columns Grid */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {/* Column 1: Planete Personale */}
+          <div className="flex flex-col gap-4">
+            <h3 className="mb-4 font-serif text-[22px] font-medium text-[var(--npul-accent)] flex items-center gap-3">
+              <span className="text-[12px] text-[var(--npul-gold)] font-sans">01</span>
+              Planete Personale
+            </h3>
+            <Card
+              title="Soarele"
+              role="Identitate"
+              icon={Sun}
+              desc="Reprezintă esența vitală, egoul conștient și voința de a fi. Este nucleul în jurul căruia se organizează restul personalității."
+              action="DETALII ARHETIPALE"
             />
-            <div className="relative z-10 text-center">
-              <h3 className="mb-2 font-serif text-3xl font-bold">Astrologie Natală</h3>
-              <p className="text-[#ededed]/90 max-w-sm mx-auto">
-                Harta sufletului tău la momentul nașterii. Descoperă-ți potențialul, darurile și provocările fundamentale ale existenței tale.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Card 2: Karmica */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{ scale: 1.02 }}
-            className="glass-card [grid-area:karmica] flex flex-col items-center justify-center p-8 rounded-[32px] overflow-hidden relative min-h-[300px]"
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
-              style={{ backgroundImage: "url('/design-nou/foto/karma-sign.png')" }}
+            <Card
+              title="Luna"
+              role="Emoție"
+              icon={Moon}
+              desc="Guvernează instinctele, reacțiile emoționale și nevoia de securitate. Reflectă lumea interioară și amintirile subconștiente."
             />
-            <div className="relative z-10 text-center">
-              <h3 className="mb-2 font-serif text-2xl font-bold">Astrologie Karmică</h3>
-              <p className="text-[#ededed]/90">
-                Înțelege tiparele din trecut care îți modelează prezentul și misiunea în această viață.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Card 3: Previzionala (Spans 2 columns on bottom) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{ scale: 1.02 }}
-            className="glass-card [grid-area:previzionala] flex flex-col items-center justify-center p-8 rounded-[32px] overflow-hidden relative min-h-[300px]"
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
-              style={{ backgroundImage: "url('/design-nou/foto/astrologie-previzionala.png')" }}
+            <Card
+              title="Venus"
+              role="Valori"
+              icon={Heart}
+              desc="Arhetipul iubirii, al frumosului și al armoniei. Indică modul în care ne raportăm la relații și ce anume prețuim."
             />
-            <div className="relative z-10 text-center">
-              <h3 className="mb-2 font-serif text-3xl font-bold">Astrologie Previzională</h3>
-              <p className="text-[#ededed]/90 max-w-sm mx-auto">
-                Anticipează ciclurile vieții și pregătește-te pentru tranzitele care urmează, folosind energia astrală în favoarea ta.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Card 4: Revolutii Solare */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            whileHover={{ scale: 1.02 }}
-            className="glass-card [grid-area:revolutii] flex flex-col items-center justify-center p-8 rounded-[32px] overflow-hidden relative min-h-[300px]"
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
-              style={{ backgroundImage: "url('/design-nou/foto/revolutii-solare.png')" }}
+            <Card
+              title="Marte"
+              role="Acțiune"
+              icon={Zap}
+              desc="Forța motrice, curajul și dorința. Reprezintă modul în care ne afirmăm și cum ne luptăm pentru obiectivele noastre."
             />
-            <div className="relative z-10 text-center">
-              <h3 className="mb-2 font-serif text-2xl font-bold">Revoluții Solare</h3>
-              <p className="text-[#ededed]/90">
-                Află tema principală a anului tău personal de la o zi de naștere la alta.
-              </p>
-            </div>
-          </motion.div>
+          </div>
 
+          {/* Column 2: Planete Sociale */}
+          <div className="flex flex-col gap-4 mt-8 md:mt-0">
+            <h3 className="mb-4 font-serif text-[22px] font-medium text-[var(--npul-accent)] flex items-center gap-3">
+              <span className="text-[12px] text-[var(--npul-gold)] font-sans">02</span>
+              Planete Sociale
+            </h3>
+            <Card
+              title="Jupiter"
+              role="Expansiune"
+              icon={ArrowUpDown}
+              desc="Marele benefic. Simbolizează creșterea, optimismul, credința și căutarea sensului suprem. Este busola noastră morală și spirituală."
+              bullets={["NOROC ȘI ABUNDENȚĂ", "FILOZOFIE DE VIAȚĂ"]}
+              highlight
+            />
+            <Card
+              title="Saturn"
+              role="Structură"
+              icon={Shield}
+              desc="Lordul Karmei. Reprezintă disciplina, responsabilitatea, limitele și lecțiile de viață necesare pentru maturizarea sufletului."
+            />
+          </div>
+
+          {/* Column 3: Transpersonale */}
+          <div className="flex flex-col gap-4 mt-8 md:mt-0">
+            <h3 className="mb-4 font-serif text-[22px] font-medium text-[var(--npul-accent)] flex items-center gap-3">
+              <span className="text-[12px] text-[var(--npul-gold)] font-sans">03</span>
+              Transpersonale
+            </h3>
+            <Card
+              title="Uranus"
+              role="Inovație"
+              icon={Zap}
+              desc="Scânteia geniului și a revoltei. Guvernează schimbările bruște, originalitatea și eliberarea de sub rigorile tradiției."
+            />
+            <Card
+              title="Neptun"
+              role="Transcendență"
+              icon={Waves}
+              desc="Lumea viselor, a misticismului și a dizolvării granițelor. Reprezintă compasiunea universală și inspirația artistică divină."
+            />
+            <Card
+              title="Pluto"
+              role="Transformare"
+              icon={Leaf}
+              desc="Moartea și renașterea. Guvernează procesele profunde de alchimie interioară, puterea personală și eliminarea a ceea ce este perimat."
+            />
+          </div>
         </div>
       </div>
     </div>
+  );
+}
+
+function Card({
+  title,
+  role,
+  icon: Icon,
+  desc,
+  action,
+  bullets,
+  highlight,
+}: {
+  title: string;
+  role: string;
+  icon: any;
+  desc: string;
+  action?: string;
+  bullets?: string[];
+  highlight?: boolean;
+}) {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.01 }}
+      className={`glass-card relative flex flex-col rounded-xl p-6 transition-all duration-300 ${
+        highlight
+          ? "border-[var(--npul-gold)]/30 shadow-[0_0_20px_rgba(233,195,73,0.08)] bg-[#2a1b38]/40"
+          : "border-white/[0.04] hover:border-white/[0.08] bg-[#1a1124]/40"
+      }`}
+    >
+      <div className="mb-4 flex items-center justify-between">
+        <Icon size={18} className="text-[var(--npul-gold)]" strokeWidth={2.5} />
+        <span className="text-[9px] uppercase tracking-[0.15em] text-[var(--npul-purple)]/50">
+          {role}
+        </span>
+      </div>
+      <h4 className="mb-3 font-serif text-[20px] tracking-wide text-[var(--npul-purple)]">
+        {title}
+      </h4>
+      <p className="text-[12px] leading-[1.6] text-[var(--npul-purple)]/70">
+        {desc}
+      </p>
+
+      {bullets && (
+        <ul className="mt-4 space-y-2.5">
+          {bullets.map((b) => (
+            <li key={b} className="flex items-center gap-2 text-[8px] tracking-[0.1em] text-[var(--npul-gold)] uppercase font-semibold">
+              <div className="h-1 w-1 rounded-full bg-[var(--npul-gold)]/80" />
+              {b}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {action && (
+        <div className="mt-5 flex items-center gap-1.5 text-[8.5px] font-bold tracking-[0.15em] text-[var(--npul-accent)] hover:text-[var(--npul-accent)]/80 transition-colors uppercase w-fit cursor-pointer">
+          {action}
+          <ArrowRight size={10} strokeWidth={2.5} />
+        </div>
+      )}
+    </motion.div>
   );
 }
