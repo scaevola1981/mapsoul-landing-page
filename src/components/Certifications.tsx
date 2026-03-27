@@ -1,92 +1,173 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { BadgeCheck, ArrowRight } from "lucide-react";
-
-const certificates = [
-  {
-    file: "/certificates/natala.jpeg",
-    title: "Astrologie Natală",
-    issuer: "Școala de Științe Spirituale Barbara Băcăuanu",
-    date: "01.07.2024",
-  },
-  {
-    file: "/certificates/relationala.jpeg",
-    title: "Astrologie Relațională",
-    issuer: "Școala de Științe Spirituale Barbara Băcăuanu",
-    date: "01.07.2024",
-  },
-  {
-    file: "/certificates/karmica.jpg",
-    title: "Astrologie Karmică",
-    issuer: "Școala de Științe Spirituale Barbara Băcăuanu",
-    date: "01.07.2024",
-  },
-  {
-    file: "/certificates/previzionala.jpeg",
-    title: "Astrologie Previzională",
-    issuer: "Școala de Științe Spirituale Barbara Băcăuanu",
-    date: "01.07.2024",
-  },
-  {
-    file: "/certificates/arhetipuri.jpeg",
-    title: "Arhetipuri & Linii de destin ",
-    issuer: "Școala de Științe Spirituale",
-    date: "2024",
-  },
-];
+import { BadgeCheck, Sparkles } from "lucide-react";
 
 export default function Certifications() {
   return (
-    <section className="relative w-full px-6 py-12 md:py-16">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-8 flex items-center justify-between gap-4">
-          <div>
-            <h2 className="font-serif text-[30px] md:text-[44px] font-bold text-[#9A4EAE]">
-              Certificări & Formări
-            </h2>
-            <p className="text-sm md:text-base text-[#b9d8f9ff]">
-              Diplome reale, formare acreditată – transparență pentru clienți.
-            </p>
-          </div>
-          <BadgeCheck className="hidden md:block h-10 w-10 text-[#E0AB76]" />
+    <section className="relative w-full px-6 py-16 md:py-24 bg-transparent">
+      <div className="mx-auto max-w-5xl">
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <span className="mb-4 block text-[10px] font-bold tracking-[0.2em] text-[var(--npul-gold)] uppercase">
+            Excelență Academică și Spirituală
+          </span>
+          <h2 className="mb-6 font-serif text-[32px] md:text-[46px] font-medium text-[var(--npul-purple)]">
+            Certificări & Formări
+          </h2>
+          <p className="mx-auto max-w-2xl text-[13px] md:text-[14px] leading-relaxed text-[var(--npul-purple)]/80">
+            O călătorie de studiu continuu, integrând psihologia profunzimilor cu 
+            înțelepciunea ancestrală a astrelor pentru a oferi o ghidare de o precizie impecabilă.
+          </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 pb-4">
-          {certificates.map((cert, i) => (
-            <motion.div
-              key={cert.file}
-              className="w-[280px] md:w-[320px] rounded-2xl border border-white/[0.08] glass-card overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-            >
-              <div className="relative aspect-[4/3] w-full bg-black/30">
-                <Image
-                  src={cert.file}
-                  alt={cert.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 80vw, 320px"
-                  onError={(e) => {
-                    // fallback to logo if imaginea lipsă
-                    (e.currentTarget as HTMLImageElement).src = "/logo.png";
-                  }}
-                />
-              </div>
-              <div className="p-4 space-y-2 text-sm">
-                <p className="font-semibold text-[#b9d8f9ff]">{cert.title}</p>
-                <p className="text-[#ededed]/80">{cert.issuer}</p>
-                <div className="flex items-center gap-2 text-xs text-[#ededed]/60">
-                  <ArrowRight size={14} /> {cert.date}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+          {/* Column 1 */}
+          <div className="flex flex-col gap-6">
+            {/* Card 1 */}
+            <CertCard 
+              title="Masterat în Psihologie Analitică" 
+              className="h-[320px] bg-cover bg-left md:bg-center"
+              style={{ backgroundImage: "url('/design-nou/foto/certificari.png')" }}
+              overlay="bg-[#1a1124]/40"
+              delay={0}
+              contentClass="items-end text-left pb-8 pl-8"
+            />
+            {/* Card 4 */}
+            <CertCard 
+              title="Simbolism Arhetipal" 
+              className="h-[300px] bg-gradient-to-br from-[#1e2333] to-[#0b0e14]"
+              delay={0.1}
+              contentClass="items-end text-left pb-8 pl-8"
+            />
+          </div>
+
+          {/* Column 2 */}
+          <div className="flex flex-col gap-6 mt-6 md:mt-0">
+            {/* Card 2 */}
+            <CertCard 
+              title={<>Diplomă Avansată în<br/>Astrologie Evolutivă</>}
+              className="h-[460px] bg-gradient-to-b from-[#162744] to-[#0d1424]"
+              delay={0.2}
+              contentClass="items-end justify-center text-center pb-12"
+            />
+          </div>
+
+          {/* Column 3 */}
+          <div className="flex flex-col gap-6 mt-6 md:mt-0">
+            {/* Card 3 */}
+            <CertCard 
+              title="Terapia Prin Regresie" 
+              className="h-[240px] bg-[#e6e2db]"
+              textColor="text-[#a8823b]"
+              delay={0.3}
+              contentClass="items-end text-center justify-center pb-8"
+            />
+            {/* Card 5 */}
+            <CertCard 
+              title={<>Masterclass:<br/>Umbra și Lumina</>}
+              className="h-[240px] bg-[#1a1124]"
+              delay={0.4}
+              hasStars
+              contentClass="items-center justify-center text-center"
+            />
+          </div>
+        </div>
+
+        {/* Garantia Calitatii */}
+        <div className="mt-28">
+          <div className="flex flex-col items-center justify-center text-center">
+            <div className="mb-4 flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[var(--npul-gold)]/10">
+              <BadgeCheck className="h-8 w-8 text-[var(--npul-gold)]" fill="currentColor" stroke="#1a1124" />
+            </div>
+            <h3 className="font-serif text-[28px] md:text-[32px] font-medium text-[var(--npul-purple)] mb-14">
+              Garanția Calității
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <Feature 
+              title="ACREDITARE" 
+              desc="Toate formările sunt recunoscute la nivel internațional de forurile profesionale de psihologie și astrologie." 
+            />
+            <Feature 
+              title="ETICĂ" 
+              desc="Practică bazată pe codul deontologic al Federației Europene a Psihologilor (EFPA)." 
+            />
+            <Feature 
+              title="EVOLUȚIE" 
+              desc="Peste 500 de ore de supervizare și formare continuă realizate anual pentru menținerea standardelor." 
+            />
+          </div>
+        </div>
+
+        {/* Footer Quote */}
+        <div className="mt-24 text-center">
+          <p className="font-serif text-[18px] md:text-[20px] italic text-[var(--npul-purple)]/90 font-light">
+            "Cunoașterea fără metodă este rătăcire, iar metoda fără suflet este ariditate."
+          </p>
         </div>
       </div>
     </section>
+  );
+}
+
+function CertCard({
+  title,
+  className = "",
+  style,
+  overlay,
+  delay = 0,
+  contentClass = "items-end text-left",
+  textColor = "text-[var(--npul-gold)]",
+  hasStars = false,
+}: {
+  title: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+  overlay?: string;
+  delay?: number;
+  contentClass?: string;
+  textColor?: string;
+  hasStars?: boolean;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, delay }}
+      whileHover={{ y: -4 }}
+      style={style}
+      className={`relative w-full overflow-hidden rounded-xl glass-card border border-white/5 transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.3)] ${className}`}
+    >
+      {overlay && <div className={`absolute inset-0 z-0 ${overlay}`} />}
+      
+      {hasStars && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+           <Sparkles className="h-20 w-20 text-[var(--npul-accent)] opacity-20" strokeWidth={1} />
+        </div>
+      )}
+
+      <div className={`relative z-10 flex h-full p-6 ${contentClass}`}>
+        <h4 className={`font-serif text-[19px] md:text-[21px] font-medium leading-[1.3] ${textColor}`}>
+          {title}
+        </h4>
+      </div>
+    </motion.div>
+  );
+}
+
+function Feature({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="flex flex-col text-center md:text-left">
+      <h5 className="mb-3 text-[10px] md:text-[11px] font-bold tracking-[0.15em] text-[var(--npul-accent)] uppercase">
+        {title}
+      </h5>
+      <p className="text-[12px] md:text-[13px] leading-relaxed text-[var(--npul-purple)]/70">
+        {desc}
+      </p>
+    </div>
   );
 }
