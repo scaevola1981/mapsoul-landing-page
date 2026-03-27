@@ -192,10 +192,12 @@ export default function SpecializationsCarousel() {
         </div>
 
         {/* Bento Grid (Desktop) */}
-        <div className="hidden md:grid-bento-layout md:grid bg-transparent">
-          {specializations.map((spec, i) => (
-            <BentoTile key={spec.id} spec={spec} index={i} />
-          ))}
+        <div className="hidden md:flex justify-center w-full">
+          <div className="grid-bento-layout grid bg-transparent w-full max-w-5xl">
+            {specializations.map((spec, i) => (
+              <BentoTile key={spec.id} spec={spec} index={i} />
+            ))}
+          </div>
         </div>
 
         {/* Carousel (Mobile) */}
