@@ -27,17 +27,20 @@ export default function Certifications() {
           <div className="flex flex-col gap-6">
             {/* Card 1 */}
             <CertCard 
-              title="Masterat în Psihologie Analitică" 
-              className="h-[320px] bg-cover bg-left md:bg-center"
-              style={{ backgroundImage: "url('/design-nou/foto/certificari.png')" }}
+              title="ASTROLOGIE NATALA " 
+              className="h-[320px] bg-cover "
+              textColor="text-[#c1b703ff]"
+              style={{ backgroundImage: "url('/design-nou/foto/astrologie-natala-certificari.png')" }}
               overlay="bg-[#1a1124]/40"
               delay={0}
               contentClass="items-end text-left pb-8 pl-8"
             />
             {/* Card 4 */}
             <CertCard 
-              title="Simbolism Arhetipal" 
-              className="h-[300px] bg-gradient-to-br from-[#1e2333] to-[#0b0e14]"
+              title="ASTROLOGIE RELATIONALA" 
+              className="h-[300px] bg-cover"
+              textColor="text-[#c1b703ff]"
+              style={{ backgroundImage: "url('/design-nou/foto/astrologie-relationala.png')" }}
               delay={0.1}
               contentClass="items-end text-left pb-8 pl-8"
             />
@@ -47,10 +50,12 @@ export default function Certifications() {
           <div className="flex flex-col gap-6 mt-6 md:mt-0">
             {/* Card 2 */}
             <CertCard 
-              title={<>Diplomă Avansată în<br/>Astrologie Evolutivă</>}
-              className="h-[460px] bg-gradient-to-b from-[#162744] to-[#0d1424]"
+              title= 'ASTROLOGIE KARMICA'
+              className="h-[460px] bg-cover"
+              textColor="text-[#c1b703ff]"
+              style={{ backgroundImage: "url('/design-nou/foto/astrologie-karmica.png')" }}
               delay={0.2}
-              contentClass="items-end justify-center text-center pb-12"
+              contentClass="items-end justify-center text-center "
             />
           </div>
 
@@ -58,19 +63,22 @@ export default function Certifications() {
           <div className="flex flex-col gap-6 mt-6 md:mt-0">
             {/* Card 3 */}
             <CertCard 
-              title="Terapia Prin Regresie" 
-              className="h-[240px] bg-[#e6e2db]"
-              textColor="text-[#a8823b]"
+              title="ASTROLOGIE PREVIZIONALA" 
+              className="h-[240px] bg-cover"
+              textColor="text-[#c1b703ff]"
               delay={0.3}
               contentClass="items-end text-center justify-center pb-8"
+              style={{ backgroundImage: "url('/design-nou/foto/astrologie-previzionala-certificari.png')" }}
             />
             {/* Card 5 */}
             <CertCard 
-              title={<>Masterclass:<br/>Umbra și Lumina</>}
-              className="h-[240px] bg-[#1a1124]"
+              title='ARHETIPURI SI LINII DE DESTIN'
+              className="h-[240px] bg-cover"
+              textColor="text-[#c1b703ff]"
               delay={0.4}
               hasStars
-              contentClass="items-center justify-center text-center"
+              contentClass="items-center justify-center text-center "
+              style={{ backgroundImage: "url('/design-nou/foto/astrologie-arhetipuri.png')" }}
             />
           </div>
         </div>
