@@ -104,8 +104,8 @@ function BentoTile({
         style={{ backgroundImage: `url(${spec.image})` }}
       />
 
-      {/* Glass overlay on hover */}
-      <div className="absolute inset-0 backdrop-blur-[0px] transition-all duration-500 group-hover:backdrop-blur-[4px]" />
+      {/* Dark overlay and blur for text visibility */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[10px] transition-all duration-500 group-hover:bg-black/20 group-hover:backdrop-blur-[6px]" />
 
       {/* Content */}
       <div className="relative z-10 p-5 md:p-6">
@@ -223,6 +223,7 @@ export default function SpecializationsCarousel() {
                       className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${spec.image})` }}
                     />
+                    <div className="absolute inset-0 bg-black/40 backdrop-blur-[8px]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                     <div className="relative z-10 p-6">
