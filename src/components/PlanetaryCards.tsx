@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Sun, Moon, Heart, Zap, ArrowUpDown, Shield, Waves, Leaf, ArrowRight } from "lucide-react";
 
 const planetsData = [
@@ -82,15 +83,28 @@ const planetsData = [
 ];
 
 export function PersonalPlanets() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  const nebulaY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const stardustY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
+
   return (
-    <div className="relative w-full px-6 py-12 md:py-20 bg-transparent">
-      <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="mb-12">
-          <h2 className="mb-4 font-serif text-[32px] md:text-[42px] font-medium text-[#F8FAFC]" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
+    <div ref={sectionRef} className="relative w-full px-6 py-8 md:py-12 bg-transparent overflow-hidden">
+      
+      {/* Background Bridge: Nebula & Stardust */}
+      {/* Background Bridge: Nebula & Stardust - REMOVED FOR CLEAN DESIGN */}
+      <div className="pointer-events-none absolute inset-0 z-0 " />
+      <div className="mx-auto max-w-6xl pt-[100px]">
+        <div className="mb-12 text-center flex flex-col items-center">
+          <h2 className="mb-4 font-serif text-[32px] md:text-[42px] font-medium font-bold text-[#F8FAFC]" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
             Atlasul Planetar
           </h2>
-          <p className="max-w-xl text-[13px] md:text-[14px] leading-relaxed text-[#F8FAFC]/80">
+          <p className="max-w-xl text-[13px] md:text-[14px] leading-relaxed text-[#F8FAFC]/80 mx-auto">
             Fiecare corp ceresc reprezintă o funcție psihologică specifică. Înțelegerea lor
             este cheia către o viață trăită conștient.
           </p>
@@ -137,10 +151,10 @@ function Card({
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
       whileHover={{ scale: 1.01 }}
-      className={`glass-card relative flex flex-col rounded-xl p-6 transition-all duration-300 ${
+      className={`glass-card relative flex flex-col rounded-[40px] p-8 md:p-10 transition-all duration-300 ${
         highlight
-          ? "border-[var(--npul-gold)]/30 shadow-[0_0_20px_rgba(233,195,73,0.08)] bg-[#2a1b38]/40"
-          : "border-white/[0.04] hover:border-white/[0.08] bg-[#1a1124]/40"
+          ? "border-[var(--npul-gold)]/30 shadow-[0_12px_40px_rgba(233,195,73,0.1)] bg-[#2a1b38]/40"
+          : "border-white/[0.04] hover:border-white/[0.08] bg-[#1a1124]/40 shadow-2xl"
       }`}
     >
       <div className="mb-5 flex items-start justify-between">

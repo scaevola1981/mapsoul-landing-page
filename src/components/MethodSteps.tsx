@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { MessageCircle, Map, Compass } from "lucide-react";
 
 const steps = [
@@ -28,11 +29,23 @@ const steps = [
 ];
 
 export default function MethodSteps() {
+  const containerRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const nebulaY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const starfieldY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
   return (
     <section
       id="metoda"
-      className="relative w-full px-6 py-12 md:py-16"
+      ref={containerRef}
+      className="relative w-full px-6 py-8 md:py-12 overflow-hidden"
     >
+      {/* Background Bridge: Nebula & Stardust - REMOVED FOR CLEAN DESIGN */}
+      <div className="pointer-events-none absolute inset-0 z-0 " />
+
       <div className="mx-auto w-full max-w-6xl">
         {/* Header */}
         <motion.div
@@ -77,11 +90,11 @@ export default function MethodSteps() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px", amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="group relative flex flex-col rounded-2xl border border-white/[0.08] glass-card p-7 transition-all duration-500 hover:border-[var(--npul-purple)]/40 hover:bg-white/[0.06]"
+                className="group relative flex flex-col rounded-[40px] border border-white/[0.08] glass-card p-8 md:p-10 transition-all duration-500 hover:border-[var(--npul-purple)]/40 hover:bg-white/[0.06] shadow-2xl"
               >
                 {/* Glow on hover */}
                 <div
-                  className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  className="pointer-events-none absolute inset-0 rounded-[40px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   style={{
                     background:
                       "radial-gradient(ellipse at 50% 0%, rgba(212,187,255,0.1) 0%, transparent 65%)",

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function JungQuote() {
   return (
-    <section className="relative w-full overflow-hidden px-6 py-6 md:py-8">
+    <section className="relative z-0 w-full overflow-hidden px-6 py-6 md:py-8">
       <div className="mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

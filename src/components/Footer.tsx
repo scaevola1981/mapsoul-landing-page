@@ -12,10 +12,10 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start">
           <Link href="#hero" className="mb-4 inline-block">
             <Image
-              src="/logo.png"
-              alt="MapSoul Logo"
-              width={120}
-              height={120}
+              src="/design-nou/logo/logo-dark-transparent.png"
+              alt="SoulMap Logo"
+              width={160}
+              height={160}
               className="object-contain"
             />
           </Link>
@@ -61,7 +61,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-8 max-w-6xl border-t border-[rgba(255,255,255,0.05)] pt-6 text-center text-xs text-[#ededed]/40">
-        <p>&copy; {currentYear} MapSoul - Astrologie Integrativă. Toate drepturile rezervate.</p>
+        <p>&copy; {currentYear} SoulMap - Astrologie Integrativă. Toate drepturile rezervate.</p>
       </div>
     </footer>
   );

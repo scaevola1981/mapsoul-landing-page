@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Sparkles,
   Search,
@@ -49,8 +50,7 @@ const specializations: Specialization[] = [
     title: "Astrologie Karmică",
     icon: Search,
     image: "/design-nou/foto/karma-sign.png",
-    shortDesc:
-      "Harta karmică îți arată tiparele și lecțiile pe care le porți din viețile trecute și darurile ascunse care te pot ghida acum. Este un ghid al sufletului, care te ajută să înțelegi cine ești cu adevărat și cum să trăiești mai liber, mai autentic și mai conștient.",
+    shortDesc: "Harta karmică îți arată tiparele și lecțiile pe care le porți din viețile trecute și darurile ascunse care te pot ghida acum. Este un ghid al sufletului, care te ajută să înțelegi cine ești cu adevărat și cum să trăiești mai liber, mai autentic și mai conștient.",
     quote: "Până nu vei aduce în conștient ceea ce este inconștient, acesta îți va ghida viața, iar tu îl vei numi destin.",
     author: "Carl Jung",
     area: "karmica",
@@ -60,8 +60,7 @@ const specializations: Specialization[] = [
     title: "Astrologie Previzională",
     icon: Calendar,
     image: "/design-nou/foto/astrologie-previzionala.png",
-    shortDesc:
-      "Harta previzionala  arată cum mișcarea planetelor în prezent influențează energiile din harta ta natală. Este ca un ghid al valurilor universului: unele perioade aduc oportunități și inspirație, altele provocări care te ajută să crești.",
+    shortDesc: "Harta previzionala  arată cum mișcarea planetelor în prezent influențează energiile din harta ta natală. Este ca un ghid al valurilor universului: unele perioade aduc oportunități și inspirație, altele provocări care te ajută să crești.",
     quote: "Ceea ce ignorăm persistă, iar ceea ce îmbrățișăm se transformă",
     author: "Carl Jung",
     area: "previzionala",
@@ -96,18 +95,19 @@ function BentoTile({
       viewport={{ once: true, margin: "-60px", amount: 0.3 }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ scale: 1.02 }}
-      className="bento-tile group relative flex h-full flex-col justify-end overflow-hidden rounded-2xl border border-white/[0.08] glass-card transition-all duration-500 hover:border-[var(--npul-purple)]/50"
+      className="bento-tile group relative flex h-full flex-col overflow-hidden rounded-[40px] border border-white/[0.08] glass-card transition-all duration-500 hover:border-[var(--npul-purple)]/50 shadow-2xl"
     >
+      {/* Image background for card */}
       <motion.div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-40"
         style={{ backgroundImage: `url(${spec.image})` }}
       />
-
-      {/* Dark overlay and blur for text visibility */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-[10px] transition-all duration-500 group-hover:bg-black/20 group-hover:backdrop-blur-[6px]" />
+      
+      {/* Dark overlay for text visibility - blur handled by glass-card utility */}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent transition-all duration-500 group-hover:h-full group-hover:bg-black/20" />
 
       {/* Content */}
-      <div className="relative z-10 p-5 md:p-6">
+      <div className="relative z-10 flex h-full flex-col p-5 md:p-6">
         <div className="mb-4 flex items-center justify-between">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white backdrop-blur-md transition-colors duration-300 group-hover:bg-white/20">
             <Icon size={20} strokeWidth={1.5} />
@@ -125,7 +125,7 @@ function BentoTile({
         </p>
 
         {spec.quote && (
-          <div className="mt-2 border-l-2 border-[var(--npul-gold)]/40 pl-3 italic">
+          <div className="mt-auto border-l-2 border-[var(--npul-gold)]/40 pl-3 italic">
             <p className="text-[12px] leading-tight text-[#F8FAFC]/80 md:text-[13px]" style={{ textShadow: "0 1px 2px rgba(0,0,0,0.4)" }}>
               &ldquo;{spec.quote}&rdquo;
             </p>
@@ -144,15 +144,23 @@ function BentoTile({
 }
 
 export default function SpecializationsCarousel() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  const nebulaY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const nebulaScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1.4, 1.2]);
+  const stardustY = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
   return (
-    <section id="specializari" className="relative py-20 md:py-32 overflow-hidden">
-      {/* Background Image for the section */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30 mix-blend-lighten"
-        style={{ backgroundImage: "url('/design-nou/foto/foto-coperta.png')" }}
-      />
-      {/* Gradient mask to gracefully fade top and bottom edges into the main theme color */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0b0e14] via-transparent to-[#0b0e14]" />
+    <section
+      id="specializari"
+      ref={sectionRef}
+      className="relative pt-12 md:pt-20 pb-12 md:pb-20 overflow-hidden"
+    >
+
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-6 flex flex-col items-center">
         {/* Header */}
@@ -167,6 +175,7 @@ export default function SpecializationsCarousel() {
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
+              filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.3))"
             }}
           >
             Harti ale Sufletului
@@ -200,48 +209,47 @@ export default function SpecializationsCarousel() {
         </div>
 
         {/* Carousel (Mobile) */}
-        <div className="block md:hidden font-bold text-[#2E4057]">
+        <div className="block md:hidden w-full overflow-hidden">
           <Swiper
-            spaceBetween={16}
-            slidesPerView={1.2}
-            freeMode={true}
-            pagination={{ clickable: true }}
+            spaceBetween={20}
+            slidesPerView={"auto"}
+            centeredSlides={false}
+            grabCursor={true}
+            observer={true}
+            observeParents={true}
             modules={[FreeMode, Pagination]}
-            className="pb-12"
+            pagination={{ clickable: true }}
+            className="mobile-swiper w-full pb-14"
           >
             {specializations.map((spec, i) => {
               const Icon = spec.icon;
               return (
-                <SwiperSlide key={spec.id}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.4, delay: i * 0.06 }}
-                    className="relative flex h-[340px] flex-col justify-end overflow-hidden rounded-2xl border border-white/[0.08] glass-card"
+                <SwiperSlide key={spec.id} style={{ width: "85%", maxWidth: "340px" }}>
+                  <div
+                    className="relative flex h-[380px] flex-col overflow-hidden rounded-[40px] border border-white/[0.08] glass-card shadow-2xl"
                   >
                     <motion.div
-                      className="absolute inset-0 bg-cover bg-center"
+                      className="absolute inset-0 bg-cover bg-center opacity-40"
                       style={{ backgroundImage: `url(${spec.image})` }}
                     />
-                    <div className="absolute inset-0 bg-black/40 backdrop-blur-[8px]" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    {/* Dark overlay for text visibility - blur handled by glass-card utility */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
 
-                    <div className="relative z-10 p-6">
+                    <div className="relative z-10 flex h-full flex-col p-6">
                       <div className="mb-4 flex items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.08] text-white backdrop-blur-md">
                           <Icon size={40} strokeWidth={1.5} />
                         </div>
-                        <h3 className="font-serif text-lg font-medium">
+                        <h3 className="font-serif text-lg font-medium text-[#F8FAFC]">
                           {spec.title}
                         </h3>
                       </div>
-                      <p className="mb-3 text-[13px] leading-relaxed">
+                      <p className="mb-3 text-[13px] leading-relaxed text-[#F8FAFC]/90">
                         {spec.shortDesc}
                       </p>
 
                       {spec.quote && (
-                        <div className="mb-4 border-l-2 border-[var(--npul-gold)]/40 pl-3 italic">
+                        <div className="mb-4 mt-auto border-l-2 border-[var(--npul-gold)]/40 pl-3 italic">
                           <p className="text-[12px] leading-tight text-[var(--npul-gold)]/90">
                             &ldquo;{spec.quote}&rdquo;
                           </p>
@@ -257,7 +265,7 @@ export default function SpecializationsCarousel() {
                         <ArrowRight size={13} />
                       </button> */}
                     </div>
-                  </motion.div>
+                  </div>
                 </SwiperSlide>
               );
             })}

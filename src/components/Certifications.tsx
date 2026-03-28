@@ -147,13 +147,20 @@ function CertCard({
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay }}
       whileHover={{ y: -4 }}
-      style={style}
-      className={`relative w-full overflow-hidden rounded-xl glass-card border border-white/5 transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.3)] ${className}`}
+      className={`relative w-full overflow-hidden rounded-[40px] glass-card-solid border border-white/5 transition-all duration-300 shadow-2xl ${className}`}
     >
-      {overlay && <div className={`absolute inset-0 z-0 ${overlay}`} />}
+      {/* Background Image Layer with opacity */}
+      {style && (
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center opacity-40" 
+          style={style} 
+        />
+      )}
+      
+      {overlay && <div className={`absolute inset-0 z-[1] ${overlay}`} />}
       
       {hasStars && (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none">
            <Sparkles className="h-20 w-20 text-[var(--npul-accent)] opacity-20" strokeWidth={1} />
         </div>
       )}
