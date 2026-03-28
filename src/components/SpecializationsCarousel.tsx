@@ -97,7 +97,6 @@ function BentoTile({
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ scale: 1.02 }}
       className="bento-tile group relative flex h-full flex-col justify-end overflow-hidden rounded-2xl border border-white/[0.08] glass-card transition-all duration-500 hover:border-[var(--npul-purple)]/50"
-      style={{ gridArea: spec.area }}
     >
       <motion.div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -193,7 +192,7 @@ export default function SpecializationsCarousel() {
 
         {/* Bento Grid (Desktop) */}
         <div className="hidden md:flex justify-center w-full">
-          <div className="grid-bento-layout grid bg-transparent w-full max-w-4xl">
+          <div className="grid-bento-layout grid bg-transparent w-full max-w-7xl">
             {specializations.map((spec, i) => (
               <BentoTile key={spec.id} spec={spec} index={i} />
             ))}

@@ -121,12 +121,8 @@ body::after {
 @utility grid-bento-layout {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(auto, auto);
-  grid-template-areas:
-    "natala karmica"
-    "natala revolutii"
-    "previzionala previzionala";
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(380px, auto);
 }
 
 /* ── Mobile Performance Utilities ── */
