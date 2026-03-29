@@ -90,7 +90,7 @@ export default function MethodSteps() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px", amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="group relative flex flex-col rounded-[40px] border border-white/[0.08] glass-card p-8 md:p-10 transition-all duration-500 hover:border-[var(--npul-purple)]/40 hover:bg-white/[0.06] shadow-2xl"
+                className="group relative flex flex-col rounded-[40px] border border-white/[0.12] glass-card bg-[#1a1124]/90 p-8 md:p-10 transition-all duration-500 hover:border-[var(--npul-purple)]/50 hover:bg-[#1a1124] shadow-2xl"
               >
                 {/* Glow on hover */}
                 <div

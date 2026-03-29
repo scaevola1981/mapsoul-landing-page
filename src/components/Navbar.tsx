@@ -56,7 +56,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 w-full z-[150] border-b border-[rgba(255,255,255,0.05)] transition-all duration-300 ${
         isScrolled
           ? "bg-[#0a0a23]/92 backdrop-blur-lg shadow-[0_4px_24px_-1px_rgba(0,0,0,0.3)]"
-          : "bg-[#0D0213]/40 backdrop-blur-md shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)]"
+          : "bg-[#0D0213]/80 backdrop-blur-md shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)]"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 md:px-6 md:py-3">
@@ -64,15 +64,15 @@ export default function Navbar() {
         <a
           href="#hero"
           onClick={(e) => scrollToSection(e, "#hero")}
-          className="flex items-center gap-2"
+          className="relative flex items-center gap-2"
         >
           <Image
             src="/design-nou/logo/logo-dark-transparent.png"
             alt="SoulMap Logo"
-            width={160}
-            height={160}
+            width={280}
+            height={280}
             priority
-            className="h-8 w-auto object-contain transition-all duration-300 md:h-20"
+            className="h-10 w-auto object-contain transition-all duration-300 md:h-32 md:-mb-12 origin-top-left"
           />
         </a>
 

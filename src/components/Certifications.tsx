@@ -28,21 +28,21 @@ export default function Certifications() {
             {/* Card 1 */}
             <CertCard 
               title="ASTROLOGIE NATALA " 
-              className="h-[320px] bg-cover "
-              textColor="text-[#F8FAFC]"
-              style={{ backgroundImage: "url('/design-nou/foto/astrologie-natala-certificari.png')" }}
-              overlay="bg-[#1a1124]/40"
+              className="h-[320px] "
+              textColor="text-[#fef50384]"
+              style={{ backgroundImage: "url('/certificates/natala.png')" }}
+              overlay="bg-[#1a1124]/10"
               delay={0}
-              contentClass="items-end text-left pb-8 pl-8"
+              contentClass="items-end text-bottom pb-4 pl-10"
             />
             {/* Card 4 */}
             <CertCard 
               title="ASTROLOGIE RELATIONALA" 
               className="h-[300px] bg-cover"
-              textColor="text-[#F8FAFC]"
-              style={{ backgroundImage: "url('/design-nou/foto/astrologie-relationala.png')" }}
+              textColor="text-[#fef50384]"
+              style={{ backgroundImage: "url('/certificates/relationala.png')" }}
               delay={0.1}
-              contentClass="items-end text-left pb-8 pl-8"
+               contentClass="items-end text-bottom pb-4 pl-10"
             />
           </div>
 
@@ -52,10 +52,10 @@ export default function Certifications() {
             <CertCard 
               title= 'ASTROLOGIE KARMICA'
               className="h-[460px] bg-cover"
-              textColor="text-[#F8FAFC]"
-              style={{ backgroundImage: "url('/design-nou/foto/astrologie-karmica.png')" }}
+               textColor="text-[#fef50384]"
+              style={{ backgroundImage: "url('/certificates/karmica.png')" }}
               delay={0.2}
-              contentClass="items-end justify-center text-center "
+               contentClass="items-end text-bottom pb-4 pl-10"
             />
           </div>
 
@@ -65,20 +65,20 @@ export default function Certifications() {
             <CertCard 
               title="ASTROLOGIE PREVIZIONALA" 
               className="h-[240px] bg-cover"
-              textColor="text-[#F8FAFC]"
+               textColor="text-[#fef50384]"
               delay={0.3}
-              contentClass="items-end text-center justify-center pb-8"
-              style={{ backgroundImage: "url('/design-nou/foto/astrologie-previzionala-certificari.png')" }}
+               contentClass="items-end text-bottom pb-4 pl-10"
+              style={{ backgroundImage: "url('/certificates/previzionala.png')" }}
             />
             {/* Card 5 */}
             <CertCard 
               title='ARHETIPURI SI LINII DE DESTIN'
               className="h-[240px] bg-cover"
-              textColor="text-[#F8FAFC]"
+               textColor="text-[#fef50384]"
               delay={0.4}
               hasStars
-              contentClass="items-center justify-center text-center "
-              style={{ backgroundImage: "url('/design-nou/foto/astrologie-arhetipuri.png')" }}
+              contentClass="items-end text-bottom pb-4 pl-10"
+              style={{ backgroundImage: "url('/certificates/arhetipuri.png')" }}
             />
           </div>
         </div>
@@ -97,15 +97,15 @@ export default function Certifications() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <Feature 
               title="ACREDITARE" 
-              desc="Toate formările sunt recunoscute la nivel internațional de forurile profesionale de psihologie și astrologie." 
+              desc="Formări recunoscute și studii aprofundate în cadrul unor școli de renume, oferind o bază solidă interpretărilor oferite." 
             />
             <Feature 
               title="ETICĂ" 
-              desc="Practică bazată pe codul deontologic al Federației Europene a Psihologilor (EFPA)." 
+              desc="Confidențialitate deplină și o abordare empatică, ghidată de principii de integritate și profesionalism în fiecare sesiune." 
             />
             <Feature 
-              title="EVOLUȚIE" 
-              desc="Peste 500 de ore de supervizare și formare continuă realizate anual pentru menținerea standardelor." 
+              title="DEDICARE" 
+              desc="Studiu permanent al dinamicii planetare și perfecționarea continuă a metodelor de analiză pentru a asigura o interpretare precisă și pertinentă." 
             />
           </div>
         </div>
@@ -152,7 +152,7 @@ function CertCard({
       {/* Background Image Layer with opacity */}
       {style && (
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center opacity-40" 
+          className="absolute inset-0 z-0 bg-cover bg-center opacity-95" 
           style={style} 
         />
       )}
@@ -180,7 +180,7 @@ function Feature({ title, desc }: { title: string; desc: string }) {
       <h5 className="mb-3 text-[10px] md:text-[11px] font-bold tracking-[0.15em] text-[var(--npul-accent)] uppercase">
         {title}
       </h5>
-      <p className="text-[12px] md:text-[13px] leading-relaxed text-[var(--npul-purple)]/70">
+      <p className="text-[12px] md:text-[13px] leading-relaxed text-[var(--npul-purple)]">
         {desc}
       </p>
     </div>

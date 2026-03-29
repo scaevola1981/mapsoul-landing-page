@@ -52,7 +52,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px", amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative flex flex-col rounded-2xl border border-white/[0.07] glass-card p-6 transition-all duration-500 hover:border-[var(--npul-gold)]/25 hover:bg-white/[0.05]"
+              className="group relative flex flex-col rounded-2xl border border-white/[0.12] glass-card bg-[#1a1124]/90 p-6 transition-all duration-500 hover:border-[var(--npul-gold)]/50 hover:bg-[#1a1124]"
             >
               {/* Quote icon */}
               <Quote

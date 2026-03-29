@@ -99,7 +99,7 @@ function BentoTile({
     >
       {/* Image background for card */}
       <motion.div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-40"
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-80"
         style={{ backgroundImage: `url(${spec.image})` }}
       />
       
@@ -229,7 +229,7 @@ export default function SpecializationsCarousel() {
                     className="relative flex h-[380px] flex-col overflow-hidden rounded-[40px] border border-white/[0.08] glass-card shadow-2xl"
                   >
                     <motion.div
-                      className="absolute inset-0 bg-cover bg-center opacity-40"
+                      className="absolute inset-0 bg-cover bg-center opacity-80"
                       style={{ backgroundImage: `url(${spec.image})` }}
                     />
                     {/* Dark overlay for text visibility - blur handled by glass-card utility */}

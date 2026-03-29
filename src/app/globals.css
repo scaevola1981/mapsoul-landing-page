@@ -49,29 +49,29 @@ body {
   .glass-card {
     backdrop-filter: blur(40px) saturate(1.8);
     -webkit-backdrop-filter: blur(40px) saturate(1.8);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.05) 0%,
-      rgba(255, 255, 255, 0.02) 100%
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.12) 100%
     );
     box-shadow: 
       0 12px 40px 0 rgba(0, 0, 0, 0.45),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
     position: relative;
     overflow: hidden;
   }
 
   .glass-card-solid {
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.06) 0%,
-      rgba(255, 255, 255, 0.03) 100%
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.10) 100%
     );
     box-shadow: 
       0 12px 40px 0 rgba(0, 0, 0, 0.45),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
     position: relative;
     overflow: hidden;
   }

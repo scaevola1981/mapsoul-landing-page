@@ -153,13 +153,13 @@ function Card({
       whileHover={{ scale: 1.01 }}
       className={`glass-card relative flex flex-col rounded-[40px] p-8 md:p-10 transition-all duration-300 ${
         highlight
-          ? "border-[var(--npul-gold)]/30 shadow-[0_12px_40px_rgba(233,195,73,0.1)] bg-[#2a1b38]/40"
-          : "border-white/[0.04] hover:border-white/[0.08] bg-[#1a1124]/40 shadow-2xl"
+          ? "border-[var(--npul-gold)]/30 shadow-[0_12px_40px_rgba(233,195,73,0.18)] bg-[#2a1b38]/95"
+          : "border-white/[0.12] hover:border-white/[0.18] bg-[#1a1124]/95 shadow-2xl"
       }`}
     >
       <div className="mb-5 flex items-start justify-between">
         <Icon size={18} className="text-[var(--npul-gold)]" strokeWidth={2.5} />
-        <span className="text-[9px] uppercase tracking-[0.15em] text-[#F8FAFC]/50">
+        <span className="text-[9px] uppercase tracking-[0.15em] text-[#F8FAFC]/85">
           {role}
         </span>
       </div>
@@ -173,7 +173,7 @@ function Card({
         </h4>
       </div>
       
-      <p className="text-[12px] flex-1 leading-[1.6] text-[#F8FAFC]/70">
+      <p className="text-[12px] flex-1 leading-[1.6] text-[#F8FAFC]">
         {desc}
       </p>
 
