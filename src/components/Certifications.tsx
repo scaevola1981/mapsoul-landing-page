@@ -21,90 +21,37 @@ export default function Certifications() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 md:grid-rows-3 gap-6 auto-rows-[220px]">
-          {/* ASTROLOGIE NATALĂ - 1x1 */}
-          <div className="md:col-span-1 md:row-span-1">
-            <CertCard 
-              title="ASTROLOGIE NATALĂ" 
-              className="h-full bg-cover" 
-              contentClass="items-end text-left justify-between flex-row px-10"
-              textColor="text-[#fef503c0]"
-              delay={0.1}
-              style={{ backgroundImage: "url('/certificates/natala.png')" }}
-              hasStars
-              level="PROFESIONAL"
-            />
-          </div>
-
-          {/* ASTROLOGIE KARMICĂ - 2x2 CENTERPIECE */}
-          <div className="sm:col-span-2 md:row-span-3">
-            <CertCard 
-              title='ASTROLOGIE KARMICĂ' 
-              className="h-full bg-cover" 
-              delay={0.3}
-              style={{ backgroundImage: "url('/certificates/karmica.png')" }}
-              hasStars
-              level="AVANSAT & SPIRITUAL"
-              contentClass="items-end text-left justify-center p-10"
-              textColor="text-[#fef503c0]"
-              titleClass="text-[26px] md:text-[16px]"
-            />
-          </div>
-
-          {/* ASTROLOGIE PREVIZIONALĂ - 1x1 */}
-          <div className="sm:col-span-1 md:col-span-1 md:row-span-1">
-            <CertCard 
-              title="ASTROLOGIE PREVIZIONALĂ" 
-              className="h-full bg-cover" 
-              contentClass="items-end text-left justify-between flex-row px-12"
-              textColor="text-[#fef503c0]"
-              delay={0.4}
-              style={{ backgroundImage: "url('/certificates/previzionala.png')" }}
-              level="TEHNIC"
-            />
-          </div>
-
-          {/* ASTROLOGIE RELAȚIONALĂ - 1x1 */}
-          <div className="sm:col-span-1 md:col-span-1 md:row-span-2">
-            <CertCard 
-              title="ASTROLOGIE RELAȚIONALĂ" 
-              className="h-full bg-cover" 
-              contentClass="items-end text-left justify-between flex-row px-12"
-              textColor="text-[#fef503c0]"
-              delay={0.2}
-              style={{ backgroundImage: "url('/certificates/relationala.png')" }}
-              level="SINESTRIC"
-            />
-          </div>
-
-          {/* ARHETIPURI ȘI LINII DE DESTIN - 1x1 */}
-          <div className="sm:col-span-1 md:col-span-1 md:row-span-2">
-            <CertCard 
-              title='ARHETIPURI ȘI LINII DE DESTIN' 
-              className="h-full bg-cover" 
-              contentClass="items-end text-left justify-between flex-row px-12"
-              textColor="text-[#fef503c0]"
-              delay={0.5}
-              style={{ backgroundImage: "url('/certificates/arhetipuri.png')" }}
-              hasStars
-              level="DESTIN"
-            />
-          </div>
-
-          {/* ASTROLOGIA ORARĂ - 4x1 WIDE FOOTER */}
-          <div className="sm:col-span-2 md:col-span-4 md:row-span-2">
-            <CertCard 
-              title='ASTROLOGIA ORARĂ'
-              className="h-full bg-cover"
-              textColor="text-[#fef503c0]"
-              delay={0.6}
-              hasStars
-              contentClass="items-end text-left justify-between flex-row px-12"
-              titleClass="text-[24px] md:text-[32px] text-left"
-              style={{ backgroundImage: "url('/certificates/orara.png')" }}
-              level="PRECIS"
-            />
-          </div>
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-16 md:gap-y-20">
+          {/* Card Wrapper for grid consistency */}
+          {[
+            { title: "ASTROLOGIE NATALĂ", delay: 0.1, img: "natala.png", stars: true },
+            { title: "ASTROLOGIE KARMICĂ", delay: 0.2, img: "astrologie-karmica.png", stars: true },
+            { title: "ASTROLOGIE PREVIZIONALĂ", delay: 0.3, img: "previzionala.png", stars: false },
+            { title: "ASTROLOGIE RELAȚIONALĂ", delay: 0.4, img: "relationala.png", stars: false },
+            { title: "ASTROLOGIA ORARĂ", delay: 0.6, img: "orara.png", stars: true },
+            { title: "ARHETIPURI ȘI LINII DE DESTIN", delay: 0.5, img: "arhetipuri.png", stars: true },
+            { title: "ASTROLOGIA KARMICĂ", delay: 0.7, img: "karmica1.png", stars: true },
+          ].map((cert, idx) => (
+            <div key={idx} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] text-center">
+              <CertCard 
+                className="h-[280px] sm:h-[240px] md:h-[260px] mb-6 md:mb-8" 
+                delay={cert.delay}
+                style={{ backgroundImage: `url('/certificates/${cert.img}')` }}
+                hasStars={cert.stars}
+              />
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: cert.delay + 0.2 }}
+                className="flex flex-col gap-1.5"
+              >
+                <h4 className="font-serif text-[12px] md:text-[12px] font-bold leading-[1.4] text-[var(--npul-gold)]">
+                  {cert.title}
+                </h4>
+              </motion.div>
+            </div>
+          ))}
         </div>
 
         {/* Garantia Calitatii */}
@@ -146,27 +93,17 @@ export default function Certifications() {
 }
 
 function CertCard({
-  title,
   className = "",
   style,
   overlay,
   delay = 0,
-  contentClass = "items-end text-left",
-  titleClass = "text-[19px] md:text-[21px]",
-  textColor = "text-[#F8FAFC]",
   hasStars = false,
-  level = "",
 }: {
-  title: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
   overlay?: string;
   delay?: number;
-  contentClass?: string;
-  titleClass?: string;
-  textColor?: string;
   hasStars?: boolean;
-  level?: string;
 }) {
   return (
     <motion.div
@@ -182,7 +119,7 @@ function CertCard({
         y: -10,
         transition: { duration: 0.4, ease: "easeOut" }
       }}
-      className={`group relative h-full w-full overflow-hidden rounded-[32px] md:rounded-[40px] glass-card-solid border border-white/10 transition-all duration-500 shadow-2xl ${className}`}
+      className={`group relative w-full overflow-hidden rounded-[32px] md:rounded-[40px] glass-card-solid border border-white/10 transition-all duration-500 shadow-2xl ${className}`}
     >
       {/* Gloss Reflection Layer */}
       <div className="absolute inset-0 z-[5] bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -207,20 +144,6 @@ function CertCard({
            <Sparkles className="h-24 w-24 text-[var(--npul-gold)] opacity-10 group-hover:opacity-20 transition-opacity duration-700" strokeWidth={0.5} />
         </div>
       )}
-
-      <div className={`relative z-10 flex h-full p-8 ${contentClass}`}>
-        <div className="flex flex-col gap-2">
-          {level && (
-            <span className="text-[9px] font-bold tracking-[0.25em] text-[var(--npul-gold)]/80 uppercase mb-1">
-              {level}
-            </span>
-          )}
-          <h4 className={`font-serif font-medium leading-[1.2] ${textColor} ${titleClass}`} 
-              style={{ textShadow: "0 4px 12px rgba(0,0,0,0.8)" }}>
-            {title}
-          </h4>
-        </div>
-      </div>
 
       {/* Hover Border Glow */}
       <div className="absolute inset-0 z-[1] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[40px] border-2 border-[var(--npul-gold)]/20 pointer-events-none" />

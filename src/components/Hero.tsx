@@ -40,7 +40,7 @@ export default function Hero() {
                 Înțelegere • Claritate • Direcție
               </span>
               <h1 className="font-serif font-medium tracking-tight text-[#f7f3ff] text-[clamp(30px,7vw,42px)] leading-[1.15] md:text-[72px] md:leading-[1.1] lg:text-[84px]">
-                Hărți pentru <br/>
+                Hărți pentru <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--npul-gold)] via-[var(--npul-accent)] to-[#D47AFE] italic">
                   Sufletul Tău
                 </span>
@@ -130,10 +130,16 @@ export default function Hero() {
               </div>
 
               <div className="absolute -right-6 -top-6 p-4 md:-right-8 md:-top-8">
-                 <Sparkles className="h-8 w-8 text-[var(--npul-gold)] opacity-20 md:h-12 md:w-12" />
+                <Sparkles className="h-8 w-8 text-[var(--npul-gold)] opacity-20 md:h-12 md:w-12" />
               </div>
             </div>
-
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+              className="mt-4 text-center text-xs font-medium italic text-[#A5F3FC]/70 px-4 md:mt-8 md:text-sm"
+            >
+              Sunt astrolog acreditat si student la psihologie.SoulMap este harta sufletului tau, iar experienta mea te-ar putea ghida spre raspunsurile  care aduc sens si directie vietii tale            </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
