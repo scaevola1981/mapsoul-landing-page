@@ -8,6 +8,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import Hero from "@/components/Hero";
+import Image from "next/image";
 import JungQuote from "@/components/JungQuote";
 import SpecializationsCarousel from "@/components/SpecializationsCarousel";
 import MethodSteps from "@/components/MethodSteps";
@@ -51,12 +52,20 @@ function PortalSection({
       {bgImage && (
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <motion.div
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat portal-bg ${bgBlur ? bgBlur : ""}`}
+            className={`absolute inset-0 portal-bg ${bgBlur ? bgBlur : ""}`}
             style={{
-              backgroundImage: bgImage.startsWith('/') ? `url('${bgImage}')` : `url('/photo_transitions/${bgImage}')`,
               scale: bgBlur ? 1.05 : 1
             }}
-          />
+          >
+            <Image
+              src={bgImage.startsWith('/') ? bgImage : `/photo_transitions/${bgImage}`}
+              alt=""
+              fill
+              className="object-cover"
+              priority={id === "HeroAboutSection"}
+              sizes="100vw"
+            />
+          </motion.div>
         </div>
       )}
 
@@ -87,10 +96,14 @@ export default function Home() {
     >
       {/* SECTION 1: HERO + QUOTE */}
       <PortalSection id="HeroAboutSection" innerPadding="pt-12 md:pt-20 pb-0"> 
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div
-            className="absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center bg-no-repeat opacity-80"
-            style={{ backgroundImage: "url('/design-nou/foto/foto-hero.png')" }}
+        <div className="absolute inset-x-0 top-0 bottom-0 z-0 pointer-events-none">
+          <Image
+            src="/design-nou/foto/foto-hero.png"
+            alt="SoulMap Hero Background"
+            fill
+            priority
+            className="object-cover object-[70%_center] md:object-center opacity-80"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0D0213] via-[#0D0213]/60 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0b0e14] via-[#0b0e14]/40 to-transparent" />

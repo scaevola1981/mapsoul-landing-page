@@ -168,9 +168,9 @@ function Card({
         <span className="text-[9px] font-bold uppercase tracking-widest text-[var(--npul-gold)]/80 flex items-center gap-1.5 mb-1.5">
           <span className="opacity-50">{catNumber}</span> {categoryName}
         </span>
-        <h4 className="font-serif text-[20px] tracking-wide text-[#F8FAFC]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
+        <h3 className="font-serif text-[20px] tracking-wide text-[#F8FAFC]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
           {title}
-        </h4>
+        </h3>
       </div>
       
       <p className="text-[12px] flex-1 leading-[1.6] text-[#F8FAFC]">

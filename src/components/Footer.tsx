@@ -6,17 +6,18 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-20 w-full border-t border-white/[0.07] glass-card backdrop-blur-xl shadow-[0_4px_24px_-1px_rgba(0,0,0,0.3)] px-6 py-8 md:py-10">
+    <footer className="relative z-20 w-full px-6 py-8 md:py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 md:flex-row md:items-start">
         {/* Brand / Logo */}
         <div className="flex flex-col items-center md:items-start">
           <Link href="#hero" className="mb-4 inline-block">
             <Image
-              src="/design-nou/logo/logo-dark-transparent.png"
-              alt="SoulMap Logo"
+              src="/design-nou/logo/logo-restilizat.png"
+              alt="SoulChart Logo"
               width={160}
               height={160}
               className="object-contain"
+              style={{ filter: 'url(#remove-dark) contrast(1.1) brightness(1.1)' }}
             />
           </Link>
           <p className="max-w-xs text-center text-sm leading-relaxed text-[var(--npul-gold)]/70 md:text-left">
@@ -37,7 +38,7 @@ export default function Footer() {
         {/* Contact/Socials */}
         <div className="flex flex-col items-center md:items-start">
           <h4 className="mb-3 font-serif text-lg text-[var(--npul-gold)]">Conectare</h4>
-          <div className="flex gap-4 mb-4">
+          <div className="flex gap-4 mb-3">
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=ghermac_marilena@yahoo.com"
               target="_blank"
@@ -57,6 +58,12 @@ export default function Footer() {
               <Facebook size={20} />
             </a>
           </div>
+          <a 
+            href="mailto:ghermac_marilena@yahoo.com" 
+            className="text-[13px] text-[var(--npul-gold)]/60 hover:text-[var(--npul-accent)] transition-colors"
+          >
+            ghermac_marilena@yahoo.com
+          </a>
         </div>
       </div>
 

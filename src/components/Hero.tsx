@@ -106,11 +106,12 @@ export default function Hero() {
               {/* Background logo watermark */}
               <div className="absolute inset-0 flex items-center justify-center opacity-[0.06]">
                 <Image
-                  src="/design-nou/logo/logo-dark-transparent.png"
+                  src="/design-nou/logo/logo-restilizat.png"
                   alt=""
                   width={320}
                   height={320}
                   className="object-contain opacity-60"
+                  style={{ filter: 'url(#remove-dark) contrast(1.1) brightness(1.1)' }}
                   aria-hidden="true"
                 />
               </div>

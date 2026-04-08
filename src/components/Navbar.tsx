@@ -53,26 +53,30 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-[150] border-b border-[rgba(255,255,255,0.05)] transition-all duration-300 ${
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-[150] rounded-2xl border border-[rgba(0, 19, 162, 0.79)] transition-all duration-500 ${
         isScrolled
-          ? "bg-[#0a0a23]/92 backdrop-blur-lg shadow-[0_4px_24px_-1px_rgba(0,0,0,0.3)]"
-          : "bg-[#0D0213]/80 backdrop-blur-md shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)]"
+          ? "bg-[#0a0a23]/80 backdrop-blur-2xl shadow-[0_8px_32px_-1px_rgba(0,0,0,0.5)] py-1"
+          : "bg-[#0a0a23]/30 backdrop-blur-xl py-2"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 md:px-6 md:py-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 md:px-6 md:py-2">
         {/* Logo */}
         <a
           href="#hero"
           onClick={(e) => scrollToSection(e, "#hero")}
-          className="relative flex items-center gap-2"
+          className="relative flex h-12 items-center justify-start md:h-16 overflow-visible"
         >
           <Image
-            src="/design-nou/logo/logo-dark-transparent.png"
+            src="/design-nou/logo/logo-restilizat.png"
             alt="SoulMap Logo"
-            width={280}
-            height={280}
+            width={180}
+            height={60}
             priority
-            className="h-10 w-auto object-contain transition-all duration-300 md:h-32 md:-mb-12 origin-top-left"
+            className="h-full w-auto object-contain transition-all duration-300"
+            style={{ 
+              filter: 'url(#remove-dark) contrast(1.1) brightness(1.1)',
+              width: 'auto'
+            }}
           />
         </a>
 
@@ -83,7 +87,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
-              className="text-sm font-medium tracking-wide text-[#ededed]/80 transition-colors hover:text-[#DFB0FF] cursor-pointer"
+              className="text-sm font-medium tracking-wide text-[#ededed] transition-colors hover:text-[#DFB0FF] cursor-pointer"
             >
               {link.name}
             </a>
@@ -116,7 +120,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[190] flex flex-col bg-[#0a0a23]/70 backdrop-blur-2xl md:hidden border-l border-white/5 shadow-2xl"
+              className="fixed inset-0 z-[190] flex flex-col bg-[#05070a]/65 backdrop-blur-2xl backdrop-saturate-150 md:hidden"
             >
             {/* Top space for the navbar */}
             <div className="h-16" />
@@ -131,11 +135,12 @@ export default function Navbar() {
                 className="mb-6"
               >
                 <Image
-                  src="/design-nou/logo/logo-dark-transparent.png"
-                  alt="SoulMap Logo"
-                  width={140}
-                  height={140}
+                  src="/design-nou/logo/logo-restilizat.png"
+                  alt="SoulChart Logo"
+                  width={120}
+                  height={120}
                   className="object-contain"
+                  style={{ filter: 'url(#remove-dark) contrast(1.1) brightness(1.1)' }}
                 />
               </motion.div>
 

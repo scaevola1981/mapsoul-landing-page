@@ -46,9 +46,9 @@ export default function Certifications() {
                 transition={{ duration: 0.5, delay: cert.delay + 0.2 }}
                 className="flex flex-col gap-1.5"
               >
-                <h4 className="font-serif text-[12px] md:text-[12px] font-bold leading-[1.4] text-[var(--npul-gold)]">
+                <h3 className="font-serif text-[12px] md:text-[12px] font-bold leading-[1.4] text-[var(--npul-gold)]">
                   {cert.title}
-                </h4>
+                </h3>
               </motion.div>
             </div>
           ))}
@@ -154,9 +154,9 @@ function CertCard({
 function Feature({ title, desc }: { title: string; desc: string }) {
   return (
     <div className="flex flex-col text-center md:text-left">
-      <h5 className="mb-3 text-[10px] md:text-[11px] font-bold tracking-[0.15em] text-[var(--npul-accent)] uppercase">
+      <h4 className="mb-3 text-[10px] md:text-[11px] font-bold tracking-[0.15em] text-[var(--npul-accent)] uppercase">
         {title}
-      </h5>
+      </h4>
       <p className="text-[12px] md:text-[13px] leading-relaxed text-[var(--npul-purple)]">
         {desc}
       </p>

@@ -130,7 +130,7 @@ function BentoTile({
               &ldquo;{spec.quote}&rdquo;
             </p>
             {spec.author && (
-              <span className="mt-1 block text-[10px] not-italic opacity-60">
+              <span className="mt-1 block text-[10px] font-medium not-italic text-[#F8FAFC]/90">
                 — {spec.author}
               </span>
             )}
