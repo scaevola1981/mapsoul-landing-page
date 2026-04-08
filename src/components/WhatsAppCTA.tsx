@@ -16,7 +16,7 @@ export default function WhatsAppCTA() {
     <AnimatePresence>
       {isVisible && (
         <motion.a
-          href="https://wa.me/40752102281?text=Bun%C4%83%2C%20a%C8%99%20dori%20o%20programare%20(SoulMap)%20pentru%20..."
+          href="https://wa.me/40752102281?text=Bun%C4%83%2C%20a%C8%99%20dori%20o%20programare%20(SoulChart)%20pentru%20..."
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contact pe WhatsApp"

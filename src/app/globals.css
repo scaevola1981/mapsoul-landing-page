@@ -249,7 +249,6 @@ body::after {
 
   /* Hero mobile */
   .hero {
-    padding: 64px 0 48px !important;
     min-height: auto !important;
   }
 

@@ -23,7 +23,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="hero relative flex w-full items-center justify-center overflow-hidden px-4 pt-20 pb-10 md:min-h-screen md:px-6 md:pt-32 md:pb-12"
+      className="hero relative flex w-full items-center justify-center overflow-hidden px-4 pb-10 md:min-h-screen md:px-6 md:pb-12"
     >
       <div className="pointer-events-none absolute inset-0 z-0 bg-[#0b0e14]/40" />
 

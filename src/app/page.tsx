@@ -95,7 +95,7 @@ export default function Home() {
       className="bg-transparent flex flex-col m-0 p-0 gap-0"
     >
       {/* SECTION 1: HERO + QUOTE */}
-      <PortalSection id="HeroAboutSection" innerPadding="pt-12 md:pt-20 pb-0"> 
+      <PortalSection id="HeroAboutSection" innerPadding="p-0"> 
         <div className="absolute inset-x-0 top-0 bottom-0 z-0 pointer-events-none">
           <Image
             src="/design-nou/foto/foto-hero.png"
@@ -109,7 +109,7 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0b0e14] via-[#0b0e14]/40 to-transparent" />
         </div>
 
-        <div className="relative z-10 flex flex-col">
+        <div className="relative z-10 flex flex-col pt-20 md:pt-32">
           <Hero />
           <div className="pb-20 md:pb-32 pt-10">
             <JungQuote />
