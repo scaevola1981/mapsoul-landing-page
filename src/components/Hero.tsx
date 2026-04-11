@@ -140,7 +140,7 @@ export default function Hero() {
               transition={{ delay: 1.2 }}
               className="mt-4 text-center text-xs font-medium italic text-[#A5F3FC]/70 px-4 md:mt-8 md:text-sm"
             >
-              Sunt astrolog acreditat si student la psihologie.SoulMap este harta sufletului tau, iar experienta mea te-ar putea ghida spre raspunsurile  care aduc sens si directie vietii tale            </motion.p>
+              Sunt astrolog acreditat si student la psihologie.SoulChart este harta sufletului tau, iar experienta mea te-ar putea ghida spre raspunsurile  care aduc sens si directie vietii tale            </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

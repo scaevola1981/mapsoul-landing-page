@@ -68,7 +68,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-8 max-w-6xl border-t border-[rgba(255,255,255,0.05)] pt-6 text-center text-xs text-[#ededed]/40">
-        <p>&copy; {currentYear} SoulMap - Astrologie Integrativă. Toate drepturile rezervate.</p>
+        <p>&copy; {currentYear} SoulChart - Astrologie Integrativă. Toate drepturile rezervate.</p>
       </div>
     </footer>
   );
