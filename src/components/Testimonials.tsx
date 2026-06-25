@@ -26,7 +26,7 @@ const testimonials = [
   },
   {
     text: "Dragă Mari, felul cald și autentic în care explici astrologia face ca totul să capete sens. Mulțumesc! ❤🌹 Se văd și se simt pasiunea ta, dedicarea și mai ales talentul! Mult succes!",
-    name: "Andreea",
+    name: "ADREEA",
     city: "Rm.Valcea",
   },
 ];
