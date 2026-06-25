@@ -24,6 +24,11 @@ const testimonials = [
     name: "Mihai D.",
     city: "Iași",
   },
+  {
+    text: "Dragă Mari, felul cald și autentic în care explici astrologia face ca totul să capete sens. Mulțumesc! ❤🌹 Se văd și se simt pasiunea ta, dedicarea și mai ales talentul! Mult succes!",
+    name: "Andreea",
+    city: "Rm.Valcea",
+  },
 ];
 
 export default function Testimonials() {

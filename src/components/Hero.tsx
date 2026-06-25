@@ -120,7 +120,7 @@ export default function Hero() {
               <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-white/[0.1] shadow-2xl md:rounded-[2.5rem]">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-[#6d28d9]/[0.04]" />
                 <Image
-                  src="/design-nou/foto/foto-client.png"
+                  src="/foto-client/foto-client1.png"
                   alt="SoulMap — Marilena, Astrolog"
                   fill
                   className="object-cover object-top"
